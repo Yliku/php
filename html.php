@@ -5,19 +5,32 @@
 	或者文件保存为utf-8 ，浏览器现在一般都会默认识别为utf-8 -->
 										<!-- HTML标签的注释,这注释符号真奇葩 -->
 <body bgcolor="#BEBEBE">					<!-- 设置背景颜色 -->
-<a>超链接标签测试文字测试文字测试文字测试文字测试文字</a>
+<a>没链接的超链接标签</a>
 <br />									<!-- html中的换行符,最规范的写法,不要写成br -->
 <a href="https://baidu.com">(超链接跳转标签)跳转百度</a>		
 										<!-- 试试看不加https://的效果 href它是Hypertext Reference的缩写-->
 <p>段落1</p>
 <p>段落2</p>								<!-- 注意两个段落之间的距离 --> 
-<em>段落3之em斜体标签<br /></em>					
+<em>强调标签之em斜体-emphasize<br /></em>				<!-- emphasize 强调、着重 -->
+<strong>强调加重标签之strong粗体<br /></strong>		<!-- 比em更加强调 -->
+<q>引用标签之q引用-quote，给浏览器知道的，浏览器会自动加上双引号</q>
+<blockquote>引用标签之blockquote，给浏览器知道的，不会自动加上双引号，会分段且左右缩进</blockquote>
+<pre>pre标签：可以保留文本中的所有格式，包括多少个空格和回车，
+因为html里面无论同时输入了多少个空格和回车，都会被当成一个空格来显示，而在pre标签中会保留所有格式：
+5个空格：     。
+1个空格： 。
+如果不想用pre标签来输出空格，可以用& nbsp;来输出空格！注意分号！！nb(牛逼)sp(space) 好牛逼的空格!哈哈哈，其实是& nbsp;no-breaking space:不间断空格
+</pre>
+以下为hr(人事，其实是horizontal rule水平线)分割的空标签，和换行br标签一样，只有结束标签
+<hr />	
+address标签：
+<address>地址标签：北京市丰台区xx大街xx号，address标签会变斜体且另起一行</address>
+
 
 <!-- img 是html中的单标签：单标签得加空格和斜杠!!!!	<br>换行<hr>水平线<img>插入图片<input>输入框<param>对象<meta>元信息<link>定义文档与外部资源的关系	 --> 	
-
 <img src="./basis/chicken1.jpg" />		<!-- 插入图片,本地图片放在根目录下的可以直接访问 --> 	
 										<!-- src就是 source（来源），这里是指图片地址 --> 				
-<img src="./images/chicken2.jpg" />		<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
+<img src="./basis/images/couple.jpg" />		<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
 
 <form>								<!-- 插入表单单单单单单 --> 
 登录名:<input type="text" name="username">
