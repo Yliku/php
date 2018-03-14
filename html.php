@@ -23,6 +23,10 @@
 </pre>
 以下为hr(人事，其实是horizontal rule水平线)分割的空标签，和换行br标签一样，只有结束标签
 <hr />	
+address标签：
+<address>地址标签：北京市丰台区xx大街xx号，address标签会变斜体且另起一行</address>
+
+
 <!-- img 是html中的单标签：单标签得加空格和斜杠!!!!	<br>换行<hr>水平线<img>插入图片<input>输入框<param>对象<meta>元信息<link>定义文档与外部资源的关系	 --> 	
 <img src="./basis/chicken1.jpg" />		<!-- 插入图片,本地图片放在根目录下的可以直接访问 --> 	
 										<!-- src就是 source（来源），这里是指图片地址 --> 				
