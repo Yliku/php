@@ -6,8 +6,15 @@
 										<!-- HTML标签的注释,这注释符号真奇葩 -->
 <body bgcolor="#BEBEBE">					<!-- 设置背景颜色 -->
 <strong>sublime中输入!按Tab会自动补齐html的主体代码 <br /></strong>
-<a>a标签：超链接标签</a><br />				<!-- br /为html中的换行符,最规范的写法,不要写成br -->
-<a href="https://baidu.com">a标签跳转百度<br /></a>		<!-- 试试看不加https://的效果，或者换成www.   href是Hypertext Reference的缩写-->
+<a href="https://baidu.com" title="title鼠标停留在这时显示的文字">a标签：超链接标签-跳转百度<br /></a>		<!-- br /为html中的换行符,最规范的写法,不要写成br -->	
+<a href="https://zhuanlan.zhihu.com/p/22231471" title="在新建网页打开，查看漏洞介绍以及修复方法" target="_blank">《被低估的 target="_blank" 漏洞》<br /></a>		
+<a href="mailto:367336561@qq.com ?subject=邮件主题 &body=邮件内容" title="title说明，点击发送邮件">发送邮件<br /></a>		
+<!-- 试试看不加https://的效果，或者换成www.   href是Hypertext Reference的缩写-->
+<!-- target="_blank" 的使用是一门很深的学问，千万不要对于所有的元素都一概而论，打个比方：
+比如google在处理分页的时候使用target="_blank"，想象一下会是什么样的后果；
+而在处理搜索结果列表的时候使用target="_blank"却又是一件很惬意的事。所以得针对不同的对象谨慎使用target="_blank"。
+
+ -->
 <q>q标签（quote）：短文本的引用；给浏览器知道的，该标签浏览器会识别为引用的内容，浏览器会自动加上双引号</q>
 <blockquote>blockquote标签：长文本的引用；该标签浏览器会识别为引用的内容，不会自动加上双引号，会分段且左右缩进</blockquote>
 <p>p标签：段落1</p>
@@ -60,7 +67,6 @@ div和span区分：
 <input type="submit" name="登录">			<!-- 比较name和value的区别 --> 
 </form>								<!-- 插入表单单单单单单 --> 
 								
-<table border="1" cellspacing="0">	<!-- 插入表格格格格格格,th: 标题table header cell；tr: 行table row；td: 单元格table data cell--> 
 <pre>
 	html语法：< table border="1" cellspacing="0">
 	html语法中设置属性的值/样式用<strong>属性名+等于号</strong> 来设置，属性的值用双/单引号括起来，一个属性定义完后是;号，比如样式  Style="color:red;"。
@@ -71,12 +77,16 @@ div和span区分：
 </pre>	
 <!--
 cellspacing合并标签tr，td之间的空隙
- border=1设置包括标签table，tr，td的边框粗细，border属性有三个子属性：线宽 线型 颜色；
-1px表示边框的宽度为1像素；
+ border=1设置包括标签table，tr，td的边框粗细，
+ border属性有三个子属性：线宽 线型 颜色；
+1px表示边框的宽度为1像素； 
 solid表示边框的样式为实线；
 #cdedfa 是边框的颜色。
 -->	
-<tr><th>序号</th><th>姓名</th><th>科目</th><th>成绩</th></tr>
+<table border="1" cellspacing="0" summary="插入简介，语义化：不会在浏览器显示出来，用于增加表格可读性，使搜索引擎更好的读懂内容，使屏幕阅读器帮助用户读取表格内容">	
+									<!-- 插入表格格格格格格 -->
+<caption>数学成绩对比</caption>									<!-- caption表格的标题 -->
+<tr><th>序号</th><th>姓名</th><th>科目</th><th>成绩</th></tr>		<!-- th: 表格表头，加粗table header cell；tr: 行table row；td: 单元格table data cell -->
 <tr><td>001</td><td>陈赫</td><td>数学</td><td>21</td></tr>
 <tr><td>002</td><td>热巴</td><td>数学</td><td>999</td></tr>
 </table>
