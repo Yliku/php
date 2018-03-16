@@ -60,9 +60,23 @@ div和span区分：
 <input type="submit" name="登录">			<!-- 比较name和value的区别 --> 
 </form>								<!-- 插入表单单单单单单 --> 
 								
-<table border="1" cellspacing="0">	<!-- 插入表格格格格格格,tr：行table row,td：单元格table data --> 
-										<!-- border=1设置包括标签table，tr，td的边框粗细，cellspacing合并标签tr，个td的空隙-->
-<tr><td>序号</td><td>姓名</td><td>科目</td><td>成绩</td></tr>
+<table border="1" cellspacing="0">	<!-- 插入表格格格格格格,th: 标题table header cell；tr: 行table row；td: 单元格table data cell--> 
+<pre>
+	html语法：< table border="1" cellspacing="0">
+	html语法中设置属性的值/样式用<strong>属性名+等于号</strong> 来设置，属性的值用双/单引号括起来，一个属性定义完后是;号，比如样式  Style="color:red;"。
+	html中两个属性之间用<strong>空格</strong>区分（不在双引号内的两个属性）比如后面的id和style属性：  < div id="top" style="width:100;pxheight:200px;">< /div>  
+	css 语法：div{width:200px;height:200px;border-width:2px;border-color:#00F;}
+	css 语法中设置属性的值/样式用<strong>属性名+冒号</strong> 来设置；
+	css 中两个属性之间用<strong>分号</strong>区分；
+</pre>	
+<!--
+cellspacing合并标签tr，td之间的空隙
+ border=1设置包括标签table，tr，td的边框粗细，border属性有三个子属性：线宽 线型 颜色；
+1px表示边框的宽度为1像素；
+solid表示边框的样式为实线；
+#cdedfa 是边框的颜色。
+-->	
+<tr><th>序号</th><th>姓名</th><th>科目</th><th>成绩</th></tr>
 <tr><td>001</td><td>陈赫</td><td>数学</td><td>21</td></tr>
 <tr><td>002</td><td>热巴</td><td>数学</td><td>999</td></tr>
 </table>
