@@ -73,7 +73,7 @@ div和span区分：
 <br>单选（radio）你喜欢旅游吗？<br>
 <input type="radio" name=	"liketravel" value="喜欢">喜欢						<!-- 注意单选的name需要一样，复选需要不同 -->
 <input type="radio" name=	"liketravel" value="不喜欢">不喜欢					<!--  当 type="radio" 时，控件为单选框；  当 type="checkbox" 时，控件为复选框 -->
-<input type="radio" name=	"liketravel" value="无所谓">无所谓
+<input type="radio" name=	"liketravel" value="无所谓" checked="checked">无所谓
 
 <br>多选（checkbox）下面的运动你喜欢哪些？<br>
 <input type="checkbox" name="likesport1" value="跑步" checked="checked">跑步	 <!-- checked="checked"默认选中 -->
