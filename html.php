@@ -62,11 +62,32 @@ div和span区分：
 <img src="./basis/images/couple.jpg" />	<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
 
 <form>								<!-- 插入表单单单单单单 --> 
-登录名:<input type="text" name="username">
-密  码:<input type="text" name="password">
-<input type="submit" value="登录">
-<input type="submit" name="登录">			<!-- 比较name和value的区别 --> 
-</form>								<!-- 插入表单单单单单单 --> 
+<label for="username">登录名:</label>	<input type="text" name="username" id="username">		<!-- label标签：当鼠标点击label中间的文字时，会跳转到for指向的id控件 -->
+<label for="password">密  码:</label><input type="password" name="password" id="password">	
+<input type="submit" value="登录" name="submit">		<!-- 比较name和value的区别，value是显示在网页上的值，name是用来传输数据到后台用于后台辨别的 --> 
+<input type="reset" value="重置" name="reset">		
+
+<br><label >文本域textarea：</label><br>
+<textarea name="msg" id="" cols="30" rows="4">请在此处输入</textarea>
+
+<br>单选（radio）你喜欢旅游吗？<br>
+<input type="radio" name=	"liketravel" value="喜欢">喜欢						<!-- 注意单选的name需要一样，复选需要不同 -->
+<input type="radio" name=	"liketravel" value="不喜欢">不喜欢					<!--  当 type="radio" 时，控件为单选框；  当 type="checkbox" 时，控件为复选框 -->
+<input type="radio" name=	"liketravel" value="无所谓">无所谓
+
+<br>多选（checkbox）下面的运动你喜欢哪些？<br>
+<input type="checkbox" name="likesport1" value="跑步" checked="checked">跑步	 <!-- checked="checked"默认选中 -->
+<input type="checkbox" name="likesport2" value="游泳">游泳
+<input type="checkbox" name="likesport3" value="旅游">旅游
+<input type="checkbox" name="likesport4" value="打篮球">打篮球
+
+<br>下拉（select）你今年是否满18周岁？<br>
+<select name="age" id="age1">
+<option value="是">是</option>
+<option value="否">否</option>
+<option value="不告诉你" selected="selected">不告诉你</option>
+</select>
+</form>								
 								
 <pre>
 	html语法：< table border="1" cellspacing="0">
@@ -91,7 +112,7 @@ solid表示边框的样式为实线；
 <tr><td>001</td><td>陈赫</td><td>数学</td><td>21</td></tr>
 <tr><td>002</td><td>热巴</td><td>数学</td><td>999</td></tr>
 </table>
-			
+
 <?php 
 date_default_timezone_set("Asia/Shanghai");		
 //显示的时间比实际时间小8小时，原因很可能是因为服务器显示的是格林威治时间。比北京时间小八小时。
