@@ -56,8 +56,9 @@ div和span区分：
 </div>
 
 <!-- img 是html中的单标签：单标签得加空格和斜杠!!!!	<br>换行<hr>水平线<img>插入图片<input>输入框<param>对象<meta>元信息<link>定义文档与外部资源的关系	 --> 	
-<img src="./basis/chicken1.jpg" />		<!-- 插入图片,本地图片放在根目录下的可以直接访问 --> 	
-										<!-- src就是 source（来源），这里是指图片地址 --> 				
+<img src="./basis/chicken1.jpg" alt="啊哦，图片被吃了" title="chicken图片"/>		
+										<!-- 插入图片,本地图片放在根目录下的可以直接访问 --> 	
+										<!-- alt是alternate(替换)src就是 source（来源），这里是指图片地址 --> 				
 <img src="./basis/images/couple.jpg" />	<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
 
 <form>								<!-- 插入表单单单单单单 --> 
