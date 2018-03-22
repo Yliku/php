@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS内联块状元素</title>
+	<style type="text/css">
+	a{
+	display: inline-block;		/*将a标签从内联元素转换为内联块状元素，
+								如果没有设置为内联块状元素，下面的行高和宽将不起作用！！*/
+	font-size:30px;				/*设置字体为30px*/
+	background:pink;			/*设置背景色为粉色*/
+	border:1px solid green;		/*设置边框为1px粗细，实线，绿色，虚线是dashed/点线是dotted 
+								{border-bottom:1px solid red;} 只为一个方向设置边框	；top bottom left right 上下左右	*/
+	width:70px;					/*设置宽度为40px*/
+	height: 70px;				/*设置高度为70px*/
+	text-align:center;			/*设置a标签内的文字在a标签中居中，*/								
+	}
+	body{text-align:center;} 	/*设置body内的东西居中，这里只有a标签，所以a标签就会居中*/
+	</style>
+</head>
+<body>
+	<a style="text-align:left">1</a>
+	<a>2</a>
+	<a>3</a>
+	<a>4</a>
+</body>
+</html>

@@ -4,13 +4,16 @@
 <!-- 用sublime写程序，输出到网页预览时，得在html中加入这句，不然浏览器无法识别会显示为乱码，
 	或者文件保存为utf-8 ，浏览器现在一般都会默认识别为utf-8 -->
 										<!-- HTML标签的注释,这注释符号真奇葩 -->
+<style>
+	/*body, input, button,xmp,pre{font-family:Microsoft Yahei;} */		/*CSS样式之：设置标签的字体为微软雅黑，英文的书写兼容性好*/
+</style>
 <body bgcolor="#BEBEBE">					<!-- 设置背景颜色 -->
 <strong>sublime中输入!按Tab会自动补齐html的主体代码 <br /></strong>
-<a href="https://baidu.com" title="title鼠标停留在这时显示的文字">a标签：超链接标签-跳转百度<br /></a>		<!-- br /为html中的换行符,最规范的写法,不要写成br -->	
-<a href="https://zhuanlan.zhihu.com/p/22231471" title="在新建网页打开，查看漏洞介绍以及修复方法" target="_blank">《被低估的 target="_blank" 漏洞》<br /></a>		
+<a href="https://baidu.com" title="title鼠标停留在这时显示的文字" >a标签：超链接标签-跳转百度<br /></a>		<!-- br /为html中的换行符,最规范的写法,不要写成br -->	
+<q><a href="https://zhuanlan.zhihu.com/p/22231471" title="在新建网页打开，查看漏洞介绍以及修复方法" target="_blank">《被低估的 target="_blank" 漏洞》</a></q><br />	
 <a href="mailto:367336561@qq.com ?subject=邮件主题 &body=邮件内容" title="title说明，点击发送邮件">发送邮件<br /></a>		
 <!-- 试试看不加https://的效果，或者换成www.   href是Hypertext Reference的缩写-->
-<!-- target="_blank" 的使用是一门很深的学问，千万不要对于所有的元素都一概而论，打个比方：
+<!-- target="_blank" 在新的窗口打开，其使用是一门很深的学问，千万不要对于所有的元素都一概而论，打个比方：
 比如google在处理分页的时候使用target="_blank"，想象一下会是什么样的后果；
 而在处理搜索结果列表的时候使用target="_blank"却又是一件很惬意的事。所以得针对不同的对象谨慎使用target="_blank"。
 
@@ -43,32 +46,35 @@
 </pre>
 hr /标签（horizontal rule水平线）：水平分割线；空标签，和换行br标签一样，只有结束标签
 <hr />	
-<div>div标签（divide）：把某个区域框起来，并另起一行，可通过css进行该区域样式的装饰，使每个区域呈现不同的效果</div>
-<div>div标签：就是一个框，将里面的东西框起来，然后通过css来使这个框按照所需要的样式显示出来</div>1234 <div>4567</div>
-<div>div标签形象的比喻：html=页面的家，div=页面的房间，css=对房间的装饰</div>
-span标签：<span>你看该标签把数据</span>连在一起了，不会和div标签一样另起一行；
-<div id="区别">	<!-- id为每个div板块添加名称 -->
-div和span区分：
-	<div>
-	两个都是用来划分区间但是没有实际语义的标签，相同之处就是都可以通过css来修饰其中的内容；<br />
-	差别就在于div是块级元素，不会其他元素在同一行；<span>而span是内联元素~</span>可以与其他元素位于同一行~<br />
+<div style="border:1px solid red">div块占据整个页面的一整行，看css框样式的生效范围
+	<div >div标签（divide）：把某个区域框起来，并另起一行，可通过css进行该区域样式的装饰，使每个区域呈现不同的效果</div>
+	<div>div标签：就是一个框，将里面的东西框起来，然后通过css来使这个框按照所需要的样式显示出来</div>1234另起一行 <div>4567另起一行</div>
+	<div>div标签形象的比喻：html=页面的家，div=页面的房间，css=对房间的装饰</div>
+	span标签：<span>你看该标签把数据</span>连在一起了，不会和div标签一样另起一行；
+	<div id="区别" style="text-align:center;">	<!-- id为每个div板块添加名称 -->
+	div和span区分：
+		<div style="border:1px solid gray;text-align:center;color:purple">
+		两个都是用来划分区间但是没有实际语义的标签，相同之处就是都可以通过css来修饰其中的内容；	内联式CSS样式写在html标签的style=""中以示区分；<br />
+		差别就在于div是块级元素，不会其他元素在同一行；<span>而span是内联元素~</span>可以与其他元素位于同一行~<br />
+		</div>
 	</div>
+	哈哈
 </div>
-
-<!-- img 是html中的单标签：单标签得加空格和斜杠!!!!	<br>换行<hr>水平线<img>插入图片<input>输入框<param>对象<meta>元信息<link>定义文档与外部资源的关系	 --> 	
+<!-- img 是html中的单标签：单标签得加空格和斜杠!!!!	
+	单标签的有：<br>换行<hr>水平线<img>插入图片<input>输入框<param>对象<meta>元信息<link>定义文档与外部资源的关系	 --> 	
 <img src="./basis/chicken1.jpg" alt="啊哦，图片被吃了" title="chicken图片"/>		
 										<!-- 插入图片,本地图片放在根目录下的可以直接访问 --> 	
 										<!-- alt是alternate(替换)src就是 source（来源），这里是指图片地址 --> 				
 <img src="./basis/images/couple.jpg" />	<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
 
 <form>								<!-- 插入表单单单单单单 --> 
-<label for="username">登录名:</label>	<input type="text" name="username" id="username">		<!-- label标签：当鼠标点击label中间的文字时，会跳转到for指向的id控件 -->
-<label for="password">密  码:</label><input type="password" name="password" id="password">	
+<label for="usernameID">登录名:</label>	<input type="text" name="username" id="usernameID">		<!-- label标签：当鼠标点击label中间的文字时，会跳转到for指向的id控件 -->
+<label for="passwordID">密  码:</label><input type="password" name="password" id="passwordID">	
 <input type="submit" value="登录" name="submit">		<!-- 比较name和value的区别，value是显示在网页上的值，name是用来传输数据到后台用于后台辨别的 --> 
 <input type="reset" value="重置" name="reset">		
 
-<br><label >文本域textarea：</label><br>
-<textarea name="msg" id="" cols="30" rows="4">请在此处输入</textarea>
+<br><label for="msgID">文本域textarea：</label><br>
+<textarea name="msg" id="msgID" cols="30" rows="4">请在此处输入</textarea>
 
 <br>单选（radio）你喜欢旅游吗？<br>
 <input type="radio" name=	"liketravel" value="喜欢">喜欢						<!-- 注意单选的name需要一样，复选需要不同 -->
@@ -83,9 +89,9 @@ div和span区分：
 
 <br>下拉（select）你今年是否满18周岁？<br>
 <select name="age" id="age1">
-<option value="是">是</option>
-<option value="否">否</option>
-<option value="不告诉你" selected="selected">不告诉你</option>
+	<option value="是">是</option>
+	<option value="否">否</option>
+	<option value="不告诉你" selected="selected">不告诉你</option>				<!-- selected="selected"默认选中 -->
 </select>
 </form>								
 								
@@ -100,7 +106,7 @@ div和span区分：
 <!--
 cellspacing合并标签tr，td之间的空隙
  border=1设置包括标签table，tr，td的边框粗细，
- border属性有三个子属性：线宽 线型 颜色；
+ border属性有三个子属性：线宽 线型 颜色，举例：{border:1px solid red}
 1px表示边框的宽度为1像素； 
 solid表示边框的样式为实线；
 #cdedfa 是边框的颜色。
