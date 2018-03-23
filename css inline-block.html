@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>CSS内联块状元素</title>
 	<style type="text/css">
-	a{
+	a.ex1{
 	display: inline-block;		/*将a标签从内联元素转换为内联块状元素，
 								如果没有设置为内联块状元素，下面的行高和宽将不起作用！！*/
 	font-size:30px;				/*设置字体为30px*/
@@ -15,13 +15,13 @@
 	height: 70px;				/*设置高度为70px*/
 	text-align:center;			/*设置a标签内的文字在a标签中居中，*/								
 	}
-	body{text-align:center;} 	/*设置body内的东西居中，这里只有a标签，所以a标签就会居中*/
+	body{text-align:center;background: gray;} 	/*设置body内的东西居中，这里只有a标签，所以a标签就会居中*/
 	</style>
 </head>
 <body>
-	<a style="text-align:left">1</a>
-	<a>2</a>
-	<a>3</a>
-	<a>4</a>
+	<a class="ex1" style="text-align:left">BOX1</a>
+	<a>BOX2</a>
+	<a>BOX3</a>
+	<a>BOX4</a>
 </body>
 </html>

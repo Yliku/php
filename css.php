@@ -47,7 +47,7 @@
 <p>伪类选择符<a title="标题呀" href="https://www.baidu.com">a:hover{}</a></p>
 <p style="text-decoration:line-through">测试测试，此处是删除线：text-decoration:line-through</p>
 <a href="http://www.adminwang.com/css/90.html" style="border:1px solid red">CSS加强网站，不错，通俗易懂</a>
-<a href="baidu.com" style="border:1px solid red">百度链接，此时是a标签是内敛元素</a>
+<a href="baidu.com" style="border:1px solid red">百度链接，此时是a标签是内联元素</a>
 <a href="baidu.com" style="display:block;border:1px solid red">a标签转为块状元素，查看加了CSS样式：display:block的变化，一个块级元素独占一行</a>
 
 <!-- 
@@ -82,6 +82,30 @@ text-indent:2em：缩进；（注意：2em的意思就是文字的2倍大小。�
 line-height:2em：行高；
 word-spacing:50px：单词间距；
 letter-spacing:20px:字母间距；
+
+盒子模型-由里到外分别是：
+width：内容的宽度，内容可以是文字、图片或者标签元素
+padding：内填充
+border：盒子的边框
+margin：盒子模型和盒子模型外边距
+
+注意：
+内填充、外边距、边框 都有四个方向：top buttom left right
+比如：padding-top/padding-bottom/padding-left/padding-right
+
+
+
+在网页中，元素有三种布局模型：
+1、流动模型（Flow）默认的网页布局模式，块占一行从上往下排，内联元素从左到右排
+2、浮动模型 (Float) 让两个块状元素在同一行显示出	{float:left/right;}
+3、层模型（Layer）
+
+层布局（Layer）模型
+position: relative;相对定位
+position: absolute;绝对定位
+position: fixed;固定定位，不会随着滚动条滚动而改变位置，会一直显示在浏览器上，很多页面小广告就是用这个，深恶痛绝
+
+
 -->
 
 </html>

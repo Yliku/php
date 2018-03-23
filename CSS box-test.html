@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS BOX-test</title>
+	<style>
+		body{
+			color:blue;			/*文字为蓝色*/
+			background: #edf5f9;	/*背景浅蓝灰色*/
+			position:relative;	/*位置相对的*/
+			/*text-align:center;  将body的元素水平居中对齐*/
+		}
+		.box{
+			display: inline-block;	/*设置为内敛块状元素*/
+			background: #A5A552;	/*背景灰色*/
+			border:1px solid black;
+		}
+		h1.ex1{background: #3498DB;}		/*浅蓝色*/
+		h1.ex2{background: #3498DB;padding:20px;} 	/*增加内边距*/
+		h1.ex3{background: #3498DB;padding:20px;margin:20px;} 	/*增加外边距*/
+		h1.ex4{background: #3498DB;padding:20px;margin:20px;border:5px solid red;} 	/* 增加h1的边框*/
+		h1.ex5{background: #3498DB;padding:20px;margin:20px;border:5px solid #fff;} 	/* #FFF的颜色不错~其实就是白色...*/
+		h1.ex6{background: #3498DB;padding:20px;margin:20px;border:5px solid #fff;width:120px;} 	/* 添加宽度*/
+		h1.ex7{background: #3498DB;padding:20px;margin:20px;border:5px solid #fff;width:120px;height:120px;} 	/* 添加高度*/
+		h1.ex8{background: #3498DB;padding:20px;margin:20px;border:5px solid #fff;width:120px;height:120px;text-align:center;} 	/* h1的内容水平居中对齐，居中对齐放在body也一样*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1 class="ex1">BOX1</h1>
+	</div>
+	<div class="box">
+		<h1 class="ex2">BOX2</h1>  	<!-- 从文字到h1的距离变宽了，即内边距增加了 -->
+	</div>
+	<div class="box">
+		<h1 class="ex3">BOX3</h1>  	<!--从h1到div的边距变大了，即外边框增加了 -->
+	</div>
+	<div class="box">
+		<h1 class="ex4">BOX4</h1>  	<!-- 增加了h1的边框，可以很明显看到变化，而且整个盒子也变宽了 -->
+	</div>
+	<div class="box">
+		<h1 class="ex5">BOX5</h1>  	<!-- h1的边框颜色变为白色 -->
+	</div>
+	<div class="box">
+		<h1 class="ex6">BOX6</h1>  	<!-- 增加了h1的宽度 -->
+	</div>
+	<div class="box">
+		<h1 class="ex7">BOX7</h1>  	<!-- 增加了h1的高度-->
+	</div>
+	<div class="box">
+		<h1 class="ex8">BOX8</h1>  	<!-- h1的内容水平居中对齐 -->
+	</div>
+	
+	
+</body>
+</html>
+
