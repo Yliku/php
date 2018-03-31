@@ -111,7 +111,7 @@ cellspacing合并标签tr，td之间的空隙
 solid表示边框的样式为实线；
 #cdedfa 是边框的颜色。
 -->	
-<table border="1" cellspacing="0" summary="插入简介，语义化：不会在浏览器显示出来，用于增加表格可读性，使搜索引擎更好的读懂内容，使屏幕阅读器帮助用户读取表格内容">	
+<table style="margin:0 auto" border="1" cellspacing="0" summary="插入简介，语义化：不会在浏览器显示出来，用于增加表格可读性，使搜索引擎更好的读懂内容，使屏幕阅读器帮助用户读取表格内容">	
 									<!-- 插入表格格格格格格 -->
 <caption>数学成绩对比</caption>									<!-- caption表格的标题 -->
 <tr><th>序号</th><th>姓名</th><th>科目</th><th>成绩</th></tr>		<!-- th: 表格表头，加粗table header cell；tr: 行table row；td: 单元格table data cell -->
