@@ -3,9 +3,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>css样式学习</title>
 <style type="text/css">
+/*
+-type="text/css"
+-代表页面上的文本内容（test）要用CSS要解析，不能当做其他来解析，
+-在最新的H5规范中，CSS和JS自带默认type，不需要声明，
+-但并不是所有客户的浏览器都是最新的，也不是所有开发者写的代码都是最新规范的,,所以建议加上type属性，
+-目的只有一个，干掉那些仅有的可能
+-*/
 	.class{color:red;} 		/*类选择器，最常用到*/
 	#id{color:green;} 		/*ID选择器*/
 	p{						/*标签选择器，以标签名开头*/
+		/*     display:none;   在网面上隐藏该标签的内容*/
 		font-size: 12px;		/*设置字体大小，注意css的注释是用*加/，html的注释是<!-- -->	*/
 		color:green;		/*设置字体颜色*/
 		font-weight: bold;	/*设置字体加粗*/
