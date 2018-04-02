@@ -62,19 +62,20 @@ hr /标签（horizontal rule水平线）：水平分割线；空标签，和换�
 </div>
 <!-- img 是html中的单标签：单标签得加空格和斜杠!!!!	
 	单标签的有：<br>换行<hr>水平线<img>插入图片<input>输入框<param>对象<meta>元信息<link>定义文档与外部资源的关系	 --> 	
-<img src="./basis/chicken1.jpg" alt="啊哦，图片被吃了" title="chicken图片"/>		
+<img src="./basis/chicken1.jpg" alt="啊哦，图片被吃了" title="chicken图片" height=200/>		
 										<!-- 插入图片,本地图片放在根目录下的可以直接访问 --> 	
 										<!-- alt是alternate(替换)src就是 source（来源），这里是指图片地址 --> 				
-<img src="./basis/images/couple.jpg" />	<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
+<img src="./basis/images/couple.jpg"  height=200 />	<!-- 当图片位置和源代码的父文件夹位置在同一父文件夹时候 应先返回父级文件夹../ 因此src地址填"../images/baby.jpg" -->			
 
 <form>								<!-- 插入表单单单单单单 --> 
 <label for="usernameID">登录名:</label>	<input type="text" name="username" id="usernameID">		<!-- label标签：当鼠标点击label中间的文字时，会跳转到for指向的id控件 -->
 <label for="passwordID">密  码:</label><input type="password" name="password" id="passwordID">	
 <input type="submit" value="登录" name="submit">		<!-- 比较name和value的区别，value是显示在网页上的值，name是用来传输数据到后台用于后台辨别的 --> 
 <input type="reset" value="重置" name="reset">		
+<input style="width:50px">
 
 <br><label for="msgID">文本域textarea：</label><br>
-<textarea name="msg" id="msgID" cols="30" rows="4">请在此处输入</textarea>
+<textarea name="msg" id="msgID" cols="40" rows="4">请在此处输入</textarea>		<!-- column列 row行 -->
 
 <br>单选（radio）你喜欢旅游吗？<br>
 <input type="radio" name=	"liketravel" value="喜欢">喜欢						<!-- 注意单选的name需要一样，复选需要不同 -->
