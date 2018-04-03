@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS的各种居中显示的办法</title>
+	<style>
+		div{border:1px solid red;}
+		.ex1{text-align:center;}
+		.ex2{width:200px;margin:0px auto;}
+		.ex3{display:table;margin:0px auto;}
+		.ex4{;}
+	</style>
+</head>
+<body>
+	<div class="ex1">行内元素：文字文本居中显示——text-align:center</div>
+	
+	<div class="ex2">定宽块状元素：居中显示——width:200px;margin:0px auto;</div>
+	
+	<table style="margin:0px auto">
+		<tr>
+			<td><div>不定宽块状元素：居中显示——方法一：div块状元素嵌套进table标签中</div></td>
+			<td><div>然后margin:0 auto;</div></td>
+		</tr>
+	</table>
+	
+	<div class="ex3">不定宽块状元素：居中显示——方法二：（最便捷）转换为table元素，display:table;margin:0 auto;</div>
+	
+	<div style="text-align:center;">
+	<div style="display:inline">不定宽块状元素：居中显示——方法三：转换为行内元素display:inline;在上级标签使用：ext-align:center;</div>
+	<div style="display:inline">将块状元素的 display 类型改为 inline，变成了行内元素，所以少了一些功能，比如宽度和高度无法设置了</div>
+	</div>
+
+	
+
+</body>
+</html>

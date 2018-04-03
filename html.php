@@ -75,6 +75,7 @@ hr /标签（horizontal rule水平线）：水平分割线；空标签，和换�
 
 <br><label for="msgID">文本域textarea：</label><br>
 <textarea name="msg" id="msgID" cols="30" rows="4">请在此处输入</textarea>
+<textarea name="msg" id="msgID" cols="30" rows="4" placeholder=" 请登录后再开始你的表演！"></textarea>
 
 <br>单选（radio）你喜欢旅游吗？<br>
 <input type="radio" name=	"liketravel" value="喜欢">喜欢						<!-- 注意单选的name需要一样，复选需要不同 -->
@@ -97,22 +98,23 @@ hr /标签（horizontal rule水平线）：水平分割线；空标签，和换�
 								
 <pre>
 	html语法：< table border="1" cellspacing="0">
-	html语法中设置属性的值/样式用<strong>属性名+等于号</strong> 来设置，属性的值用双/单引号括起来，一个属性定义完后是;号，比如样式  Style="color:red;"。
-	html中两个属性之间用<strong>空格</strong>区分（不在双引号内的两个属性）比如后面的id和style属性：  < div id="top" style="width:100;pxheight:200px;">< /div>  
+	html语法中设置属性的值/样式用<strong>属性名+等于号</strong> 来设置，属性的值用双/单引号括起来，比如<  table border="1" cellspacing="0"  >。
+	html中两个属性之间用<strong>空格</strong>区分（不在双引号内的两个属性）比如后面的id和style属性：  < div id="top" style="width:100;pxheight:200px;">< /div>  这里的style开始是css样式
 	css 语法：div{width:200px;height:200px;border-width:2px;border-color:#00F;}
 	css 语法中设置属性的值/样式用<strong>属性名+冒号</strong> 来设置；
 	css 中两个属性之间用<strong>分号</strong>区分；
 </pre>	
 <!--
-cellspacing合并标签tr，td之间的空隙
+cellspacing代表标签tr，td之间的空隙
  border=1设置包括标签table，tr，td的边框粗细，
  border属性有三个子属性：线宽 线型 颜色，举例：{border:1px solid red}
 1px表示边框的宽度为1像素； 
 solid表示边框的样式为实线；
-#cdedfa 是边框的颜色。
+red是边框的颜色。
 -->	
-<table style="margin:0 auto" border="1" cellspacing="0" summary="插入简介，语义化：不会在浏览器显示出来，用于增加表格可读性，使搜索引擎更好的读懂内容，使屏幕阅读器帮助用户读取表格内容">	
+<table style="margin:0 auto" border="1" bordercolor=red cellspacing="0" summary="插入简介，语义化：不会在浏览器显示出来，用于增加表格可读性，使搜索引擎更好的读懂内容，使屏幕阅读器帮助用户读取表格内容">	
 									<!-- 插入表格格格格格格 -->
+									<!-- margin:0 auto 设置表格左右水平居中 -->
 <caption>数学成绩对比</caption>									<!-- caption表格的标题 -->
 <tr><th>序号</th><th>姓名</th><th>科目</th><th>成绩</th></tr>		<!-- th: 表格表头，加粗table header cell；tr: 行table row；td: 单元格table data cell -->
 <tr><td>001</td><td>陈赫</td><td>数学</td><td>21</td></tr>
