@@ -13,7 +13,8 @@
 	.class{color:red;} 		/*类选择器，最常用到*/
 	#id{color:green;} 		/*ID选择器*/
 	p{						/*标签选择器，以标签名开头*/
-		/*     display:none;   在网面上隐藏该标签的内容*/
+		/*     display:none;   在网面上隐藏该标签的内容
+		*/
 		font-size: 12px;		/*设置字体大小，注意css的注释是用*加/，html的注释是<!-- -->	*/
 		color:green;		/*设置字体颜色*/
 		font-weight: bold;	/*设置字体加粗*/

@@ -30,7 +30,7 @@ function rotationSort($row,$col)
     }
     return $result;
 }
-/*
+
 function printArray($result,$row,$col)
 {
     echo '<table border=1 style="width:500px;">';
@@ -49,7 +49,7 @@ $row = 5;
 $col = 5;
 $arr = rotationSort($row,$col);
 printArray($arr,$row,$col);
-*/
+
 $a=rotationSort(5,5);
 var_dump($a);
 
