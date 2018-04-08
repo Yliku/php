@@ -75,7 +75,7 @@ hr /标签（horizontal rule水平线）：水平分割线；空标签，和换�
 <input style="width:50px">
 
 <br><label for="msgID">文本域textarea：</label><br>
-<textarea name="msg" id="msgID" cols="40" rows="4">请在此处输入</textarea>		<!-- column列 row行 -->
+<textarea name="msg" id="msgID" cols="40" rows="4" style="resize:none">请在此处输入</textarea>		<!-- column列 row行，style="resize:none"禁止文本框拉伸 -->
 <textarea name="msg" id="msgID" cols="30" rows="4" placeholder=" 请登录后再开始你的表演！"></textarea>
 
 <br>单选（radio）你喜欢旅游吗？<br>
@@ -132,3 +132,10 @@ echo  date("y-m-d H:i:s",time());	//得用双引号！！！大写的H表示输�
 </body>
 
 </html>
+
+
+<style>
+	textarea{resize:none;} 		/*禁止文本框拉伸*/
+	a{text-decoration:none;} 	/*取消字体修饰样式，在这里是清除超链接的默认下划线*/
+
+</style>
