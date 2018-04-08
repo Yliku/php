@@ -15,6 +15,19 @@
 			background: gray;		/*背景灰色  #A5A552猪肝色。。。*/
 			border:1px solid black;
 		}
+		.box1{
+			width:200px;
+			height:100px;
+			background: gray;		/*背景灰色  #A5A552猪肝色。。。*/
+			border:1px solid black;
+		}
+		.box2{
+			width:200px;
+			height:100px;
+			background: gray;		/*背景灰色  #A5A552猪肝色。。。*/
+			border:1px solid black;
+			margin:2px auto;
+		}
 		h1.ex1{background: #3498DB;}		/*浅蓝色*/
 		h1.ex2{background: #3498DB;padding:20px;} 	/*增加内边距/填充  */
 		h1.ex3{background: #3498DB;padding:20px;margin:20px;} 	/*增加外边距/边界  */
@@ -26,6 +39,10 @@
 	</style>
 </head>
 <body>
+	<div class="box1">块状元素与块状元素之间没空隙</div>	
+	<div class="box1">块状元素与下面的内联块状元素之间有空隙</div>		
+	<div class="box2">块状元素之间可通过margin:2px auto设置间隙，和居中</div>		
+	<div class="box2">块状元素之间可通过margin:2px auto设置间隙，和居中</div>		
 	<div class="box">
 		<h1 class="ex1">BOX1</h1>
 	</div>

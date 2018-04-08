@@ -135,6 +135,7 @@ echo  date("y-m-d H:i:s",time());	//得用双引号！！！大写的H表示输�
 
 
 <style>
+	*{margin:0;padding:0;font-size:12px;}
 	textarea{resize:none;} 		/*禁止文本框拉伸*/
 	a{text-decoration:none;} 	/*取消字体修饰样式，在这里是清除超链接的默认下划线*/
 
