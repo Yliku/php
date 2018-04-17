@@ -84,8 +84,12 @@ font-family:设置字体；
 font-size:字体大小；
 font-weight:bold：设置为粗体样式；
 font-style:italic：设置为斜体样式；
-text-decoration:underline：文字设置下划线；
-text-decoration:line-through：删除线；
+
+h1 {text-decoration: overline} 上划线
+h2 {text-decoration: line-through} 删除线；
+h3 {text-decoration: underline} 下划线
+a {text-decoration: none} 什么线都没有，取消文本的样式
+
 text-align:center：水平居中对齐； 
 text-indent:2em：缩进；（注意：2em的意思就是文字的2倍大小。）
 line-height:2em：行高；
