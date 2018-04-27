@@ -14,6 +14,7 @@
 		.top1 a:link{color:green;text-decoration:none;} 		/*取消字体修饰样式，在这里是清除a标签超链接的默认下划线*/
 		.top1 a:hover{color:red;text-decoration:underline;} 					/*滑过a标签，a标签改变颜色*/
 		.top2{border:1px solid red;background: white;}
+		.tel{color:red;font-size:16px;}
 		/*
 		a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠标移动到链接上时的状态；
 
@@ -37,9 +38,9 @@
 
 	<div class="top2">		<!-- top2开始 -->
 		<img src="images/logo.jpg" alt="慕课网" style="float:left;height: 50px;">
-		<div style="float:right;width:150px;margin:15px 0;">
-			<img src="images/tel.jpg" style="height: 20px;vertical-align:middle;">  	<!-- 为什么此处使用vertial-align会生效？？？？ -->
-			<span >0756-1234567</span>
+		<div style="float:right;width:250px;margin:15px 0;color:#8e8e8e;">
+			<img src="images/tel.jpg" style="height: 20px;vertical-align:middle;" alt="服务热线">  	<!-- 为什么此处使用vertial-align会生效？？？？ -->
+			24小时服务热线：<span class="tel" >0756-1234567</span>
 			<!--
 			 vertical-align:middle 垂直居中，只对行内元素有效，对块状元素无效！可用display:inline-block设置为行内块状元素 。
 			所谓inline-block行内块状元素，即可以与inline水平元素混排（在同一行），又能设置高宽属性的元素，
