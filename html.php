@@ -6,6 +6,7 @@
 										<!-- HTML标签的注释,这注释符号真奇葩 -->
 <style>
 	/*body, input, button,xmp,pre{font-family:Microsoft Yahei;} */		/*CSS样式之：设置标签的字体为微软雅黑，英文的书写兼容性好*/
+	input{height:30px;border:1px solid gray;border-radius:4px;} 		/*设置边框的高度 和 圆角属性*/
 </style>
 <body bgcolor="#BEBEBE">					<!-- 设置背景颜色 -->
 <strong>sublime中输入!按Tab会自动补齐html的主体代码 <br /></strong>
@@ -77,6 +78,7 @@ hr /标签（horizontal rule水平线）：水平分割线；空标签，和换�
 <br><label for="msgID">文本域textarea：</label><br>
 <textarea name="msg" id="msgID" cols="40" rows="4" style="resize:none">请在此处输入</textarea>		<!-- column列 row行，style="resize:none"禁止文本框拉伸 -->
 <textarea name="msg" id="msgID" cols="30" rows="4" placeholder=" 请登录后再开始你的表演！"></textarea>
+<button style="border:none;">button标签，特殊样式border:none，好像没什么用，点击后会跳转刷新页面</button>
 
 <br>单选（radio）你喜欢旅游吗？<br>
 <input type="radio" name=	"liketravel" value="喜欢">喜欢						<!-- 注意单选的name需要一样，复选需要不同 -->
