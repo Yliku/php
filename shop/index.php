@@ -61,8 +61,6 @@
 
 
 
-<input type="datetime-local">
-
 	<div class="btm"> 	<!-- 颜色#acc3e3 -->
 	<button onclick="alert('点击确定跳转到我的Github上~');window.open('https://github.com/Yliku')">关于我</button>&nbsp;|
 	<!--

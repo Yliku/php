@@ -65,17 +65,37 @@
 内联块状元素：	display:inline-block
 -->
 
+<pre>
+在网页中，元素有三种布局模型：
+1、流动模型（Flow）默认的网页布局模式，块占一行从上往下排，内联元素从左到右排
+2、浮动模型 (Float) 让两个块状元素在同一行显示出	{float:left/right;}
+3、层模型（Layer）
+
+层布局（Layer）模型
+position: relative;相对定位
+position: absolute;绝对定位
+position: fixed;固定定位，不会随着滚动条滚动而改变位置，会一直显示在浏览器上，很多页面小广告就是用这个，深恶痛绝
+
+相对定位（position：raletive）和绝对定位（position:absolute）区别：
+相对定位是相对于原来位置的改变，如果只是设置相对定位，而不设置right/left/top/bottom属性，位置将不会改变；
+而绝对定位是相对于父级元素的改变，如果只是设置绝对定位，而不设置right/left/top/bottom属性，会浮动并且位于最左边（即初始位置），
+并且父元素会产生塌陷，下面的元素会挤掉绝对定位元素原来的位置，绝对定位的元素会遮盖在下面的元素上面！
+举例：
+</pre>
+<div style="border:1px solid red;border-radius:50%;height: 150px;width: 150px;position:relative;text-align:center;">相对定位</div>
+<div style="border:1px solid red;border-radius:50%;height: 150px;width: 150px;position:absolute;text-align:center;">绝对定位</div>
+<input type="datetime-local">
+
+
 <xmp>
 外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，
 这个css样式文件以“.css”为扩展名，在<head>内（不是在<style>标签内）
 使用<link>标签将css样式文件链接到HTML文件内，如下面代码：
 <link href="base.css" rel="stylesheet" type="text/css" />
-xmp标签可以在网页上显示出html的标签代码，和pre标签还是有很大区别的，
-区别：
+
+xmp标签可以在网页上显示出html的标签代码，和pre标签还是有很大区别的，区别：
 pre标签只保留所有的   空格和换行符，而xmp不仅会保留空格和换行符，而且会保留html的代码片段。
 </xmp>
-
-
 </body>
 
 
@@ -107,16 +127,6 @@ margin：盒子模型和盒子模型外边距
 比如：padding-top/padding-bottom/padding-left/padding-right
 
 
-
-在网页中，元素有三种布局模型：
-1、流动模型（Flow）默认的网页布局模式，块占一行从上往下排，内联元素从左到右排
-2、浮动模型 (Float) 让两个块状元素在同一行显示出	{float:left/right;}
-3、层模型（Layer）
-
-层布局（Layer）模型
-position: relative;相对定位
-position: absolute;绝对定位
-position: fixed;固定定位，不会随着滚动条滚动而改变位置，会一直显示在浏览器上，很多页面小广告就是用这个，深恶痛绝
 
 color : rgb(80% , 40% , 0% ) ;   或者  color : rgb(204 , 102 , 0 ) ;     
 计算机显示的颜色是红、绿、蓝三色不同比例配置而成的。
