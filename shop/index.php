@@ -41,8 +41,8 @@
 				<li><a href="http://baidu.com">联系我们</a></li>
 			</ul>
 			<span >欢迎来到慕课网！<a href="" style="margin-left:5px">[登陆]</a><a href="">[注册]</a></span>
-		</div>
-	</div> 					<!-- top1结束 -->
+		</div>					<!-- top1结束 -->
+	</div> 					
 	
 	<div class="top2">		<!-- top2开始 -->
 		<img src="images/logo.jpg" alt="慕课网" style="float:left;height: 50px;">
