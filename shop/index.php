@@ -8,6 +8,7 @@
 		hr{width:1000px;margin:0 auto;}
 
 		.top1:after,.top2:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
+		.top{background:#c5d3e5;width:100%;border:none;height:30px;line-height: 30px;}
 		.top1 li{list-style:none;float:left;margin-right:5px;} 	 
 		.top1 span{float:right;}
 		/*行高line-height设置和盒子/图片高度一样，可以实现垂直居中   list-style-image: url(./images/li_bg.gif);*/
@@ -32,15 +33,17 @@
 	</style>
 </head>
 <body>
-	<div class="top1">		<!-- top1开始 -->
-		<ul>
-			<li><a href="#">设为首页</a></li>
-			<li><a href="#">加入收藏</a></li> 	<!-- 注意空链接的#号如果不加，点击超链接将会是重新跳转到当前页面，即刷新页面 -->
-			<li><a href="http://baidu.com">联系我们</a></li>
-		</ul>
-		<span >欢迎来到慕课网！<a href="" style="margin-left:5px">[登陆]</a><a href="">[注册]</a></span>
+	<div class="top">
+		<div class="top1">		<!-- top1开始 -->
+			<ul>
+				<li><a href="#">设为首页</a></li>
+				<li><a href="#">加入收藏</a></li> 	<!-- 注意空链接的#号如果不加，点击超链接将会是重新跳转到当前页面，即刷新页面 -->
+				<li><a href="http://baidu.com">联系我们</a></li>
+			</ul>
+			<span >欢迎来到慕课网！<a href="" style="margin-left:5px">[登陆]</a><a href="">[注册]</a></span>
+		</div>
 	</div> 					<!-- top1结束 -->
-
+	
 	<div class="top2">		<!-- top2开始 -->
 		<img src="images/logo.jpg" alt="慕课网" style="float:left;height: 50px;">
 		<div style="float:right;width:250px;margin:15px 0;color:#8e8e8e;">
