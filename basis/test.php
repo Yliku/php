@@ -41,5 +41,13 @@ echo '1+5='. 100+200,"<br />";
 	这样的话，echo会对每个参数先进行计算，最后再进行分别输出，所以我们用逗号就不存在上面的问题了
  */
 
+$staff=array("a"=>'123','b'=>'345','c'=>'456','d'=>'789');
+foreach($staff as $key=>$key1){
+	echo $key . $key1 . '<br>';
+}
 
+$staff=array("a"=>'123','b'=>'345','c'=>'456','d'=>'789');
+foreach($staff as $key){
+	echo $key . '<br>';
+}
 ?>
