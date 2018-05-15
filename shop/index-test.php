@@ -50,8 +50,10 @@
 		.body_title a{width:20%;float:right;color:gray;height:30px;line-height: 30px;text-decoration: none;text-align:right;}
 		.body_title{clear:both;}
 
-		.pic_news{line-height: 25px;}
-		.pic_news img{float:left;margin:10px;}
+		.pic_news{line-height: 20px;margin:10px;}
+		.pic_news img{float:left;margin-right:10px;}
+		.news_list{margin-top:10px;margin: 10px;}
+		.news_list li{list-style:none;}
 		
 		/*
 		.body_left,.body_middle,.body_right{width:330px;display:inline-block;}  
