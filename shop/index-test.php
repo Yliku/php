@@ -66,8 +66,8 @@
 		/*    	背景颜色				宽度			高度			绝对定位			定位在最下面	没有边框		文字水平居中		行高等于div高度，垂直居中 	文字颜色为gray*/
 		.btm a{color:#1d5494;text-decoration:none;}
 		.btm a:hover{color:#1d5494;text-decoration:underline;}
-
 	</style>
+	<link rel="shortcut icon" href="./images/favicon.ico">
 </head>
 <body>
 	<div class="top">
