@@ -62,6 +62,7 @@
 			background:url(./images/li-bg.jpg) no-repeat;
 			font-style:normal;
 			background-position:0px -16px;	
+			/*水平向右偏移0px;垂直向上偏移16px;不限制em宽度和设置no-repeat的话，背景图像是上下左右重复的,所以16px和-16px效果是一样的*/
 		}
 		
 		/*
