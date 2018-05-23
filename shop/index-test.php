@@ -52,8 +52,17 @@
 
 		.pic_news{line-height: 20px;margin:10px;}
 		.pic_news img{float:left;margin-right:10px;}
-		.news_list{margin-top:10px;margin: 10px;}
+		.news_list{margin: 10px;line-height: 20px;}
 		.news_list li{list-style:none;}
+		.news_list em{
+			background:url(./images/li-bg.jpg) no-repeat;
+			font-style:normal; /*em里的字体不倾斜*/		
+		}
+		.news_list_btm em{ 		/*为什么使用了上级.news_list em后，直接在em里面定义css样式，background-position不起作用？？？*/
+			background:url(./images/li-bg.jpg) no-repeat;
+			font-style:normal;
+			background-position:0px -16px;	
+		}
 		
 		/*
 		.body_left,.body_middle,.body_right{width:330px;display:inline-block;}  
@@ -125,9 +134,12 @@
 			</div>
 			<div class='news_list'>
 				<ul>
-					<li><a href="">新闻1</a></li>
-					<li><a href="">新闻1</a></li>
-					<li><a href="">新闻1</a></li>
+					<li><em>01</em><a href="">【慕客访谈用户篇】“有为屌丝”在路上</a></li>
+					<li><em>02</em><a href="">【有奖活动】给父亲的三行书信</a></li>
+					<li><em>03</em><a href="">《程序猿，请晒出你的童年》活动获奖公告</a></li>
+					<li class="news_list_btm"><em>04</em><a href="">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>
+					<li class="news_list_btm"><em>05</em><a href="">【获奖公告】追“球”巅峰，争当“预言帝”</a></li>
+					<li class="news_list_btm"><em>06</em><a href="">【问卷调查】慕课网用户学习情况大调查</a></li>
 				</ul>
 			</div>
 		</div> <!-- 新闻框结束 -->
