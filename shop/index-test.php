@@ -56,12 +56,15 @@
 			float:left;margin-right:10px;
 			cursor:pointer;		
 			/*pointer鼠标移到这里时变成一只伸出食指的手，和a标签的效果一样，只是点击了不能跳转，
-			其他参数如：default箭头，crosshair十字，progress箭头加沙漏等*/
+			其他参数有：default箭头，crosshair十字，progress箭头加沙漏等*/
 			transition:all 1s;	/*代表这个转换过程在1s内完成*/
 		}
 		.pic_news img:hover{
 			transform:rotate(360deg);	 /*旋转360度*/
-			/*transform:scale(1.5); 	神奇的transform转换，在鼠标放到图片上的时候图片按比例放大1.5倍*/
+			/*
+			transform:scale(1.5); 	在鼠标放到图片上的时候图片按比例放大1.5倍
+			神奇的transform转换，其属性有：斜拉(skew)，缩放(scale)，旋转(rotate)以及位移(translate)。
+			*/
 		}
 
 		.news_list{margin: 10px;line-height: 20px;}
