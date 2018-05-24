@@ -52,7 +52,14 @@
 		.body_title{clear:both;}
 
 		.pic_news{line-height: 20px;margin:10px;}
-		.pic_news img{float:left;margin-right:10px;}
+		.pic_news img{
+			float:left;margin-right:10px;
+			transition:all 1s;		/*代表这个转换过程在1s内完成*/
+		}
+		.pic_news img:hover{
+			transform:scale(1.5); 	/*神奇的transform转换，在鼠标放到图片上的时候图片按比例放大1.5倍*/
+		}
+
 		.news_list{margin: 10px;line-height: 20px;}
 		.news_list li{list-style:none;}
 		.news_list em{
@@ -64,14 +71,17 @@
 			font-style:normal;
 			background-position:0px -16px;	
 			/*水平向右偏移0px;垂直向上偏移16px;不限制em宽度和设置no-repeat的话，背景图像是上下左右重复的,所以16px和-16px效果是一样的*/
-		}
-		
+		}		
 		/*
 		.body_left,.body_middle,.body_right{width:330px;display:inline-block;}  
-		上面的两行代码中的浮动如果改为行内块状元素，
-		要留意浏览器内 行内块状元素 之间的默认间距，一般是标签之间的tab缩进造成的空格，360是3px
+		上面代码中的浮动如果改为行内块状元素，行内块状元素会出现默认间距，浮动元素则没有间距；
+		要留意浏览器内 行内块状元素 之间的默认间距，一般是标签之间的tab缩进造成的空格，360浏览器是3px
 		（注意：换行符、tab(制表符)、空格都会造成此问题）
 		*/
+
+		.transition
+
+
 
 		.btm{background:#c5d3e5;width:100%;height:30px;position:absolute;bottom:0;border:none;text-align:center;line-height: 30px;color:gray;}
 		/*    	背景颜色				宽度			高度			绝对定位			定位在最下面	没有边框		文字水平居中		行高等于div高度，垂直居中 	文字颜色为gray*/
@@ -147,7 +157,7 @@
 		</div> <!-- 新闻框结束 -->
 
 		<div class='body2'>
-			<i>123</i>
+			<div class="trans">transition的过渡效果</div>
 		</div>
 
 		<div class='body1'>
