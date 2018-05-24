@@ -54,7 +54,8 @@
 		.pic_news{line-height: 20px;margin:10px;}
 		.pic_news img{
 			float:left;margin-right:10px;
-			transition:all 1s;		/*代表这个转换过程在1s内完成*/
+			cursor:pointer;		/*pointer鼠标移到这里时变成一只伸出食指的手，其他参数如：default箭头，crosshair十字，progress箭头加沙漏等*/
+			transition:all 1s;	/*代表这个转换过程在1s内完成*/
 		}
 		.pic_news img:hover{
 			transform:scale(1.5); 	/*神奇的transform转换，在鼠标放到图片上的时候图片按比例放大1.5倍*/
