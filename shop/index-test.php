@@ -27,6 +27,7 @@
 		.tel{color:red;}
 
 		.content_top{border-radius:4px;background:gray;height:30px;} 	/*设置边框的圆角属性*/
+		/*border-top-left-radius:5px 10px;表示top-left这个角的水平圆角半径为5px，垂直圆角半径为10px。*/
 		.content_top li{list-style:none;width:100px;float:left;text-align:center;line-height: 30px;}
 		.content_top li a{font-size:16px;color:white;}
 		.content_top form{float:right;}
@@ -146,7 +147,7 @@
 		</div> <!-- 新闻框结束 -->
 
 		<div class='body2'>
-			
+			<i>123</i>
 		</div>
 
 		<div class='body1'>
