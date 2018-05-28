@@ -73,7 +73,7 @@
 			background:url(./images/li-bg.jpg) no-repeat;
 			font-style:normal; /*em里的字体不倾斜*/		
 		}
-		.news_list_btm em{ 		/*为什么使用了上级.news_list em后，直接在em里面定义css样式，background-position不起作用？？？*/
+		.news_list_btm em{ 		/*为什么使用了上级.news_list em后，直接在em里面使用类选择器定义css样式，background-position不起作用？？？*/
 			background:url(./images/li-bg.jpg) no-repeat;
 			font-style:normal;
 			background-position:0px -16px;	
