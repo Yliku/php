@@ -44,8 +44,27 @@
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
 		</form>
 	</div>
-
-
+	<div class="listTop"><img src="images/ad4.jpg" alt=""></div>
+	<div class="listContent">
+		<div class="listLeft">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		<div class="listRight">
+			<ul>
+				<li>11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+				<li>15</li>
+			</ul>
+		</div>
+	</div>
 	
 
 

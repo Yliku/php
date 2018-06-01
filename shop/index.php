@@ -66,7 +66,7 @@
 					<li class="news_list_btm"><em>04</em><a href="">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>
 					<li class="news_list_btm"><em>05</em><a href="">【获奖公告】追“球”巅峰，争当“预言帝”</a></li>
 					<li class="news_list_btm"><em>06</em><a href="">【问卷调查】慕课网用户学习情况大调查</a></li>
-				</ul>
+				</ul>		
 			</div>
 		</div> <!-- 新闻框结束 -->
 
