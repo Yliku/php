@@ -42,7 +42,7 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 	border:1px solid white; /*设置边框线宽度，更加简洁好看*/
 }
 .body{margin:5px auto;}
-.body1{background-color:#A0D468;width:400px;float:left;border-radius:4px;min-height: 350px;}
+.body1{background-color:#A0D468;width:400px;float:left;border-radius:4px;min-height: 400px;} 	/*min=height设置最低高度400px，如果内容多的话还可以继续自动增加高度*/
 .body2{height:400px;background-color:#AC92DC;width:180px;float:left;margin:0 10px;border-radius:4px;}
 .body_title{height:30px;border-bottom:2px solid #E8E8E8;}
 .body_title h2{width:70%;float:left;color:gray;line-height: 30px;padding-left:15px;}
