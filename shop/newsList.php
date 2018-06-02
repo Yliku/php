@@ -47,22 +47,35 @@
 	<div class="listTop"><img src="images/ad4.jpg" alt=""></div>
 	<div class="listContent">
 		<div class="listLeft">
+			<h2>新闻动态</h2>
 			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
+				<li><a href="">公司新闻</a></li>
+				<li><a href="">行业新闻</a></li>
+				<li><a href="">媒体报道</a></li>
+				<li><a href="">活动专题</a></li>
+				<li><a href="">公司内刊</a></li>
+				<li><a href="">招贤纳士</a></li>
+				<li><a href="">联系我们</a></li>
 			</ul>
 		</div>
 		<div class="listRight">
+			<h2>行业新闻</h2>
+			<div class="news_list">
 			<ul>
-				<li>11</li>
-				<li>12</li>
-				<li>13</li>
-				<li>14</li>
-				<li>15</li>
+				<li><a href="https://www.imooc.com/wenda/issuedetail/26"><span>2018-03-28</span>当我们谈论Java时，我们都谈些什么？</a></li>
+				<li><a href="https://www.imooc.com/wenda/issuedetail/25"><span>2018-04-12</span>直击BAT面试机会！行业大佬在线答疑</a></li>
+				<li><a href="如何开发前后端分离的系统"><span>2018-06-02</span>如何开发前后端分离的系统？</a></li>
+				<li><a href="https://www.imooc.com/wenda/issuedetail/12"><span>2018-04-14</span>如何使用Python实现自动化运维？</a></li>
+				<li><a href="http://www.imooc.com/article/19848"><span>2018-04-22</span>连Angular都学不精，敢说自己做前端？</a></li>
+				<li><a href="https://www.imooc.com/wenda/issuedetail/9"><span>2018-05-02</span>如何高效开发企业级电商的前端？</a></li>
+				<li><a href="https://www.imooc.com/article/32253"><span>2018-05-12</span>LAMP-各PHP加速器性能剖析</a></li>
+				<li><a href="https://www.imooc.com/article/32252"><span>2018-05-13</span>Windows server下部署php环境</a></li>
+				<li><a href="https://www.imooc.com/article/31820"><span>2018-05-22</span>PHP面向对象和PHP面向过程的优缺点评比</a></li>
+				<li><a href="https://www.imooc.com/article/32050"><span>2018-05-25</span>lamp环境下php加速</a></li>
+				<li><a href="https://www.imooc.com/article/30207"><span>2018-05-28</span>看完这篇Linux基本的操作就会了</a></li>
+				<li><a href="https://www.imooc.com/article/31965"><span>2018-06-02</span>Redis从入门到高可用，分布式实践 </a></li>
 			</ul>
+			</div>
 		</div>
 	</div>
 	
