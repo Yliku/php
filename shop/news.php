@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>我的电商网站-新闻列表页</title>
+	<title>我的电商网站-新闻详细页</title>
 	<link rel="shortcut icon" href="./images/favicon.ico">
 	<link type="text/css" href="style/main.css" rel="stylesheet">
 </head>
@@ -59,38 +59,23 @@
 			</ul>
 		</div>
 		<div class="listRight">
-			<h2>行业新闻</h2>
-			<div class="news_list">
-			<ul>
-				<li><a href="news.php"><span>2018-04-01</span>慕课网获App Store强力推荐荣登四榜单</a></li>
-				<li><a href="https://www.imooc.com/wenda/issuedetail/26"><span>2018-03-28</span>当我们谈论Java时，我们都谈些什么？</a></li>
-				<li><a href="https://www.imooc.com/wenda/issuedetail/25"><span>2018-04-12</span>直击BAT面试机会！行业大佬在线答疑</a></li>
-				<li><a href="如何开发前后端分离的系统"><span>2018-06-02</span>如何开发前后端分离的系统？</a></li>
-				<li><a href="https://www.imooc.com/wenda/issuedetail/12"><span>2018-04-14</span>如何使用Python实现自动化运维？</a></li>
-				<li><a href="http://www.imooc.com/article/19848"><span>2018-04-22</span>连Angular都学不精，敢说自己做前端？</a></li>
-				<li><a href="https://www.imooc.com/wenda/issuedetail/9"><span>2018-05-02</span>如何高效开发企业级电商的前端？</a></li>
-				<li><a href="https://www.imooc.com/article/32253"><span>2018-05-12</span>LAMP-各PHP加速器性能剖析</a></li>
-				<li><a href="https://www.imooc.com/article/32252"><span>2018-05-13</span>Windows server下部署php环境</a></li>
-				<li><a href="https://www.imooc.com/article/31820"><span>2018-05-22</span>PHP面向对象和PHP面向过程的优缺点评比</a></li>
-				<li><a href="https://www.imooc.com/article/32050"><span>2018-05-25</span>lamp环境下php加速</a></li>
-				<li><a href="https://www.imooc.com/article/30207"><span>2018-05-28</span>看完这篇Linux基本的操作就会了</a></li>
-				<li><a href="https://www.imooc.com/article/31965"><span>2018-06-02</span>Redis从入门到高可用，分布式实践 </a></li>
-			</ul>
-			</div>
-			<div class="page"> <!-- 页码，分页 -->
-				<a href="">首页</a>
-				<a href="">&lt;</a>
-				<a href="">1</a>
-				<a href="">2</a>
-				<a href="">3</a>
-				<a href="">....</a>
-				<a href="">&gt;</a>
-				<a href="">尾页</a>
+			<h1>慕课网获App Store强力推荐荣登四榜单</h1>
+			<p class="newsInfo">发布人：Admin 发布时间：2014-08-01 浏览：5321次</p>
+			<div class="newsContent">
+				<p> 8月伊始，慕课网App即获得了App Store的多个推荐，同时出现在“免费App精选”、“致毕业生”、“学而不倦”以及“轻松学编程”四个榜单中。这款IT编程学习类的App为何如此备受青睐？趣味视频课程、高清画面质感、在线离线随身学习……优质的课程内容结合良好的用户体验，慕课网App无疑是IT学习的最佳选择。</p>
+				<p> App Store力荐慕课网荣登四榜单</p>
+				<p>App Store因公平著称，能被其推荐是每一款App梦寐以求的荣誉，慕课网则一举占据了其四个榜单，包括精品推荐首页“合集”版块下“免费App精选”中的“新品”推荐、“合集”版块“致毕业生”中“学无止境”推荐、教育类别“合集”版块下“学而不倦”中的推荐以及“轻松学编程”版块推荐。</p>
+				<p><img src=" http://img.mukewang.com/53edaa5a0001c86705000420.jpg" width="500" height="420" alt=""/></p>
+				<p>事实上，慕课网登上App Store榜单并非首次。早在2014年5月，慕课网就荣登App Store 精品推荐榜首，同时登上“教育”类别下“优秀新App”榜首，并获评“五月最佳”精彩App。随后，慕课网App接连出现在“致毕业生”、“免费App精选”、“夏日学堂”等榜单中。</p>
+				<p>从App Store的持续推荐以及“优秀”、“精选”的肯定中不难看出，慕课网在IT在线学习领域以及教育类App中得到了用户的认可。</p>
+				<p>新功能上线持续提升用户体验一款好的产品同样需要不断改进来满足用户需求。慕课网App上线至今进行了多个版本的迭代，不断完善产品、提升用户体验，ios最新的2.1.0版本于7月20日更新，上线了大量新功能。</p>
+				<p>明确、清晰的课程分类能够让用户迅速找到感兴趣的课程，本次慕课网就上线了全新的课程分类方式，点击“全部课程”即可显示出全部的技术语言种类以及视频课程数量，全部在线课程一目了然。</p>
+				<p>不知道讲师在哪里？此版本更新中添加了讲师认证，不仅对讲师空间进行了认证，在课程讨论和笔记中，通过认证标识，一眼可以看到哪个是讲师回复。</p>
+				<p>此外，慕课网App在最新版本中调整了下拉刷新和上拉加载的效果；课程练习部分增加了习题解析；对半透化效果、全屏播放器按钮进行了优化，并新增了编程课、ps课程。一系列的改进相信能为IT学习用户带来更好的学习体验。</p>
+				<p>慕课网App在精品视频课程的基础上，不断优化用户体验，帮助IT学习者迅速入门、提升技能，以优秀的产品基因获得App Store的多个推荐，使更多用户有机会使用这款IT学习软件，体验学习的简单和快捷。</p>
 			</div>
 		</div>
 	</div>
-	
-
 
 	<div class="btm"> 	<!-- 颜色#acc3e3 -->
 		<button onclick="alert('点击确定跳转到我的Github上~');window.open('https://github.com/Yliku')">关于我</button>&nbsp;|

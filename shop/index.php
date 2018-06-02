@@ -34,7 +34,7 @@
 	</div>					<!-- top2结束 -->
 	<div class="content_top">
 		<ul>
-			<li><a href="#">首页</a></li>
+			<li><a href="index.php">首页</a></li>
 			<li><a href="">关于慕课</a></li>
 			<li><a href="newsList.php">新闻动态</a></li>
 			<li><a href="">课程中心</a></li>
@@ -60,7 +60,7 @@
 			</div>
 			<div class='news_list'>
 				<ul>
-					<li><em>01</em><a href=""><span>2018-04-01</span>【慕客访谈用户篇】“有为屌丝”在路上</a></li>
+					<li><em>01</em><a href="news.php"><span>2018-04-01</span>慕课网获App Store强力推荐荣登四榜单</a></li>
 					<li><em>02</em><a href=""><span>2018-04-25</span>【有奖活动】给父亲的三行书信</a></li>
 					<li><em>03</em><a href=""><span>2018-05-13</span>《程序猿，请晒出你的童年》活动获奖公告</a></li>
 					<li class="news_list_btm"><em>04</em><a href=""><span>2018-05-16</span>【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>

@@ -1,7 +1,7 @@
 @charset "utf-8";
 *{margin:0;padding:0;font-size:12px;font-family: "微软雅黑";} 		/*设置全局边框和字体*/
 body{background: #F5F5F5;}
-.top1,.top2,.content_top,.body,.btm,.listTop,.listContent{width:1000px;margin:0 auto;}
+.top1,.top2,.content_top,.body,.listTop,.listContent{width:1000px;margin:0 auto;}
 
 .top1:after,.top2:after,.content_top:after,.body:after,.listContent:after,.top2:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
 .clear{clear:both;}
@@ -88,7 +88,7 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 （注意：换行符、tab(制表符)、空格都会造成此问题）
 */
 
-.btm{background:#c5d3e5;width:100%;height:30px;border:none;text-align:center;line-height: 30px;color:gray;}
+.btm{background:#c5d3e5;width:100%;height:30px;border:none;text-align:center;line-height: 30px;color:gray;clear:both;}
 /*    	背景颜色			宽度		   高度			没有边框		文字水平居中		行高等于div高度，垂直居中 	文字颜色为gray
 	还可以设置绝对定位 position:absolute;	定位在最下面 bottom:0;
 */
@@ -126,3 +126,9 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 .page{text-align:center;}
 .page a{text-decoration:none;border:1px solid #E8E8E8;margin:5px;padding:5px 10px;}
 .page a:hover{text-decoration:none;color:green;background-color:#FFCE54;}
+
+/*以下为news.php的样式*/
+.listRight h1{font-size:20px;text-align:center;margin:10px auto;}
+.newsInfo{color:#666;text-align:center;border-bottom:1px dotted #666;}
+.newsContent{padding:10px;line-height:25px;text-indent:2em;} 	
+/*text-indent:2em 缩进两个字符，em为相对长度单位，px是绝对单位*/
