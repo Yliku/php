@@ -123,3 +123,6 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 	background:url(../images/li_bg2.png) no-repeat left center;
 	background-color:#A0D468; 		/*既设置了背景图片，也设置了背景颜色，会就近原则先显示颜色，然后才是背景图片*/
 	}
+.page{text-align:center;}
+.page a{text-decoration:none;border:1px solid #E8E8E8;margin:5px;padding:5px 10px;}
+.page a:hover{text-decoration:none;color:green;background-color:#FFCE54;}

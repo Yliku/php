@@ -76,6 +76,16 @@
 				<li><a href="https://www.imooc.com/article/31965"><span>2018-06-02</span>Redis从入门到高可用，分布式实践 </a></li>
 			</ul>
 			</div>
+			<div class="page"> <!-- 页码，分页 -->
+				<a href="">首页</a>
+				<a href="">&lt;</a>
+				<a href="">1</a>
+				<a href="">2</a>
+				<a href="">3</a>
+				<a href="">....</a>
+				<a href="">&gt;</a>
+				<a href="">尾页</a>
+			</div>
 		</div>
 	</div>
 	
