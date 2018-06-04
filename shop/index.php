@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>我的电商网站</title>
-	<link rel="shortcut icon" href="./images/favicon.ico">
+	<link rel="shortcut icon" href="./images/bird.png">
 	<link type="text/css" href="style/main.css" rel="stylesheet">
 </head>
 <body>
@@ -44,7 +44,7 @@
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
 		</form>
 	</div>
-
+	<div class="listTop"><img src="images/ad2.jpg" alt=""></div>
 
 	<div class='body'>
 		<div class='body1'>

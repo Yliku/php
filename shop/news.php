@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>我的电商网站-新闻详细页</title>
-	<link rel="shortcut icon" href="./images/favicon.ico">
+	<link rel="shortcut icon" href="./images/bird.png">
 	<link type="text/css" href="style/main.css" rel="stylesheet">
 </head>
 <body>
@@ -50,7 +50,7 @@
 			<h2>新闻动态</h2>
 			<ul>
 				<li><a href="">公司新闻</a></li>
-				<li><a href="">行业新闻</a></li>
+				<li><a href="newsList.php">行业新闻</a></li>
 				<li><a href="">媒体报道</a></li>
 				<li><a href="">活动专题</a></li>
 				<li><a href="">公司内刊</a></li>
