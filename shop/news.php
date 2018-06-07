@@ -2,7 +2,7 @@
 <head>
 	<title>我的电商网站-新闻详细页</title>
 	<link rel="shortcut icon" href="./images/bird.png">
-	<link type="text/css" href="style/main.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="style/main.css">
 </head>
 <body>
 	<div class="top">
