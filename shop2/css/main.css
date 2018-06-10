@@ -1,0 +1,8 @@
+/*头部登录区*/
+.floatL{float:left;}
+.floatR{float:right;}
+.top{background:#c5d3e5;height:30px;line-height: 30px;}
+.topLogo img,.search,.shopCar{float:left;}
+.topLogo{height:50px;line-height: 50px;background-color:gray;}
+.search{margin:0 150px;}
+.shopCar{background:url(../images/li_bg2.png) no-repeat right;border:1px red solid;}

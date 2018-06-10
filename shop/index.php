@@ -17,7 +17,7 @@
 	</div> 					
 	
 	<div class="top2">		<!-- top2开始 -->
-		<img src="images/logo.jpg" alt="慕课网" style="float:left;height: 50px;">
+		<img src="images/logo.jpg" alt="慕课网" height="50px" style="float:left;">  <!-- css无法设置图片高度？？只能在img里设置高度 -->
 		<div style="float:right;width:250px;margin:15px 0;color:#8e8e8e;">
 			<img src="images/tel.jpg" style="height: 20px;vertical-align:middle;" alt="服务热线">  	<!-- 为什么此处使用vertial-align会生效？？？？ -->
 			24小时服务热线：<span class="tel" ><b>0756-1234567</b></span>
