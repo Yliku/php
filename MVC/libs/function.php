@@ -19,5 +19,9 @@
 		$obj = new $view();
 		return $obj;
 	}
+	function daddslashes($str){ 	//该函数的作用是对非法字符进行转义
+		return (!get_magic_quotes_gpc())?addslashes($str):$str;
+		//addslashes php的内置函数，对单引号等特殊符号进行转义
+	}
 
  ?>
