@@ -4,8 +4,8 @@
 
 //单例模式（面试中经常被问到）
  //实例化同一个类4次就开辟了4个内存空间，php是一种解释性的脚本语言，这种运行机制使得每一个php页面被执行解释完后所有的相关资源才能被回收
-class Test{
-	private static $_instance=NULL;	
+class Test{ 	//三私一公
+	private static $_instance=NULL;			//static变量常驻内存~~~~~~！！！！
 	final private function __construct(){}	//构造方法如果被私有化private，那么在外部new 时会调用构造方法而导致报错，这个类就无法在类的外部被实例化，
 											//但是我们知道private可以在内部进行调用，所以我们在类的内部new时，构造函数可以被调用，可以new成功！！											
 	final private function __clone(){}				//同样的克隆方法如果被私有化，那这个类/对象在外部将无法被克隆

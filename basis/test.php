@@ -50,4 +50,47 @@ $staff=array("a"=>'123','b'=>'345','c'=>'456','d'=>'789');
 foreach($staff as $key){
 	echo $key . '<br>';
 }
+
+echo '冒泡排序：<br>排序前：';
+$a=array(112,44,31,343,53,58,55,13);
+foreach($a as $k=>$value){
+	echo $value .' ';
+}
+echo '<br>'.sizeof($a);
+echo '<br>'.'排序后：';
+for($i=0;$i<8;$i++){
+	for($j=0;$j<8-$i-1;$j++){
+		if($a[$j]>$a[$j+1]){
+			$temp=$a[$j];
+			$a[$j]=$a[$j+1];
+			$a[$j+1]=$temp;
+		}
+	}
+}
+foreach($a as $k=>$value){
+	echo $value .' ';
+}
+
+echo '<br>设计模式之：单例模式<br>';
+class A{
+	private static $instance=NULL;
+	final private function __construct(){}
+	final private function __clone(){}
+	public static function getInstance(){
+		if( empty(self::$instance) ){
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+}
+$b1=A::getInstance();
+$b2=A::getInstance();
+$b3=A::getInstance();
+$b4=A::getInstance();
+var_dump($b1);
+var_dump($b2);
+var_dump($b3);
+var_dump($b4);
+
+
 ?>

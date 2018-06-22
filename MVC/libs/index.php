@@ -7,4 +7,6 @@ $controller = $_GET['controller'];
 $method = $_GET['method'];
 C($controller,$method); /*调用控制器*/
 
+
+
  ?>
