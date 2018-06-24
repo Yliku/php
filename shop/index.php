@@ -8,9 +8,9 @@
 	<div class="top">
 		<div class="top1">		<!-- top1开始 -->
 			<ul>
-				<li><a href="#">设为首页</a></li>
-				<li><a href="#">加入收藏</a></li> 	<!-- 注意空链接的#号如果不加，点击超链接将会是重新跳转到当前页面，即刷新页面 -->
-				<li><a href="http://baidu.com">联系我们</a></li>
+				<li><a href="#" onclick=alert("设为首页成功")>设为首页</a></li>
+				<li><a href="#" onclick=alert("加入收藏成功")	>加入收藏</a></li> 	<!-- 注意空链接的#号如果不加，点击超链接将会是重新跳转到当前页面，即刷新页面 -->
+				<li><a href="#" onclick=alert('我的QQ：370495410\n我的手机：13826076961')>联系我们</a></li>	<!-- alert中换行用 /n，中间插入空格为什么不能正常弹出？？ -->
 			</ul>
 			<span >欢迎来到慕课网！<a href="" style="margin-left:5px">[登陆]</a><a href="">[注册]</a></span>
 		</div>					<!-- top1结束 -->
