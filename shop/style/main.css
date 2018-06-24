@@ -37,7 +37,7 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 	background-repeat:no-repeat;
 	background-position:right center;
 	*/
-	background-color: white;
+	background-color: white;/*如果这一行代码放在background:url之前，将无法显示效果*/
 	padding-right:25px; 	/*输入文字会遮盖搜索的背景图片，设置填充限制，填充大小等同于搜索图片宽度*/
 	border:1px solid white; /*设置边框线宽度，更加简洁好看*/
 }
@@ -47,6 +47,7 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 .body_title{height:30px;border-bottom:2px solid #E8E8E8;}
 .body_title h2{width:70%;float:left;color:gray;line-height: 30px;padding-left:15px;}
 .body_title a{width:20%;float:right;color:gray;height:30px;line-height: 30px;text-decoration: none;text-align:right;}
+.body_title a:hover{color:red;}
 .body_title{clear:both;}
 
 .pic_news{line-height: 20px;margin:10px;}
@@ -62,6 +63,12 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 	/*
 	transform:scale(1.5); 	在鼠标放到图片上的时候图片按比例放大1.5倍
 	神奇的transform转换，其属性有：斜拉(skew)，缩放(scale)，旋转(rotate)以及位移(translate)。
+	为了兼容老版本的浏览器，根据浏览器内核的不同，很多时候我们得加上以下所有代码：
+	transform:rotate(7deg);				//统一标识语句。要写代码时最好这句也写下去，符合w3c标准
+	-ms-transform:rotate(7deg);			//-ms 		代表IE内核识别码
+	-moz-transform:rotate(7deg);		//-moz 		代表火狐Firefox内核识别码
+	-webkit-transform:rotate(7deg);		//-webkit 	代表谷歌Chrome/Aafari内核识别码
+	-o-transform:rotate(7deg);			//-o		代表Opera内核识别码
 	*/
 }
 

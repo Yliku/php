@@ -1,19 +1,19 @@
 <html>
 <head>
 	<title>我的电商网站</title>
-	<link rel="shortcut icon" href="./images/bird.png">
-	<link type="text/css" href="style/main.css" rel="stylesheet">
+	<link href="./images/bird.png" rel="shortcut icon">
+	<link href="style/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="top">
-		<div class="top1">		<!-- top1开始 -->
+		<div class="top1">	<!-- top1开始 -->
 			<ul>
 				<li><a href="#" onclick=alert("设为首页成功")>设为首页</a></li>
 				<li><a href="#" onclick=alert("加入收藏成功")	>加入收藏</a></li> 	<!-- 注意空链接的#号如果不加，点击超链接将会是重新跳转到当前页面，即刷新页面 -->
 				<li><a href="#" onclick=alert('我的QQ：370495410\n我的手机：13826076961')>联系我们</a></li>	<!-- alert中换行用 /n，中间插入空格为什么不能正常弹出？？ -->
 			</ul>
 			<span >欢迎来到慕课网！<a href="" style="margin-left:5px">[登陆]</a><a href="">[注册]</a></span>
-		</div>					<!-- top1结束 -->
+		</div>				<!-- top1结束 -->
 	</div> 					
 	
 	<div class="top2">		<!-- top2开始 -->
@@ -35,10 +35,10 @@
 	<div class="content_top">
 		<ul>
 			<li><a href="index.php">首页</a></li>
-			<li><a href="">关于慕课</a></li>
+			<li><a href="https://www.imooc.com/">关于慕课</a></li>
 			<li><a href="newsList.php">新闻动态</a></li>
 			<li><a href="">课程中心</a></li>
-			<li><a href="">我的课程</a></li>
+			<li><a href="https://www.imooc.com/u/1008322/courses">我的课程</a></li>
 		</ul>
 		<form action="" method="POST">
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
@@ -75,9 +75,12 @@
 		</div>
 
 		<div class='body1'>
-			
+			<div class='body_title'>
+				<h2>课程列表</h2>
+				<a href="newsList.php">More&gt;&gt;</a>
+			</div>
 		</div>
-	</div>
+	</div> <!-- 信息展示框结束 -->
 
 
 	<div class="btm"> 	<!-- 颜色#acc3e3 -->
@@ -110,9 +113,9 @@
 
 		等，有24种之多：https://www.cnblogs.com/eyed/p/7880000.html
 		-->
-		<a href="" onclick="alert('点击确定跳转到我的Github上~');window.open('https://github.com/Yliku')">联系我们</a>&nbsp;|
-		<a href="" >服务条款</a>&nbsp;|
-		<a href="">帮助中心</a>&nbsp;|
+		<a href="" onclick="alert('点击确定跳转到我的Github上~');window.open('https://github.com/Yliku')">我的Github</a>&nbsp;|
+		<a href="#" >服务条款</a>&nbsp;|
+		<a href="#">帮助中心</a>&nbsp;|
 		<span>制作时间：2018.04.08~现在</span>
 	</div>
 </body>
