@@ -113,7 +113,7 @@
 
 		等，有24种之多：https://www.cnblogs.com/eyed/p/7880000.html
 		-->
-		<a href="" onclick="alert('点击确定跳转到我的Github上~');window.open('https://github.com/Yliku')">我的Github</a>&nbsp;|
+		<a href="" onclick="alert('即将跳转到我的Github上~');window.open('https://github.com/Yliku')">我的Github</a>&nbsp;|
 		<a href="#" >服务条款</a>&nbsp;|
 		<a href="#">帮助中心</a>&nbsp;|
 		<span>制作时间：2018.04.08~现在</span>

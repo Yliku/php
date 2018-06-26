@@ -35,10 +35,10 @@
 	<div class="content_top">
 		<ul>
 			<li><a href="index.php">首页</a></li>
-			<li><a href="">关于慕课</a></li>
+			<li><a href="https://www.imooc.com">关于慕课</a></li>
 			<li><a href="newsList.php">新闻动态</a></li>
 			<li><a href="">课程中心</a></li>
-			<li><a href="">我的课程</a></li>
+			<li><a href="https://www.imooc.com/u/1008322/courses">我的课程</a></li>
 		</ul>
 		<form action="" method="POST">
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
