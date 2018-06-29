@@ -76,9 +76,28 @@
 
 		<div class='body1'>
 			<div class='body_title'>
-				<h2>课程列表</h2>
+				<h2>问卷调查</h2>
 				<a href="newsList.php">More&gt;&gt;</a>
 			</div>
+			<form action="thx.php" method="post" style="line-height:30px;padding-left:10px;">
+				<p>1.你觉得我的网站做的怎么样呢？</p>
+				<input type="radio" name="like1" value="1">非常差
+				<input type="radio" name="like1" value="2">差
+				<input type="radio" name="like1" value="3">一般
+				<input type="radio" name="like1" value="4">好
+				<input type="radio" name="like1" value="5">很好
+				<p>2.你喜欢这样的页面布局风格吗？</p>
+				<select name="like2" id="">
+					<option value="1">非常讨厌</option>
+					<option value="2">不喜欢</option>
+					<option value="3">一般</option>
+					<option value="4">喜欢</option>
+					<option value="5">非常喜欢</option>
+				</select>
+				<p>3.有什么建议或意见？</p>
+				<textarea name="suggest" id="" cols="50" rows="4" placeholder="请酌情填写"></textarea>
+				<p><input type="submit" value="提交"></p>
+			</form>
 		</div>
 	</div> <!-- 信息展示框结束 -->
 

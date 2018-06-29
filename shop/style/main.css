@@ -1,5 +1,6 @@
 @charset "utf-8";
 *{margin:0;padding:0;font-size:12px;font-family: "微软雅黑";} 		/*设置全局边框和字体*/
+textarea{resize:none}
 body{background: #F5F5F5;}
 .top1,.top2,.content_top,.body,.listTop,.listContent{width:1000px;margin:0 auto;}
 
@@ -45,7 +46,7 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 .body1{background-color:#A0D468;width:400px;float:left;border-radius:4px;min-height: 400px;} 	/*min=height设置最低高度400px，如果内容多的话还可以继续自动增加高度*/
 .body2{height:400px;background-color:#AC92DC;width:180px;float:left;margin:0 10px;border-radius:4px;}
 .body_title{height:30px;border-bottom:2px solid #E8E8E8;}
-.body_title h2{width:70%;float:left;color:gray;line-height: 30px;padding-left:15px;}
+.body_title h2{width:70%;float:left;color:gray;line-height: 30px;padding-left:10px;}
 .body_title a{width:20%;float:right;color:gray;height:30px;line-height: 30px;text-decoration: none;text-align:right;}
 .body_title a:hover{color:red;}
 .body_title{clear:both;}
