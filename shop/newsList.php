@@ -32,7 +32,7 @@
 			-->
 		</div>
 	</div>					<!-- top2结束 -->
-	<div class="content_top">
+	<div class="nav1">
 		<ul>
 			<li><a href="index.php">首页</a></li>
 			<li><a href="https://www.imooc.com/">关于慕课</a></li>

@@ -3,6 +3,9 @@
 	<title>我的电商网站</title>
 	<link href="./images/bird.png" rel="shortcut icon">
 	<link href="style/main.css" rel="stylesheet" type="text/css">
+	<script src="js/myfocus-2.0.1.min.js" type="text/javascript"></script>		 	<!-- 引入myFocus库文件----script标签最好放在底部 -->
+	<script src="js/mf-pattern/mF_classicHB.js" type="text/javascript"></script> 	<!-- 引入myFocus的其中一种风格文件 -->
+	<link href="js/mf-pattern/mF_classicHB.css" rel="stylesheet" type="text/css" > 	<!-- 引入风格对应的样式表文件 -->
 </head>
 <body>
 	<div class="top">
@@ -28,11 +31,11 @@
 			例如图片，按钮，单复选框，单行/多行文本框等HTML控件，只有这些元素默认情况下会对vertical-align属性起作用。
 			1、当父元素top2设置了line-height:200px;时，vertical-align:middle;将会根据父元素的高度在100px的位置垂直居中；
 			2、当父元素没有设置line-height时，可以试试直接设置height，将会看的更直观，
-			      这时vertical-align:middle;将会根据行内的兄弟元素对齐；在兄弟元素的中间水平线上对齐；
+			   这时vertical-align:middle;将会根据行内的兄弟元素对齐；在兄弟元素的中间水平线上对齐；
 			-->
 		</div>
 	</div>					<!-- top2结束 -->
-	<div class="content_top">
+	<div class="nav1">
 		<ul>
 			<li><a href="index.php">首页</a></li>
 			<li><a href="https://www.imooc.com/">关于慕课</a></li>

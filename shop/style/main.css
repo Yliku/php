@@ -2,16 +2,16 @@
 *{margin:0;padding:0;font-size:12px;font-family: "微软雅黑";} 		/*设置全局边框和字体*/
 textarea{resize:none}
 body{background: #F5F5F5;}
-.top1,.top2,.content_top,.body,.listTop,.listContent{width:1000px;margin:0 auto;}
+.top1,.top2,.nav1,.body,.listTop,.listContent{width:1000px;margin:0 auto;}
 
-.top1:after,.top2:after,.content_top:after,.body:after,.listContent:after,.top2:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
+.top1:after,.top2:after,.nav1:after,.body:after,.listContent:after,.top2:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
 .clear{clear:both;}
 .top{background:#c5d3e5;width:100%;border:none;height:30px;line-height: 30px;}
 .top1 li{list-style:none;float:left;margin-right:5px;} 	 /*list-style:none没有样式/disc实心圆（默认）/circle空心圆/square实心方块*/
 .top1 span{float:right;}
 /*行高line-height设置和盒子/图片高度一样，可以实现垂直居中   list-style-image: url(../images/li_bg.gif);*/
-.top1 a:link,.content_top li a:link{color:green;text-decoration:none;} 		/*取消字体修饰样式，在这里是清除a标签超链接的默认下划线*/
-.top1 a:hover,.content_top li a:hover{color:red;text-decoration:underline;} 					/*滑过a标签，a标签改变颜色*/
+.top1 a:link,.nav1 li a:link{color:green;text-decoration:none;} 		/*取消字体修饰样式，在这里是清除a标签超链接的默认下划线*/
+.top1 a:hover,.nav1 li a:hover{color:red;text-decoration:underline;} 					/*滑过a标签，a标签改变颜色*/
 /*
 a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠标移动到链接上时的状态；
 定义CSS时候的顺序不同，也会直接导致链接显示的效果不同。
@@ -25,11 +25,11 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 .top2{background: white;}		
 .tel{color:red;}
 
-.content_top{border-radius:4px;background:gray;height:30px;} 	/*设置边框的圆角属性*/
+.nav1{border-radius:4px;background:gray;height:30px;} 	/*设置边框的圆角属性*/
 /*border-top-left-radius:5px 10px;表示top-left这个角的水平圆角半径为5px，垂直圆角半径为10px。*/
-.content_top li{list-style:none;width:100px;float:left;text-align:center;line-height: 30px;}
-.content_top li a{font-size:16px;color:white;}
-.content_top form{float:right;}
+.nav1 li{list-style:none;width:100px;float:left;text-align:center;line-height: 30px;}
+.nav1 li a{font-size:16px;color:white;}
+.nav1 form{float:right;}
 .search_text{
 	width:200px;height:24px;margin-top:3px;margin-right:20px;
 	background:url(../images/search.jpg) no-repeat right center; 	/*搜索框图片，不重复，居右，垂直居中*/
