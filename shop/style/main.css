@@ -2,7 +2,7 @@
 *{margin:0;padding:0;font-size:12px;font-family: "微软雅黑";} 		/*设置全局边框和字体*/
 textarea{resize:none}
 body{background: #F5F5F5;}
-.top1,.top2,.nav1,.body,.listTop,.listContent{width:1000px;margin:0 auto;}
+.top1,.top2,.nav1,.body,.listContent,.ad,.ad1{width:1000px;margin:0 auto;}
 
 .top1:after,.top2:after,.nav1:after,.body:after,.listContent:after,.top2:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
 .clear{clear:both;}
@@ -42,6 +42,10 @@ a:link 未访问时的状态；		a:visited 已访问过的状态；		a:hover 鼠
 	padding-right:25px; 	/*输入文字会遮盖搜索的背景图片，设置填充限制，填充大小等同于搜索图片宽度*/
 	border:1px solid white; /*设置边框线宽度，更加简洁好看*/
 }
+
+.ad{height:310px;overflow:hidden;}	
+
+
 .body{margin:5px auto;}
 .body1{background-color:#A0D468;width:400px;float:left;border-radius:4px;min-height: 400px;} 	/*min=height设置最低高度400px，如果内容多的话还可以继续自动增加高度*/
 .body2{height:400px;background-color:#AC92DC;width:180px;float:left;margin:0 10px;border-radius:4px;}

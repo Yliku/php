@@ -3,9 +3,19 @@
 	<title>我的电商网站</title>
 	<link href="./images/bird.png" rel="shortcut icon">
 	<link href="style/main.css" rel="stylesheet" type="text/css">
-	<script src="js/myfocus-2.0.1.min.js" type="text/javascript"></script>		 	<!-- 引入myFocus库文件----script标签最好放在底部 -->
-	<script src="js/mf-pattern/mF_classicHB.js" type="text/javascript"></script> 	<!-- 引入myFocus的其中一种风格文件 -->
-	<link href="js/mf-pattern/mF_classicHB.css" rel="stylesheet" type="text/css" > 	<!-- 引入风格对应的样式表文件 -->
+	<script src="js/myfocus-2.0.4.full.js" type="text/javascript"></script>
+	<!-- 引入myFocus库文件----script标签最好放在底部 -->
+	<script type="text/javascript">
+		myFocus.set({
+	    id:'boxID',			//焦点图盒子ID
+	    pattern:'mF_YSlider',//风格应用的名称
+	    //time:11,				切换时间间隔(秒)
+	    //trigger:'click',		触发切换模式:'click'(点击)/'mouseover'(悬停)
+	    //width:200,			设置图片区域宽度(像素)
+	    //height:200,			设置图片区域高度(像素)
+	    //txtHeight:'default'	文字层高度设置(像素),'default'为默认高度，0为隐藏，隐藏图片的alt文字
+	});
+	</script>		<!-- 调用myFocus函数 -->
 </head>
 <body>
 	<div class="top">
@@ -35,7 +45,7 @@
 			-->
 		</div>
 	</div>					<!-- top2结束 -->
-	<div class="nav1">
+	<div class="nav1">		<!-- nav开始 -->
 		<ul>
 			<li><a href="index.php">首页</a></li>
 			<li><a href="https://www.imooc.com/">关于慕课</a></li>
@@ -46,9 +56,18 @@
 		<form action="" method="POST">
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
 		</form>
+	</div>					<!-- nav结束 -->
+	<div class="ad1">
+	<div class="ad" id="boxID">	<!-- 焦点图开始 -->
+		<div class="pic">		<!-- 成功使用myFocus必须再嵌套一个div，类选择器叫pic -->
+			<ul>
+				<li><img src="./images/ad2.jpg" alt="共同学习，共同进步"></li>
+				<li><img src="./images/ad3.jpg" alt="看书的身影"></li>
+				<li><img src="./images/ad4.jpg" alt="换一种方式来学习编程"></li>
+			</ul>
+		</div>
+	</div>						<!-- 焦点图结束 -->
 	</div>
-	<div class="listTop"><img src="images/ad2.jpg" alt=""></div>
-
 	<div class='body'>
 		<div class='body1'>
 			<div class='body_title'>
@@ -83,7 +102,7 @@
 				<a href="newsList.php">More&gt;&gt;</a>
 			</div>
 			<form action="thx.php" method="post" style="line-height:30px;padding-left:10px;">
-				<p>1.你觉得我的网站做的怎么样呢？</p>
+				<p>1.你觉得这个网站做的怎么样呢？</p>
 				<input type="radio" name="like1" value="1">非常差
 				<input type="radio" name="like1" value="2">差
 				<input type="radio" name="like1" value="3">一般

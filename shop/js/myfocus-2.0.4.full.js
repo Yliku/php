@@ -1,12 +1,12 @@
-/*
-* myFocus JavaScript Library v2.0.0
-* Open source under the BSD & GPL License
-* 
-* Copyright 2012, Koen Lee
-* http://cosmissy.com/
-* 
-* Date: 2012/05/10
-*/
+﻿/*!
+ * myFocus JavaScript Library v2.0.4
+ * https://github.com/koen301/myfocus
+ * 
+ * Copyright 2012, Koen Lee
+ * Released under the MIT license
+ * 
+ * Date: 2012/10/28
+ */
 (function(){
 	//DOM基础操作函数
 	var $id=function(id){
@@ -66,38 +66,42 @@
 			pattern:'mF_fancy',//风格样式
 			trigger:'click',//触发切换模式['click'(鼠标点击)|'mouseover'(鼠标悬停)]
 			txtHeight:'default',//文字层高度设置[num(数字,单位像素,0表示隐藏文字层,省略设置即为默认高度)]
-			wrap:true,//是否保留边框(有的话)[true|false]
+			wrap:true,//是否需要让程序添加焦点图的外围html(wrap)元素(目的是为了添加某些风格的边框)[true|false]
 			auto:true,//是否自动播放(切换)[true|false]
 			time:4,//每次停留时间[num(数字,单位秒)]
 			index:0,//开始显示的图片序号(从0算起)[num(数字)]
-			loadIMGTimeout:3,//载入图片的最长等待时间(Loading画面时间)[num(数字,单位秒,0表示不等待直接播放)]
+			loadingShow:true,//是否显示Loading画面[true(显示，即等待图片加载完)|false(不显示，即不等待图片加载完)]
 			delay:100,//触发切换模式中'mouseover'模式下的切换延迟[num(数字,单位毫秒)]
+			autoZoom:false,//是否允许图片自动缩放居中[true|false]
+			onChange:null,//切换图片的时候执行的自定义函数，带有一个当前图索引的参数
+			xmlFile:'',//myfocus图片的xml配置文件路径,留空即不读取xml文件
 			__focusConstr__:true//程序构造参数
 		},
 		constr:function(settings){//构造函数
-			var e=settings.__focusConstr__?$id(settings.id):settings;
+			var e=settings,len=e&&e.length;
 			if(e instanceof myFocus.constr) return e;//myFocus::[]
-			if(!e||(e.sort&&!e.length)||(e.item&&!e.length)){//null/array/nodeList
+			this.length=0;
+			if(!e||(e.sort&&!len)||(e.item&&!len)){//null/array::[]/nodeList::[]
 				Array.prototype.push.call(this);
-				return this;
-			}
-			var len=e.length;
-			this.length = 0;
-		  	if(len){//包括字符串
-				for(var i=0;i<len;i++) Array.prototype.push.call(this,e[i]);
-			}else{//myFocus
+			}else if(e.__focusConstr__){//new myFocus
+				e=$id(e.id);
 				Array.prototype.push.call(this,e);
 				this.settings=settings;
 				this.HTMLUList=$tag('li',$tag('ul',e)[0]);
 				this.HTMLUListLength=this.HTMLUList.length;
+			}else if(len){//nodeList/Array/字符串
+				for(var i=0;i<len;i++) Array.prototype.push.call(this,e[i]);
+			}else{//node
+				Array.prototype.push.call(this,e);
 			}
 			return this;
 		},
 		fn:{splice:[].splice},//原形
-		pattern:{}//风格集
+		pattern:{},//风格集
+		config:{}//参数集
 	});
 	myFocus.constr.prototype=myFocus.fn;
-	myFocus.fn.extend=myFocus.pattern.extend=myFocus.defConfig.extend=myFocus.extend;
+	myFocus.fn.extend=myFocus.pattern.extend=myFocus.config.extend=myFocus.extend;
 	myFocus.fn.extend({//DOM
 		find:function(selector){//选择器只应用基本查找,暂不考虑用querySelectorAll
 			var parent=this,isChild=false,$=myFocus;
@@ -156,7 +160,7 @@
 		eq:function(n){
 			return myFocus(this[n]);
 		},
-		parseSelector:function(selector){//选择器分析,部分参考了Sizzle
+		parseSelector:function(selector){
 			var chunker=/(([^[\]'"]+)+\]|\\.|([^ >+~,(\[\\]+)+|[>+~])(\s*,\s*)?/g;
 			var parts=[],m;
 			while((m = chunker.exec(selector)) !== null ) {
@@ -312,7 +316,7 @@
 			for(var p in o) if(p.indexOf('__myFocusTimer__')!==-1) o[p]&&clearInterval(o[p]);
 			return this;
 		},
-		easing:{//集成部分缓动效果,参考Easing v1.3
+		easing:{
 			linear:function(t,b,c,d){return c*t/d + b;},
 			swing:function(t,b,c,d) {return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;},
 			easeIn:function(t,b,c,d){return c*(t/=d)*t*t*t + b;},
@@ -348,21 +352,25 @@
 				if(seamless&&indexLast>=n&&indexCurrent<n) indexCurrent+=n;//无缝时的按钮点击(保持同一方向)
 				funcCurrentFrame&&funcCurrentFrame(indexCurrent,n,indexLast);//运行当前帧
 				this_.runIndex=indexLast=indexCurrent;//保存已运行的帧索引
+				//增加自定义回调函数@10.27
+				p.onChange&&p.onChange.call(this_,indexCurrent);
 			};
-			try{this_.run(indexCurrent)}catch(e){setTimeout(function(){this_.run(indexCurrent)},0)};//运行...
-			if(p.auto){//自动切换
+			//运行...(try是为了兼容风格js中play比bindControl先执行)
+			try{this_.run(indexCurrent)}catch(e){setTimeout(function(){this_.run(indexCurrent)},0)};
+			if(p.auto&&n>1){//自动切换
 				this_.runTimer=setInterval(function(){this_.run('+=1')},t);//默认递增运行每帧
 				this_.bind('mouseover',function(){//绑定事件
 					clearInterval(this_.runTimer);
+					this_.runTimer='pause';//标记以防止执行两次this_.runTimer
 				}).bind('mouseout',function(){
-					if(!this_.isStop) this_.runTimer=setInterval(function(){this_.run('+=1')},t);
+					if(!this_.isStop&&this_.runTimer==='pause') this_.runTimer=setInterval(function(){this_.run('+=1')},t);
 				});
 			}
 			this_.find('a').each(function(){//去除IE链接虚线
 				this.onfocus=function(){this.blur();}
 			});
 		},
-		bindControl:function($btnList,params){//params={thumbShowNum:'略缩图显示数目(如果有)',isRunning:'运行中的标记(当需要判断时)'}
+		bindControl:function($btnList,params){//params={thumbShowNum(略缩图显示数目(如果有)):num,isRunning(运行中的标记(当需要判断时)):boolean}
 			var this_=this,p=this_.settings,type=p.trigger,delay=p.delay,par=params||{},tsNum=par.thumbShowNum||p.thumbShowNum;
 			var run=function(){
 				if(this.index!==this_.runIndex&&!par.isRunning){
@@ -413,7 +421,7 @@
 				this.showEnd=this.showStart+this.showNum-1;
 			}
 			css[dir]=-this.showStart*this.distance;
-			$ul.slide(css,500,'easeOut');
+			$ul.slide(css,time||500,'easeOut');
 			return this;
 		}
 	});
@@ -424,14 +432,18 @@
 			p.__clsName=p.pattern+'_'+id;
 			F.addEvent(window,'load',function(){F.onloadWindow=true});
 			F.loadPattern(p,function(){
-				p=F.extend({},F.defConfig,p);//收集完整参数
+				p=F.extend({},F.defConfig,F.config[p.pattern],p);//收集完整参数
 				F.getBoxReady(p,function(){
-					var $o=F(p);
+					var $o=F($id(id));
+					p.$o=$o;//保存node
+					//xml load
+					p.xmlFile&&F.loadXML(p);
+					p.pic=$class('pic',$o[0])[0];//保存node for是否标准风格的判断及是否需要initcss
 					p.width=p.width||$o.css('width'),p.height=p.height||$o.css('height');//获得box高/宽
-					F.initCSS(p,$o,oStyle);//css
-					F.initHTML($o);//html
+					F.initCSS(p,oStyle);//css
 					$o.addClass(p.pattern+' '+p.__clsName);//+className
-					F.getIMGReady(p,function(){
+					F.getIMGReady(p,function(arrSize){
+						if(p.autoZoom) F.zoomIMG(p,arrSize);//缩放图片
 						F.pattern[p.pattern](p,F);//运行pattern代码
 						callback&&callback();
 					});
@@ -443,22 +455,27 @@
 			if(this.pattern[p.pattern]){callback();return;}//如果已加载pattern
 			var path=this.getFilePath()+'mf-pattern/'+p.pattern;
 			var js= document.createElement("script"),css=document.createElement("link"),src=path+'.js',href=path+'.css'; 
-    		js.type = "text/javascript",js.src=src;
+			js.type = "text/javascript",js.src=src;
 			css.rel = "stylesheet",css.href=href;
-			var head=$tag('head')[0],isSuccess=0,timeout=3000;//超时3秒
+			var head=$tag('head')[0],isSuccess=false,timeout=10*1000;//超时10秒
 			head.appendChild(css);
 			head.appendChild(js);
 			js.onload=js.onreadystatechange=function(){
-				if(!js.readyState||js.readyState=="loaded"||js.readyState=="complete") callback(),isSuccess=1;
+				if(isSuccess) return;//防止IE9+重复执行
+				if(!js.readyState||js.readyState=="loaded"||js.readyState=="complete"){
+					isSuccess=true;
+					callback();
+					js.onload=js.onreadystatechange=null;
+				}
 			};
-			setTimeout(function(){if(!isSuccess) alert('Failed to load: '+src);},timeout);
+			setTimeout(function(){if(!isSuccess) $id(p.id).innerHTML='加载失败: '+src;},timeout);
 		},
 		getFilePath:function(){
 			var path='';
 			var scripts=$tag("script");
 			for(var i=0,len=scripts.length;i<len;i++){
 				var src=scripts[i].src;
-				if(src&&/myfocus-.*?\.js/i.test(src)){
+				if(src&&/myfocus([\.-].*)?\.js/i.test(src)){//兼容myfocus.js/myfocus.min.js/myfocus-2.x.js
 					path=src;
 					break;
 				}
@@ -478,25 +495,43 @@
 			})();
 		},
 		getIMGReady:function(p,callback){
-			var t=p.loadIMGTimeout;
-			var box=$id(p.id),img=$tag('img',box),len=img.length,count=0,done=false;
-			if(!t||!len){callback();return;}//无延迟
+			var isShow=p.loadingShow;
+			var box=$id(p.id),img=$tag('img',p.pic),len=img.length,
+				count=0,done=false,arrSize=new Array(len);
+			if(!isShow||!len){callback();return;}//无延迟
 			for(var i=0;i<len;i++){
-				img[i].onload=function(){
+				var IMG=new Image();
+				IMG.i=i;//标记前后顺序
+				IMG.onload=function(){
 					count+=1;
-					if(count==len&&!done){done=true,callback();}
+					arrSize[this.i]={w:this.width,h:this.height};//储存for zoomIMG
+					if(count==len&&!done){done=true,callback(arrSize);}
 				};
-				if(this.isIE) img[i].src=img[i].src;//修复IE BUG
+				IMG.src=img[i].src;
 			};
-			var t=t*1000;
-			setTimeout(function(){
-				if(!done){done=true,callback();}
-			},t);
 		},
-		initCSS:function(p,$o,oStyle){
+		zoomIMG:function(p,arrSize){
+			var imgs=$tag('img',p.pic),len=imgs.length,boxWidth=p.width,boxHeight=p.height;
+			for(var i=0;i<len;i++){
+				var w=arrSize[i].w,h=arrSize[i].h;
+				if(w == boxWidth && h == boxHeight) continue;
+				if(w < boxWidth && h < boxHeight){
+					var width=w,height=h,top=(boxHeight-height)/2;
+				}else if(w / h >= boxWidth / boxHeight){
+					var width=boxWidth,height=boxWidth/w*h,top=(boxHeight-height)/2;
+				}else{
+					var width=boxHeight/h*w,height=boxHeight,top=0;
+				}
+				imgs[i].style.cssText=';width:'+width+'px;height:'+height+'px;margin-top:'+top+'px;';
+			};
+		},
+		initCSS:function(p,oStyle){
 			var css=[],w=p.width||'',h=p.height||'';
-			if(p.wrap) $o.wrap('<div class="'+p.pattern+'_wrap"></div>');
-			css.push('.'+p.__clsName+' *{margin:0;padding:0;border:0;list-style:none;}.'+p.__clsName+'{position:relative;width:'+w+'px;height:'+h+'px;overflow:hidden;font:12px/1.5 Verdana;text-align:left;background:#fff;visibility:visible!important;}.'+p.__clsName+' .loading{position:absolute;z-index:9999;width:100%;height:100%;color:#666;text-align:center;padding-top:'+0.26*h+'px;background:#fff;}.'+p.__clsName+' .pic{position:relative;width:'+w+'px;height:'+h+'px;overflow:hidden;}.'+p.__clsName+' .txt li{width:'+w+'px;height:'+p.txtHeight+'px!important;overflow:hidden;}');
+			if(p.pic){
+				css.push('.'+p.__clsName+' *{margin:0;padding:0;border:0;list-style:none;}.'+p.__clsName+'{position:relative;width:'+w+'px;height:'+h+'px;overflow:hidden;font:12px/1.5 Verdana;text-align:left;background:#fff;visibility:visible!important;}.'+p.__clsName+' .pic{position:relative;width:'+w+'px;height:'+h+'px;overflow:hidden;}.'+p.__clsName+' .txt li{width:'+w+'px;height:'+p.txtHeight+'px!important;overflow:hidden;}');
+				if(p.wrap) p.$o.wrap('<div class="'+p.pattern+'_wrap"></div>');
+				if(p.autoZoom) css.push('.'+p.__clsName+' .pic li{text-align:center;width:'+w+'px;height:'+h+'px;}');//缩放图片居中
+			}
 			try{oStyle.styleSheet.cssText=css.join('')}catch(e){oStyle.innerHTML=css.join('')}
 		},
 		initBaseCSS:function(id){
@@ -506,17 +541,10 @@
 			var oHead = $tag('head',document)[0];
 			oHead.insertBefore(oStyle,oHead.firstChild);
 			return oStyle;
-		},
-		initHTML:function($o){
-			var $load=$o.find('.loading'),$img=$load.find('img'),img=$img[0];
-			if($img.length){
-				$load.addHtml('<p>'+img.alt+'</p>');
-				if(!img.getAttribute('src')) img.style.display='none';
-			}
 		}
 	});
 	myFocus.extend({//Method(myFocus)
-		isIE:!!(document.all&&navigator.userAgent.indexOf('Opera')===-1),
+		isIE:!!(document.all&&navigator.userAgent.indexOf('Opera')===-1),//!(+[1,]) BUG IN IE9+
 		addEvent:function(o,type,fn){
 			var ie=this.isIE,e=ie?'attachEvent':'addEventListener',t=(ie?'on':'')+type;
 			o[e](t,function(e){
@@ -526,6 +554,21 @@
 					else e.stopPropagation(),e.preventDefault();
 				}
 			},false);
+		},
+		loadXML:function(p){
+			var xmlhttp = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLDOM");
+			xmlhttp.open("GET", p.xmlFile + "?" + Math.random(), false);
+			xmlhttp.send(null);
+			this.appendXML(xmlhttp.responseXML,p);
+		},
+		appendXML:function(xml,p){
+			var items=xml.documentElement.getElementsByTagName("item"),len=items.length;
+			var html=['<div class="loading"></div><div class="pic"><ul>'];
+			for(var i=0;i<len;i++){
+				html.push('<li><a href="'+items[i].getAttribute('href')+'"><img src="'+items[i].getAttribute('image')+'" thumb="'+items[i].getAttribute('thumb')+'" alt="'+items[i].getAttribute('title')+'" text="'+items[i].getAttribute('text')+'" /></a></li>');
+			}
+			html.push('</ul></div>');
+			p.$o[0].innerHTML=html.join('');
 		}
 	});
 	//支持JQ
