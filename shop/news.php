@@ -44,7 +44,7 @@
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
 		</form>
 	</div>
-	<div class="listTop"><img src="images/ad4.jpg" alt=""></div>
+	<div class="ad"><img src="images/ad4.jpg" alt=""></div>
 	<div class="listContent">
 		<div class="listLeft">
 			<h2>新闻动态</h2>
@@ -62,8 +62,8 @@
 			<h1>慕课网获App Store强力推荐荣登四榜单</h1>
 			<p class="newsInfo">发布人：Admin 发布时间：2014-08-01 浏览：5321次</p>
 			<div class="newsContent">
-				<p> 8月伊始，慕课网App即获得了App Store的多个推荐，同时出现在“免费App精选”、“致毕业生”、“学而不倦”以及“轻松学编程”四个榜单中。这款IT编程学习类的App为何如此备受青睐？趣味视频课程、高清画面质感、在线离线随身学习……优质的课程内容结合良好的用户体验，慕课网App无疑是IT学习的最佳选择。</p>
-				<p> App Store力荐慕课网荣登四榜单</p>
+				<p>8月开始，慕课网App即获得了App Store的多个推荐，同时出现在“免费App精选”、“致毕业生”、“学而不倦”以及“轻松学编程”四个榜单中。这款IT编程学习类的App为何如此备受青睐？趣味视频课程、高清画面质感、在线离线随身学习……优质的课程内容结合良好的用户体验，慕课网App无疑是IT学习的最佳选择。</p>
+				<p>App Store力荐慕课网荣登四榜单</p>
 				<p>App Store因公平著称，能被其推荐是每一款App梦寐以求的荣誉，慕课网则一举占据了其四个榜单，包括精品推荐首页“合集”版块下“免费App精选”中的“新品”推荐、“合集”版块“致毕业生”中“学无止境”推荐、教育类别“合集”版块下“学而不倦”中的推荐以及“轻松学编程”版块推荐。</p>
 				<p><img src=" http://img.mukewang.com/53edaa5a0001c86705000420.jpg" width="500" height="420" alt=""/></p>
 				<p>事实上，慕课网登上App Store榜单并非首次。早在2014年5月，慕课网就荣登App Store 精品推荐榜首，同时登上“教育”类别下“优秀新App”榜首，并获评“五月最佳”精彩App。随后，慕课网App接连出现在“致毕业生”、“免费App精选”、“夏日学堂”等榜单中。</p>

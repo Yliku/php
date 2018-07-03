@@ -44,7 +44,7 @@
 			<input type="text" class="search_text" placeholder="请输入要搜索的内容" id="key">
 		</form>
 	</div>
-	<div class="listTop"><img src="images/ad4.jpg" alt=""></div>
+	<div class="ad"><img src="images/ad4.jpg" alt=""></div>
 	<div class="listContent">
 		<div class="listLeft">
 			<h2>新闻动态</h2>
