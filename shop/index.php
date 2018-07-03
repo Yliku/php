@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 		myFocus.set({
 	    id:'boxID',			//焦点图盒子ID
-	    pattern:'mF_YSlider',//风格应用的名称
+	    pattern:'mF_kiki',//风格应用的名称
 	    //time:11,				切换时间间隔(秒)
 	    //trigger:'click',		触发切换模式:'click'(点击)/'mouseover'(悬停)
 	    //width:200,			设置图片区域宽度(像素)
@@ -101,14 +101,14 @@
 				<h2>问卷调查</h2>
 				<a href="newsList.php">More&gt;&gt;</a>
 			</div>
-			<form action="thx.php" method="post" style="line-height:30px;padding-left:10px;">
+			<form action="#" method="post" style="line-height:30px;padding-left:10px;">
 				<p>1.你觉得这个网站做的怎么样呢？</p>
 				<input type="radio" name="like1" value="1">非常差
 				<input type="radio" name="like1" value="2">差
 				<input type="radio" name="like1" value="3">一般
 				<input type="radio" name="like1" value="4">好
 				<input type="radio" name="like1" value="5">很好
-				<p>2.你喜欢这样的页面布局风格吗？</p>
+				<p>2.你喜欢本网站这样的页面布局风格吗？</p>
 				<select name="like2" id="">
 					<option value="1">非常讨厌</option>
 					<option value="2">不喜欢</option>
@@ -116,7 +116,13 @@
 					<option value="4">喜欢</option>
 					<option value="5">非常喜欢</option>
 				</select>
-				<p>3.有什么建议或意见？</p>
+				<p>3.比较喜欢什么风格的网站？（<span style="color:red;">多选</span>）</p>
+				<input type="checkbox" name="like2" vlaue="1">简约风格
+				<input type="checkbox" name="like2" vlaue="2">文艺风格
+				<input type="checkbox" name="like2" vlaue="3">酷炫风格
+				<input type="checkbox" name="like2" vlaue="4">复古风格
+				<input type="checkbox" name="like2" vlaue="5">创新风格
+				<p>4.有什么建议或意见？</p>
 				<textarea name="suggest" id="" cols="50" rows="4" placeholder="请酌情填写"></textarea>
 				<p><input type="submit" value="提交"></p>
 			</form>
