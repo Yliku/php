@@ -6,16 +6,16 @@ require_once('function.php');
 	require_once('./View/testView.class.php');
 */
 class testController{
+	function __construct(){
+		echo '成功new了testController<br>';
+	}
 	function show(){
-		// echo "成功调用show函数".'</br>';
-		$testModel = M();
+		//test控制器，调用的方法和视图肯定也是test开头的，所以M和V函数不用再传递变量，直接传递test即可;
+		//每个控制器只指定一个M和V
+		$testModel = M('test');
 		$data = $testModel->get();
-		$testView = new testView();
+		$testView = V('test');
 		$testView -> display($data);
 	}
-	function show2(){}
-	function show3(){}
-	function show4(){}
-	function show5(){}
 }
  ?>

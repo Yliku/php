@@ -1,13 +1,12 @@
 <?php 
-require_once("testModel.class.php");
-require_once("testView.class.php");
+//首先统一文件命名规范：文件名+控制器+类文件
+//控制器的作用是调用模型，并调用视图，将模型产生的数据传递给视图，让相关视图去显示。
 class testController{
 	function show(){
-		$model = new testModel();
-		return $model->get();
+		$testModel = new testModel();
+		$data = $testModel->get();
+		$testView = new testView();
+		$testView -> display($data);
 	}
 }
-$data = testController::show();
-$view = new testView();
-$view->display($data);
- ?>
+?>

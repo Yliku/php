@@ -1,7 +1,6 @@
 <?php 
 //当项目很大，存在多个不同的controller/model/view时，我们就可以这样优化程序
 	function C($name,$method){ 		/* controller控制函数，MVC架构规范：控制器的方法原则上不允许有参数 */
-		echo "没问题".'</br>';
 		require_once('./Controller/'.$name.'Controller.class.php');
 		$controller = $name.'Controller';
 		$obj = new $controller(); 	//注意此处的$符号需要加！！！留意此处的$controller!!!!!!不用加双引号！！
@@ -19,9 +18,12 @@
 		$obj = new $view();
 		return $obj;
 	}
-	function daddslashes($str){ 	//该函数的作用是对非法字符进行转义
+	function daddslashes($str){ 	//该函数的作用是对非法字符进行转义，进行初步过滤
 		return (!get_magic_quotes_gpc())?addslashes($str):$str;
-		//addslashes php的内置函数，对单引号等特殊符号进行转义
+		//addslashes() 是php的内置函数，对单引号等特殊符号进行转义
+		/*get_magic_quotes_gpc() 判断当前魔法符号的打开状态，打开的时候函数返回true，
+		  魔法符号打开的时候系统会对单引号等特殊符号进行转义，避免addslashes()一起，与造成两次转义
+		*/
 	}
 
  ?>
