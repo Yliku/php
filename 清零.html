@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
+		*{margin:0;padding:0;} 		/*不同浏览器，不加样式控制的情况下，各自的margin和padding差异较大，为了解决兼容性问题，所以得设置这个*/
 		body{font-family:"微软雅黑";	font-size:12px;}
 		img{border:none;} 			/*设置图片无边框*/
 		li{list-style:none;} 		/*设置li列表的标记，默认会是实心圆点，设成none就是没有标记*/
@@ -19,7 +20,7 @@
 	</style>
 </head>
 <body>
-	<img src="./basis/images/couple.jpg" alt="">
+	<img src="./basis/images/couple.jpg" alt="图片说明" title="图片title">
 	<input type="text">
 	<textarea name="" id="" cols="20" rows="5"></textarea>
 	<a href="">a标签</a>

@@ -16,6 +16,7 @@ $methodAllow=array('test','index','show');	//定义允许输入的方法名
 $controller =	in_array( $_GET['controller'],$controllerAllow	)	?	daddslashes($_GET['controller']	) 	: 'index';
 $method = 		in_array( $_GET['method'],	  $methodAllow		)	?	daddslashes($_GET['method']	) 		: 'index';
 //三元运算，判断字符串是否存在我们允许的数组里面，是的话使用 daddslashes(	$_GET['controller']	) ，不存在的话使用默认的 index
+//注意 $_GET['method'] 的格式！！！大写，方括号里面是单引号，method不用加$符号！！！
 
 C($controller,$method); /*调用控制器*/
 
