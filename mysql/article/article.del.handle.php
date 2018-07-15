@@ -6,7 +6,7 @@ $id=$_GET['id'];
 $deletesql = "delete from article where id=$id";	
 //当有变量存在时，得用双引号才能识别变量，单引号中的变量会被识别为文本/字符串直接输出 
 if( mysqli_query($con,$deletesql) ){
-	echo "<script>alert('删除成功');window.location.href='index.php'</script>";
+	echo "<script>alert('删除成功');window.location.href='article.manage.php'</script>";
 }else	echo '删除失败，原因：',mysqli_errno($con);
  
 
