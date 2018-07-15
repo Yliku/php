@@ -45,7 +45,7 @@ if($query && mysqli_num_rows($query)){										//当结果集$query存在且行
 </table>
 <a href="article.add.php">新增文章</a>
 <form action="article.search.php" method="get">
-	<input type="text" name="key">
+	<input type="text" name="key" placeholder="仅限文章标题搜索">
 	<input type="submit" value="Search">
 </form>
 

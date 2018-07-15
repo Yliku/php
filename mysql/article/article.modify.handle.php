@@ -12,7 +12,7 @@ $dateline=time();		//获取当前系统的时间戳
 $updatesql="update article set title='$title',author='$author',description='$description',content='$content',dateline=$dateline where id='$id'";
 //字符串变量需要加单引号，$dateline是int类型的，所以不用加单引号
 if( mysqli_query($con,$updatesql) ){
-	echo "<script>alert('文章修改成功');window.location.href='index.php'</script>";	
+	echo "<script>alert('文章修改成功');window.location.href='article.manage.php'</script>";	
 }else{
 	echo "<script>alert('文章修改失败')</script>";
 	echo mysqli_error($con);
