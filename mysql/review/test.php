@@ -23,10 +23,14 @@ if (	mysqli_query($con,"INSERT INTO review(name) VALUES('小六2')")	) {
 $res = mysqli_query($con,'SELECT * FROM review');
 var_dump(mysqli_fetch_array($res));
 
-mysql_fetch_row($res);
-mysql_fetch_array($res);
-mysql_fetch_assoc($res);
-mysql_fetch_object($res);
+$a = mysqli_fetch_row($res);
+var_dump($a);
+$b = mysqli_fetch_array($res);
+var_dump($b);
+$c = mysqli_fetch_assoc($res);
+var_dump($c);
+$d = mysqli_fetch_object($res);
+var_dump($d);
 
 
 

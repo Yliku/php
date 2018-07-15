@@ -5,7 +5,7 @@
 //文章管理列表
 require_once('connect.php');
 $query = mysqli_query($con,'select * from article order by dateline desc');		//根据添加时间倒序排列，desc降序
-if($query && mysqli_num_rows($query)){										//当结果集$query存在且行数不为0的时候
+if($query && mysqli_num_rows($query)){											//当结果集$query存在且行数不为0的时候
 	while( $row=mysqli_fetch_assoc($query)){									//将结果集$query的数据转换为一条条关联数组$row
 		$data[]=$row;			//将row关联数组添加进去$data[]二维数组里面，$data后面如果是方括号代表将$row添加到$data里面，而不是赋值
 	}
