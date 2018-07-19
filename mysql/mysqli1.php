@@ -23,7 +23,9 @@ if(	mysqli_query($con,"  INSERT INTO  test1(id,name) VALUES(3,'banana')")	) { 	/
 	$uid=mysqli_insert_id($con);
 	echo '插入的数据id为：',$uid,'<br />';			//输出的是0，有bug
 } else{
-	echo mysqli_error($con);	//当sql语句太过长时，执行失败，无法分辨是哪里时，要借助该语句查询错误
+	echo mysqli_error($con);	
+	//当sql语句太过长时，执行失败，无法分辨是哪里时，要借助该语句查询错误
+	//返回上一个mysql操作所产生的文本错误信息！！！！
 	echo '插入失败<br />';
 }
 $a=mysqli_query($con,'SELECT * FROM test1');		

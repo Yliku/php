@@ -17,10 +17,9 @@ $insertsql="INSERT INTO article(title,author,description,content,dateline) VALUE
 //字符串变量需要加单引号，$dateline是int类型的，所以不用加单引号
 //echo $insertsql;			//打印变量检测语句是否书写正确，打印出来后复制进数据库的sql进行执行看是否出错！！！！！！
 if( $con1=mysqli_query($con,$insertsql) ){
-	echo '插入成功';
+	echo "<script>alert('新增文章成功');window.location.href='article.manage.php'</script>";
 }else {
 	echo '插入失败',mysqli_error($con);	//mysqli_error必须输出才能看到报错内容
 }
-
 
  ?>
