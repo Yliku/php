@@ -43,6 +43,13 @@ $str = "<b>example: </b><div align=left>this is a test</div>";
 preg_match_all($p, $str, $matches);
 print_r($matches);
 
-
+echo '<br>';
+for($n=0;$n<4;$n++){
+	for ($i=1;$i<=2*$n+1;$i++){
+		echo 0;
+	}
+	echo 0 .'<br>'; //此处数字和字符串连起来，数字后得加空格，否则会被认为是小数点
+	//echo 0,'<br>';	//或者将点改为逗号
+}
 
  ?>
