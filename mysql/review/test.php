@@ -17,8 +17,7 @@ mysqli_query($con,'set names utf8');	//告诉数据库当前插入和读出的�
 if (	mysqli_query($con,"INSERT INTO review(name) VALUES('小六2')")	) {
 	echo '插入成功<br>';
 }else{
-	echo '插入失败，原因：';
-	echo mysqli_error($con);
+	echo '插入失败，原因：'.mysqli_error($con)."<br>";
 }
 $res = mysqli_query($con,'SELECT * FROM review');
 var_dump(mysqli_fetch_array($res));

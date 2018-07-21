@@ -92,5 +92,82 @@ var_dump($b2);
 var_dump($b3);
 var_dump($b4);
 
+$path = "C:/wamp64/www/test/MVC";
+echo "<br>遍历文件夹下的所有文件，方法一：<br>";
+function get_all_files( $path ){
+	$list = array();
+	foreach( glob( $path . '/*') as $item ){
+	if( is_dir( $item ) ){
+		$list = array_merge( $list , get_all_files( $item ) );
+	}
+	else{		$list[] = $item;		}
+	}
+	return $list;
+}
+var_dump(get_all_files($path));
+
+echo "<br>遍历文件夹下的所有文件，方法二：<br>";
+function read_all ($dir){
+    if(!is_dir($dir)) return false;
+    $handle = opendir($dir);
+    if($handle){
+        while(($fl = readdir($handle)) !== false){
+            //$path=iconv("utf-8","gb2312",$path);将字符串的编码从UTF-8转为GB2312格式
+            //iconv第三个参数必须是字符串！！！！！！！！！！！！
+            //$temp = $dir.DIRECTORY_SEPARATOR.$fl;
+            $temp = iconv('GBK','utf-8',$dir.DIRECTORY_SEPARATOR.$fl);//转换成utf-8格式
+            //如果不加  $fl!='.' && $fl != '..'  则会造成把$dir的父级目录也读取出来
+            if(is_dir($temp) && $fl!='.' && $fl != '..'){
+                echo '目录：'.$temp.'<br>';
+                read_all($temp);
+            }else{
+                if($fl!='.' && $fl != '..'){
+                    echo '文件：'.$temp.'<br>';
+                }
+            }
+        }
+    }
+}
+read_all($path);
+
+echo "<br>遍历文件目录，方法一：<br>";
+function refresh($dir){
+    if ($headle=opendir($dir)){
+        while ($file=readdir($headle)){
+		$file=iconv("gb2312","utf-8",$file); 
+            if ($file!='.' && $file!='..'){
+                echo "文件".$file."在文件夹".$dir."下<br />";
+            }
+        }
+        closedir($headle);
+    }
+}
+refresh("$path");
+
+echo "<br>遍历文件目录，方法二：<br>";
+if(is_dir($path)){
+	if($dire = scandir($path)){
+		foreach($dire as $value){
+		$value = iconv("gb2312","utf-8",$value);
+		echo $value."<br>";
+		}
+	}else{
+		echo "没有打开文件夹";
+	}
+	}else{
+		echo "不是路径";
+}
+
+
+echo "<br>遍历文件目录，方法三：<br>";
+$files1 = scandir($path);
+foreach($files1 as $v){
+	if (!is_dir($v) && strpos($v,".")!=false ){
+		$v = iconv('gb2312','utf-8',$v);
+		echo $v."<br />";
+	}
+}
+ 
+
 
 ?>
