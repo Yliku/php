@@ -92,7 +92,7 @@ var_dump($b2);
 var_dump($b3);
 var_dump($b4);
 
-$path = "C:/wamp64/www/test/MVC";
+$path = "C:/wamp64/www/test/namespaceAutoload";
 echo "<br>遍历文件夹下的所有文件，方法一：<br>";
 function get_all_files( $path ){
 	$list = array();
@@ -109,15 +109,26 @@ var_dump(get_all_files($path));
 echo "<br>遍历文件夹下的所有文件，方法二：<br>";
 function read_all ($dir){
     if(!is_dir($dir)) return false;
+    //is_dir() 函数，判断指定的文件是否是目录
     $handle = opendir($dir);
+    var_dump($handle); //opendir($dir)返回resource类型（资源标识符/句柄），和fopen()函数一样
     if($handle){
         while(($fl = readdir($handle)) !== false){
+        	var_dump($fl);
+        	//优先级：（算术>关系>逻辑）	或者：	！ > 算术运算符 > 关系运算符 > && > || > 赋值运算符=	
             //$path=iconv("utf-8","gb2312",$path);将字符串的编码从UTF-8转为GB2312格式
             //iconv第三个参数必须是字符串！！！！！！！！！！！！
-            //$temp = $dir.DIRECTORY_SEPARATOR.$fl;
             $temp = iconv('GBK','utf-8',$dir.DIRECTORY_SEPARATOR.$fl);//转换成utf-8格式
-            //如果不加  $fl!='.' && $fl != '..'  则会造成把$dir的父级目录也读取出来
+            //$temp = $dir.DIRECTORY_SEPARATOR.$fl;
             if(is_dir($temp) && $fl!='.' && $fl != '..'){
+            //如果不加  $fl!='.' && $fl != '..'  则会造成把$dir的父级目录也读取出来
+            /*
+            文件夹也是文件的一种特别存在形式，你读取当前目录，意思是读取当前目录下的文件。
+            当前目录下有当前目录‘.’和上级目录‘..’的句柄，当然还有下层目录（文件夹）的句柄和当前目录下的文件。
+            
+            每个目录底下都会存在的两个目录，分别是‘.’，‘..’
+            文件夹系统就像一个房间，房间里有出口（../）、房间本身（./）、房间里的大箱子（子文件夹）、物品（文件）
+            */
                 echo '目录：'.$temp.'<br>';
                 read_all($temp);
             }else{
@@ -127,10 +138,22 @@ function read_all ($dir){
             }
         }
     }
+    echo '<br>';
 }
 read_all($path);
 
-echo "<br>遍历文件目录，方法一：<br>";
+echo "<br>遍历文件夹下的所有文件，方法三：<br>";
+$dir = opendir("$path");
+if(!$dir) {
+	echo "Error opening the /tmp/ directory!<BR>";
+	exit;
+}
+while(($files[] = readdir($dir)) !== false);	
+var_dump($files);
+print_r($files);
+
+
+echo "<br><br>遍历文件目录，方法一：<br>";
 function refresh($dir){
     if ($headle=opendir($dir)){
         while ($file=readdir($headle)){
@@ -167,7 +190,34 @@ foreach($files1 as $v){
 		echo $v."<br />";
 	}
 }
- 
-
 
 ?>
+
+<?php 
+echo "<br>遍历文件夹下的所有文件，方法四：<br>"; 
+$dir = opendir( $path );
+$file_list=null;
+$i=1;
+while( false != ( $file = readdir( $dir ) ) ){
+	if( ( $file != "." ) and ( $file != ".." ) ){
+	//$file_list ="1";
+	$file_list .= "<li>$file</li>";
+	}
+	echo '第'.$i.'次循环<br>';
+	var_dump( $file_list);
+	$i++;
+}
+closedir( $dir );
+?>
+
+<html>
+<head>
+	<title>列出目录下所有文件</title>
+<head>
+<body>
+	<p>Files in <?php echo( $path ); ?> </p>
+	<ul>
+	<?php echo( $file_list ); ?>
+	</ul>
+</body>
+</html>
