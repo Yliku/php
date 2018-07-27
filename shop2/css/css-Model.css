@@ -11,5 +11,3 @@ a{text-decoration:none;} 	/*设置a标签无下划线*/
 .clearfix:after{content:"";display:block;clear:both;}
 .clearfix{zoom:1;} 			/* 触发 hasLayout */ 
 /*是IE浏览器的专有属性，Firefox等其它浏览器不支持，在这里是检查是否清除浮动，遗憾的是，它通不过W3C验证*/
-
-.comWidth{width:1000px;margin:0 auto;} /*common公共、公有的、共有的*/

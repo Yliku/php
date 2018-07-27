@@ -4,7 +4,7 @@ textarea{resize:none}
 body{background: #F5F5F5;}
 .top1,.top2,.nav1,.body,.listContent,.ad,.ad1{width:1000px;margin:0 auto;}
 
-.top1:after,.top2:after,.nav1:after,.body:after,.listContent:after,.top2:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
+.top1:after,.top2:after,.nav1:after,.body:after,.listContent:after{content:"";	display:table;	clear:both; } 	/*清浮动!!!!  	*/
 .clear{clear:both;}
 .top{background:#c5d3e5;width:100%;border:none;height:30px;line-height: 30px;}
 .top1 li{list-style:none;float:left;margin-right:5px;} 	 /*list-style:none没有样式/disc实心圆（默认）/circle空心圆/square实心方块*/
