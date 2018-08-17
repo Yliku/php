@@ -92,7 +92,7 @@ var_dump($b2);
 var_dump($b3);
 var_dump($b4);
 
-$path = "C:/wamp64/www/test/namespaceAutoload";
+$path = 'D:\wamp\www\test\basis';
 echo "<br>遍历文件夹下的所有文件，方法一：<br>";
 function get_all_files( $path ){
 	$list = array();
@@ -108,13 +108,12 @@ var_dump(get_all_files($path));
 
 echo "<br>遍历文件夹下的所有文件，方法二：<br>";
 function read_all ($dir){
-    if(!is_dir($dir)) return false;
+    //if(!is_dir($dir)) return false;
     //is_dir() 函数，判断指定的文件是否是目录
     $handle = opendir($dir);
     var_dump($handle); //opendir($dir)返回resource类型（资源标识符/句柄），和fopen()函数一样
     if($handle){
-        while(($fl = readdir($handle)) !== false){
-        	var_dump($fl);
+        while($fl = readdir($handle)){
         	//优先级：（算术>关系>逻辑）	或者：	！ > 算术运算符 > 关系运算符 > && > || > 赋值运算符=	
             //$path=iconv("utf-8","gb2312",$path);将字符串的编码从UTF-8转为GB2312格式
             //iconv第三个参数必须是字符串！！！！！！！！！！！！
@@ -141,6 +140,11 @@ function read_all ($dir){
     echo '<br>';
 }
 read_all($path);
+
+
+
+
+
 
 echo "<br>遍历文件夹下的所有文件，方法三：<br>";
 $dir = opendir("$path");
@@ -221,3 +225,20 @@ closedir( $dir );
 	</ul>
 </body>
 </html>
+
+<?php 
+function readAll($path){
+	$handle = opendir($path);
+	while( $rel = readdir($handle)){
+		if( is_dir($rel) && $rel!='.' && $rel!='..'){
+			echo '目录：'.$rel . '<br>';
+			readAll($rel);
+		}else{
+			echo $rel. '<br>';
+		}
+	}
+	echo '<br>';
+}
+readAll($path);
+
+ ?>

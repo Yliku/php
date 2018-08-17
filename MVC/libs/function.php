@@ -20,9 +20,10 @@
 	}
 	function daddslashes($str){ 	//该函数的作用是对非法字符进行转义，进行初步过滤
 		return (!get_magic_quotes_gpc())?addslashes($str):$str;
-		//addslashes() 是php的内置函数，对单引号等特殊符号进行转义
 		/*get_magic_quotes_gpc() 判断当前魔法符号的打开状态，打开的时候函数返回true，
 		  魔法符号打开的时候系统会对单引号等特殊符号进行转义，避免addslashes()一起，与造成两次转义
+		addcslashes() 在指定的字符前添加反斜杠。 		比如：  addcslashes($str,'m');在字符m前添加反斜杠
+		addslashes() 在指定的预定义字符前添加反斜杠。  预定义字符是：单引号 (')双引号 (")反斜杠 (\)
 		*/
 	}
 
