@@ -6,7 +6,7 @@
 .top2{height:50px;}
 .search,.shopCar{float:left;}
 .topLogo{background-color:#d2a2cc;border-radius:3px;}
-/*height:50px;line-height: 50px; 如果此处用了这个使search居中，那后面的购物车行高也会变成50px，不利于布局！*/
+/*line-height: 50px; 如果此处用了行高使search居中，那后面的购物车行高也会变成50px，不利于布局！*/
 /*.search{margin:0px 250px;line-height: 50px;} 	 							调整垂直居中：块状元素用margin 或者 line-height ，和下面的代码等价*/
 .search{margin:15px 250px;} 											/* 	调整垂直居中：块状元素用margin 或者 line-height */
 .shopCar{background:url(../images/li_bg2.png) no-repeat right;margin-top: 10px;width:90px;} 	/* 调整垂直居中：行内元素用margin */

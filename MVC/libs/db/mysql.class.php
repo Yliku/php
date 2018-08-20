@@ -31,12 +31,29 @@ class mysql{
 
 	function findAll($query){ 		//封装取全部数据的命令
 		while(	$rs = mysqli_fetch_array($query,MYSQL_ASSOC)	){
-			//MYSQL_ASSOC - 关联数组；	MYSQL_NUM - 数字数组；	MYSQL_BOTH - 默认。同时产生关联和数字数组
+			//MYSQL_ASSOC - 关联数组；	MYSQL_NUM - 数字/索引数组；	MYSQL_BOTH - 默认。同时产生关联和数字数组
 			$list[]=$rs;
 		}
+		return isset($list)? $list : "";
+	}
+	function findOne($query){		//封装取单挑数据的命令
+		$rs = mysqli_fetch_array($query,MYSQL_ASSOC)
+		return $rs;
 	}
 
+	function findResult($query,$row=0,$field=0){	//封装取指定行指定字段的命令
+		$rs = mysqli_result($query,$row,$field);
+		return $rs;
+	}
 
+	function insert($table,$arr){
+		//$arr我们定为关联数组，因为当我们的字段很多时，用关联数组来书写就可以减少字段对错的失误
+		foreach($arr as $key=>$value){
+			$keyArr[]="`".$key."`";					//不用逗号隔开？？
+			$valueArr[]="'".$value."'";				//不用逗号隔开？？
+		}
+
+	}
 }
 
 
