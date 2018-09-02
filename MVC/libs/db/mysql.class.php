@@ -47,27 +47,40 @@ class mysql{
 	}
 
 	function insert($table,$arr){
+		//mysql插入的格式： INSERT INTO 表名('字段1','字段2') VALUES('值1','值2');
 		//$arr我们定为关联数组，因为当我们的字段很多时，用关联数组来书写就可以减少字段对错的失误
+		//$arr格式举例：$arr=array('id'=>'5','name'=>'小红');
 		foreach($arr as $key=>$value){
 			$keyArr[]="`".$key."`";					//符号是键盘Esc下面的符号，不是单引号
 			$valueArr[]="'".$value."'";				//这个是单引号了
 		}
-/*  
-https://www.cnblogs.com/shijianchuzhenzhi/p/6193097.html
-键盘Esc下面的 ` 符号是 MySQL 的转义符，避免和 mysql 的本身的关键字冲突，
-只要你不在列名或表名中使用 mysql 的保留字或中文，就不需要转义。
-所有的数据库都有类似的设置，不过mysql用的是`而已。通常用来说明其中的内容是数据库名、表名、字段名，不是关键字。
-例如：
-select from from table;
-第一个from是字段名，最后的table表名，但是同时也是mysql关键字，这样执行的时候就会报错，
-所以应该使用select `from` from `table`;
-当然，为了便于阅读，不建议使用关键字作为字段名、表名，同时，应该对数据库名、表名、字段名用一对儿反引号包含。
-*/
+		/*  
+		https://www.cnblogs.com/shijianchuzhenzhi/p/6193097.html
+		键盘Esc下面的 ` 符号是 MySQL 的转义符，避免和 mysql 的本身的关键字冲突，
+		只要你不在列名或表名中使用 mysql 的保留字或中文，就不需要转义。
+		所有的数据库都有类似的设置，不过mysql用的是`而已。通常用来说明其中的内容是数据库名、表名、字段名，不是关键字。
+		例如：
+		select from from table;
+		第一个from是字段名，最后的table表名，但是同时也是mysql关键字，这样执行的时候就会报错，
+		所以应该使用select `from` from `table`;
+		当然，为了便于阅读，不建议使用关键字作为字段名、表名，同时，应该对数据库名、表名、字段名用一对儿反引号包含。
+		*/
 		$keys = implode(",", $keyArr);	//implode函数是把数组组合成字符串，用法： implode(分隔符，数组)
 		$values = implode(",", $valueArr);
 		$sql = "INSERT INTO ".$table."(".$keys.") VALUES(".$values.")";
 		$this->query($sql);
 		return mysqli_insert_id($this->con);
+	}
+
+	function update($table,$arr,$where){
+		//mysql修改的格式：	UPDATE 表名 SET '字段'='值' where id='';
+		//$arr格式举例：$arr=array('id'=>'5','name'=>'小红');
+		foreach($arr as $key => $value){
+			$keyAndValueArr[] = "`".$key."`='".$value."'";
+		}
+		$keyAndValue = implode(',', $keyAndValueArr);
+		$sql = "UPDATE ".$table." SET ".$keyAndValue." WHERE ".$where;
+		$this->query($sql);
 	}
 }
 
