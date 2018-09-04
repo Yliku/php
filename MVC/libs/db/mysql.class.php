@@ -51,6 +51,7 @@ class mysql{
 		//$arr我们定为关联数组，因为当我们的字段很多时，用关联数组来书写就可以减少字段对错的失误
 		//$arr格式举例：$arr=array('id'=>'5','name'=>'小红');
 		foreach($arr as $key=>$value){
+			$value = mysqli_real_escape_string($this->con,$value);	//将字符串中的有害字符进行转义过滤，避免数据库被入侵
 			$keyArr[]="`".$key."`";					//符号是键盘Esc下面的符号，不是单引号
 			$valueArr[]="'".$value."'";				//这个是单引号了
 		}
@@ -76,10 +77,17 @@ class mysql{
 		//mysql修改的格式：	UPDATE 表名 SET '字段'='值' where id='';
 		//$arr格式举例：$arr=array('id'=>'5','name'=>'小红');
 		foreach($arr as $key => $value){
+			$value = mysqli_real_escape_string($this->con,$value);	//对value的非法字符进行过滤转义，降低数据库被入侵风险
 			$keyAndValueArr[] = "`".$key."`='".$value."'";
 		}
 		$keyAndValue = implode(',', $keyAndValueArr);
 		$sql = "UPDATE ".$table." SET ".$keyAndValue." WHERE ".$where;
+		$this->query($sql);
+	}
+
+	function delete($table,$where){
+		//mysql删除的格式：DELETE FROM table WHERE ...
+		$sql = "DELETE FROM ".$table."WHERE ".$where;
 		$this->query($sql);
 	}
 }
@@ -91,10 +99,10 @@ $config=array('dbhost'=>'127.0.0.1','dbuser'=>'root','dbpsw'=>'123','dbname'=>'t
 //踩坑：注意是utf8，不是utf-8，不然会乱码！！！
 $mysql->connect($config);
 
-//插入测试
-$sql_insert = 'INSERT INTO review(name) VALUES("晓黄")';
-$result1 = $mysql->query($sql_insert);
-var_dump($result1);
+// 插入测试
+// $sql_insert = 'INSERT INTO review(name) VALUES("晓黄")';
+// $result1 = $mysql->query($sql_insert);
+// var_dump($result1);
 
 //搜索测试
 $sql_search = 'SELECT * FROM review';
@@ -102,9 +110,16 @@ $result2 = $mysql->query($sql_search);
 $list = $mysql->findAll($result2);
 var_dump($list);
 
-//插入封装的测试
-$arr=array('id'=>'5','name'=>'小红');	//注意id是主键，每次刷新得改下，避免重复报错
-$id = $mysql->insert('review',$arr);
-var_dump($id);
+// 插入封装的测试
+// $arr=array('id'=>'5','name'=>'小红');	//注意id是主键，每次刷新得改下，避免重复报错
+// $id = $mysql->insert('review',$arr);
+// var_dump($id);
+
+//修改测试
+$arrUpdate = array('id'=>'5');
+$where = 'id=41';
+$mysql->update('review',$arrUpdate,$where);
+
+
 
  ?>
