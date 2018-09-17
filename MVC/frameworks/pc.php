@@ -1,6 +1,7 @@
 <?php 
 	//启动引擎文件
 	$currentdir = dirname(__FILE__);
+	//echo __FILE__; 输出的是当前文件的位置，并不是被引入后的位置！！！
 	include_once($currentdir.'/include.list.php');
 	foreach ($paths as $path) {
 		include_once($currentdir.'/'.$path);
@@ -21,18 +22,18 @@
 			)
 		*/
 		private static function init_db(){
-			DB::init('mysql',self:$config['dbconfig']);
+			DB::init('mysql',self::$config['dbconfig']);
 		}
 		private static function init_view(){
-			VIEW:init('Smarty',self::$config['viewconfig']);
+			VIEW::init('Smarty',self::$config['viewconfig']);
 		}
 		private static function init_controller(){
 			self::$controller = isset($_GET['controller'])?daddslashes($_GET['controller']):'index';
 		}
 		private static function init_method(){
-			self::$method = isset($_GET['method'])?daddslasher($_GET['method']):'index';
+			self::$method = isset($_GET['method'])?daddslashes($_GET['method']):'index';
 		}
-		public function run($config){
+		public static function run($config){
 			self::$config = $config;
 			self::init_db();
 			self::init_view();

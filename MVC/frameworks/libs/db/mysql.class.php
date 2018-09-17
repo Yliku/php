@@ -92,6 +92,7 @@ class mysql{
 	}
 }
 
+/*
 
 $mysql = new mysql();
 //数据库连接测试
@@ -120,6 +121,6 @@ $arrUpdate = array('id'=>'5');
 $where = 'id=41';
 $mysql->update('review',$arrUpdate,$where);
 
-
+*/
 
  ?>
