@@ -5,7 +5,8 @@
 			return 0;
 		}
 		public static function display($template){
-			self::$view->display($template);
+			//self::$view->display($template);
+			require_once("./tpl/"."$template");
 		}
 	}
 

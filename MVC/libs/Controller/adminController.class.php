@@ -1,9 +1,9 @@
 <?php 
 	class adminController{
-		function test(){
+		public function test(){
 			echo 'hello1113';
 		}
-		function login($name,$password){
+		public function login($name,$password){
 			if($_POST){
 				//进行登陆处理
 				//登陆处理的业务逻辑放在admin auth
