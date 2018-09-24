@@ -2,11 +2,10 @@
 	class VIEW{
 		private static $view;
 		public static function init($view,$config){
-			return 0;
+			self::$view = new $view();
 		}
 		public static function display($template){
-			//self::$view->display($template);
-			require_once("./tpl/"."$template");
+			self::$view->display($template);
 		}
 	}
 

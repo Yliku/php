@@ -3,8 +3,9 @@
 		public function test(){
 			echo 'hello1113';
 		}
-		public function login($name,$password){
+		public function login(){
 			if($_POST){
+
 				//进行登陆处理
 				//登陆处理的业务逻辑放在admin auth
 				//admin同表名的模型：从数据库取用户信息

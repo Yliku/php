@@ -3,7 +3,7 @@ class DB{
 	public static $db;
 	//初始化，核心函数，$dbtype，选择要操作的数据库类型，MySql/Oracle/SQL Server等
 	public static function init($dbtype,$config){
-		self::$db = new $dbtype;		//实例化选择的数据库
+		self::$db = new $dbtype();		//实例化选择的数据库
 		self::$db->connect($config);	//调用实例化的数据库中的链接方法
 	}
 	public static function query($sql){
