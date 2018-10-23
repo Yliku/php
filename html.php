@@ -130,7 +130,9 @@ date_default_timezone_set("Asia/Shanghai");
 //服务器位于其他国家或者被设置为不同时区，得添加以上代码，把时区设置为上海。
 echo  date("y-m-d H:i:s",time());	//得用双引号！！！大写的H表示输出24小时制，小写h表示输出12小时制
  ?>
-			
+
+
+
 </body>
 
 </html>

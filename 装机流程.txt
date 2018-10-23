@@ -31,7 +31,9 @@ myBase
 git
 sublime
 360Èí¼ş¹Ü¼ÒÖĞÏÂÔØ£ºÎ¢Èí³£ÓÃÔËĞĞ¿âºÏ¼¯ 64Î»£¬È»ºó²Å×°WampServer£¡£¡²»È»»áÌáÊ¾È±ÉÙMSVCR110.dllÎÄ¼ş£¡
-WampServer
+WampServer£¨°²×°ÔÚdÅÌ£©
+composer£¨°²×°ÔÚCÅÌ£©
+laravel
 
 git ³õÊ¼»¯£º
 git config --global core.autocrlf false     ½ûÖ¹git»»ĞĞ·ûµÄ×Ô¶¯×ª»»¹¦ÄÜ
@@ -51,35 +53,44 @@ git clone git@github.com:Yliku/sublime-config.git  ¿ËÂ¡ÎÒµÄÅäÖÃ£¬×¢Òâ²Ö¿âÒª¼Óºó×
 mv sublime-config/* .           ½«sublime-configÎÄ¼şÏÂµÄËùÓĞÎÄ¼şÒÆ¶¯µ½µ±Ç°ÎÄ¼ş¼Ğ£¨gitµÄÎÄ¼şÊÇÒş²ØµÄ£¬µÃÊÖ¶¯ÒÆ¶¯£©
 rm -rf sublime-config           É¾³ı¿ÕµÄsublime-configÎÄ¼ş¼Ğ
 
-°²×°°ü¹ÜÀíÆ÷ Package Control:
+1¡¢ÉèÖÃÓïÑÔ£º¹¤¾ßÀ¸-Help-Language-chinese
+2¡¢°²×°°ü¹ÜÀíÆ÷£¨Package Control£©:
 µ½ https://packagecontrol.io/installation °²×°°ü¹ÜÀíÆ÷ Package Control£º
 Ctrl+` £¨»òÕß¹¤¾ßÀ¸-ÊÓÍ¼-ÏÔÊ¾/Òş²Ø¿ØÖÆÌ¨£©´ò¿ª¿ØÖÆÌ¨£¬ÊäÈë´úÂë£¬»Ø³µµÈ´ı¼´¿É£¬
 ÔÚ¹¤¾ßÀ¸-Ê×Ñ¡Ïî£¬¿´µ½Package ControlÕâÒ»Ïî£¬´ú±í°²×°³É¹¦£»
 ³É¹¦ºóËùÓĞµÄ²å¼ş£¨°ü£©»á×Ô¶¯°²×°ÉÏ£¬µÈ´ıÅäÖÃµÄÍê³É£¬ÖØÆôSublime Text¡£
-
-°²×°²å¼ş£º
+3¡¢°²×°²å¼ş£º
 ´ò¿ª°ü¹ÜÀíÆ÷£ºctrl + shift + p (»òÕß¹¤¾ßÀ¸-Ê×Ñ¡Ïî-Package Control)
 ÊäÈëinstall packageºó»Ø³µ£¬µÈ´ı¸üĞÂÍê³Éºó£¬ÊäÈë¶ÔÓ¦µÄ²å¼şÃû¼´¿É°²×°²å¼ş£¬»òÕßÏÂÔØ²å¼ş°²×°°ü½âÑ¹Ëõµ½PackageÄ¿Â¼(¹¤¾ßÀ¸-Ê×Ñ¡Ïî-ä¯ÀÀ²å¼şÄ¿Â¼)
 °²×°³É¹¦µÄ²å¼ş¿ÉÒÔÔÚ ¹¤¾ßÀ¸-Ê×Ñ¡Ïî-Package Settings ÖĞ²é¿´ºÍÅäÖÃ¡£
-
-³£ÓÃ²å¼ş£º
+4¡¢³£ÓÃ²å¼ş£º
 ConvertToUTF8 »òÕß GBK Encoding Support£º	Ö§³Ö¶àÖÖ±àÂë£¬½â¾ö´ò¿ªÎÄ¼şÖĞµÄÖĞÎÄÂÒÂëÎÊÌâ
 Codecs33 £º 				Èç¹û²»ÄÜ½â¾öÈ«²¿ÂÒÂë£¬ÔÙ¼ÌĞø×°Õâ¸ö²å¼ş
 Emmet(Ô­ÃûZen Coding)£º	×Ô¶¯²¹È«html/css´úÂë
-SideBarEnhancements£º
-	¸Ä½øÁË×ó²à²à±ßÀ¸£¬Ôö¼ÓÁËĞí¶à¹¦ÄÜ£¨¸´ÖÆÕÅÌù¸ÄÃûµÈ£©£¬
-	¶øÇÒ¿ÉÒÔÔÚÉèÖÃµÄä¯ÀÀÆ÷ÖĞ£¬Ê¹ÓÃ¿ì½İ¼üÔ¤ÀÀÇ°¶Ëhtml´úÂë£¬PHPµÈºóÌ¨´úÂëĞèÒªÊäÈë·şÎñÆ÷µØÖ·£¡
+SideBarEnhancements£º	¸Ä½øÁË×ó²à²à±ßÀ¸£¬Ôö¼ÓÁËĞí¶à¹¦ÄÜ£¨¸´ÖÆÕÅÌù¸ÄÃûÍøÒ³Ô¤ÀÀµ±Ç°ÎÄ¼ş´úÂëµÈ£©£¬
 Bracket Hightlighter£º	ÓÃÓÚ¸ßÁÁÆ¥ÅäÀ¨ºÅ¡¢ÒıºÅ¡¢html±êÇ©
 evernote£º				Õâ¸öÊÇEvernoteµÄ²å¼ş£¬Ö§³ÖmarkdownÓï·¨
 markdown preview£º		Ô¤ÀÀmarkdownµÄ²å¼ş
 SublimeLinter£º			´úÂë´íÎó¼ì²é²å¼ş£¬¸ßÁÁÓĞ´íÎóµÄ´úÂë
 Alignment£º				´úÂë¶ÔÆë£¬Ğ´¼¸¸ö±äÁ¿£¬Ñ¡ÖĞÕâ¼¸ĞĞ£¬Ctrl+Alt+A£¬½«×Ô¶¯¶ÔÆë
 DocBlockr£º				×¢ÊÍ²å¼ş
-
-É¾³ı²å¼ş£º
+5¡¢É¾³ı²å¼ş£º
 ´ò¿ª°ü¹ÜÀíÆ÷£ºctrl + shift + p (»òÕß¹¤¾ßÀ¸-Ê×Ñ¡Ïî-Package Control)
 ÊäÈë£ºremove package
 Ñ¡Ôñ£ºÒªÉ¾³ıµÄ²å¼ş¼´¿É£¬×îºó²å¼şÄ¿Â¼¶ÔÓ¦µÄÓÃ»§ÅäÖÃÎÄ¼şÒ²É¾µô£¨ÎÄ¼şÂ·¾¶£ºSublime Text 3\Packages\User£©
+6¡¢ÉèÖÃ´úÂëÔ¤ÀÀä¯ÀÀÆ÷£º
+Ç°ÌáÊÇ×°ÁËSideBarEnhancements²å¼ş£¬
+Ê¹ÓÃ¿ì½İ¼üÔ¤ÀÀµ±Ç°ÎÄ¼şµÄ´úÂë£¬½ö¶ÔÇ°¶Ëhtml´úÂëÓĞĞ§£¬
+PHPµÈºóÌ¨´úÂëĞèÒªÊ¹ÓÃWampserver·şÎñÆ÷£¬ä¯ÀÀÆ÷ÊäÈëµØÖ·'localhost/ÎÄ¼şÃû' £¨localhostÖ¸ÏòµÄÊÇwwwÄ¿Â¼/ÎÄ¼ş¼Ğ£©²Å¿ÉÔ¤ÀÀ¡£
+¾ßÌå²Ù×÷£º¹¤¾ßÀ¸-Ê×Ñ¡Ïî-¿ì½İ¼üÉèÖÃ-ÊäÈëÒÔÏÂ´úÂë£¬±£´æ£¬¼´¿ÉÓÃ¿ì½İ¼üF2Ô¤ÀÀÇ°¶Ë´úÂë£¨¶à¸ö£©¡£
+[
+	//×¢ÊÍ£¬ÕâÀïÊÇÉèÖÃÁË360ä¯ÀÀÆ÷
+  {"keys": ["f2"],  
+  "command": "side_bar_files_open_with", 
+  "args": {"application": "C:\\Users\\Administrator.USER-20181020VX\\AppData\\Roaming\\360se6\\Application\\360se.exe", 
+  "extensions": ".*", "paths": []}  
+  },
+]
 
 
 WampServer°²×°ºÍ³õÊ¼»¯
