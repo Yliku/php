@@ -43,10 +43,10 @@ Route::any('multy2',function(){
 });
 
 
-//路由参数 ，参数书写规 则和正则表达式相关
+//路由参数 ，限制参数的书写规则和正则表达式相关
 Route::get('user/{id}',function($id){
 	return '路由参数User-id(必需参数)-'.$id;
-});
+})->where('id','[0-9]+');
 //举例：	http://test.com/laravel/public/user/4    ,输出：路由参数User-id(必需参数)-4
 Route::get('user/{name?}',function($name = null){		//参数可选，$name的默认值是空
 	return '路由参数User-name(可选参数)-'.$name;

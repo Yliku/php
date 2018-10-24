@@ -33,7 +33,7 @@ sublime
 360软件管家中下载：微软常用运行库合集 64位，然后才装WampServer！！不然会提示缺少MSVCR110.dll文件！
 WampServer（安装在d盘）
 composer（安装在C盘）
-laravel
+git上克隆laravel项目到本地后，命令行中进入该项目文件，输入：composer update，否则laravel项目会报错。
 
 git 初始化：
 git config --global core.autocrlf false     禁止git换行符的自动转换功能
@@ -45,6 +45,7 @@ ls ~/.ssh/ 检查SSH KEY是否存在
 ssh-keygen -t rsa -C "xx@qq.com" 创建SSh，一路回车即可
 用笔记本打开id_rsa.pub(公钥)，将里面的内容复制到自己github上的SSH and GPG keys上
 这时候就可以克隆项目了！！
+注意：clone项目后，如果有laravel框架，还得在laravel框架的项目文件中执行命令：composer install，否则laravel项目会报错（待测试此步骤）
 
 
 Sublime Text配置还原(克隆项目/配置)：
