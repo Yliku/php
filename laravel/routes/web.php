@@ -81,3 +81,8 @@ Route::group(['prefix'=>'group'],function(){	//prefix是指前缀，表示要加
 //通过 http://localhost/studyphp/laravel/public/group/group2 访问
 
 //路由中输出视图 
+
+
+
+//学习控制器-控制器和路由关联
+Route::get('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
