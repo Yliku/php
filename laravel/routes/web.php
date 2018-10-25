@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome');	//路由中输出视图，视图在resources/views/welcome.blade.php
 });
 
 //路由简介：传统MVC中请求对应控制器，但laravel中的请求却是对应路由，作用就是建立url和程序之间的映射
@@ -86,3 +86,11 @@ Route::group(['prefix'=>'group'],function(){	//prefix是指前缀，表示要加
 
 //学习控制器-控制器和路由关联
 Route::get('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
+Route::post('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
+Route::any('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
+Route::match(['get','post'],'member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
+// Route::get('member/info',['uses' => 'MemberController@info']);	 也可以这么写
+Route::get('member/info2',[		//路由别名
+	'uses' => 'MemberController@info2',
+	'as' => 'memberinfo2'
+]);
