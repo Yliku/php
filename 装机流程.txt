@@ -32,7 +32,7 @@ git
 sublime
 360软件管家中下载：微软常用运行库合集 64位，然后才装WampServer！！不然会提示缺少MSVCR110.dll文件！
 WampServer（安装在d盘）
-composer（安装在C盘）
+composer（安装在C盘或者自己喜欢的盘都可以）
 git上克隆laravel项目到本地后，命令行中进入该项目文件，输入：composer update，否则laravel项目会报错。
 
 git 初始化：

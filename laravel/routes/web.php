@@ -25,7 +25,7 @@ Route::get('basic1',function(){
 /*
 我的laravel的主页面是
 	http://test.com/laravel/public
-而我们要访问get请求，我们要在主页面的链接后添加 /basic1
+而我们要访问get请求，我们要在主页面的链接后添加 /basic1 这个路由名称
 即：	http://test.com/laravel/public/basic1 即可访问该get路由
 */
 Route::post('basic2',function(){
@@ -35,7 +35,7 @@ Route::post('basic2',function(){
 //多请求路由 
 //第一种方法 match，响应制定类型的请求，放在数组[]里面
 Route::match(['get','post'],'multy1',function(){
-	return '多请求路由之match，可接收get或post请求，路由名称：multy1';
+	return '多请求路由之match，可接收我们指定的get或post请求，路由名称：multy1';
 });
 //第二种方法 any，响应所有类型的请求
 Route::any('multy2',function(){
@@ -44,7 +44,7 @@ Route::any('multy2',function(){
 
 
 //路由参数 ，限制参数的书写规则和正则表达式相关
-Route::get('user/{id}',function($id){
+Route::get('user/{id}',function($id){	//$id的值是取决于{}花括号内的值，和花括号里面的符号没关系，也就是说可以取名为$ddddd，不影响$id的取值
 	return '路由参数User-id(必需参数)-'.$id;
 })->where('id','[0-9]+');
 //举例：	http://test.com/laravel/public/user/4    ,输出：路由参数User-id(必需参数)-4
@@ -60,9 +60,24 @@ Route::get('user/{id}/{name?}',function($id,$name = 'sean'){	//多个参数
 
 
 //路由别名 
-Route::get('user/menber-center',['as'=>'center',function(){
-	return route('center');
+Route::get('user/menber-center1',['as'=>'center1',function(){
+	return 'center1';
+}]);
+Route::get('user/menber-center2',['as'=>'center2',function(){
+	return route('center2');
+	//路由别名的好处，是可以用route函数来生成别名对应的URL
 }]);
 
 
-//路由群组 //路由中输出视图 
+//路由群组 
+Route::group(['prefix'=>'group'],function(){	//prefix是指前缀，表示要加group这个前缀
+	Route::get('group1',function(){
+		return '路由群组下的group1';
+	});
+	Route::get('group2',function(){
+		return '路由群组下的group2';
+	});
+});
+//通过 http://localhost/studyphp/laravel/public/group/group2 访问
+
+//路由中输出视图 
