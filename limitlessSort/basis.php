@@ -1,4 +1,5 @@
 <?php 
+//无限极分类
 $con = mysqli_connect('localhost','root','123');
 mysql_select_db('deeploop');
 $sql = "INSERT INTO deeploop(id,pid,catename,cateorder,createtime) VALUES
