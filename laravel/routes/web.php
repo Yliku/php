@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');	//路由中输出视图，视图在resources/views/welcome.blade.php
+    return view('welcome');	//路由中直接输出视图，视图在resources/views/welcome.blade.php
 });
 
 //路由简介：传统MVC中请求对应控制器，但laravel中的请求却是对应路由，作用就是建立url和程序之间的映射
@@ -84,7 +84,8 @@ Route::group(['prefix'=>'group'],function(){	//prefix是指前缀，表示要加
 
 
 
-//学习控制器-控制器和路由关联
+//学习控制器-控制器和路由关联，控制器在app/Http/Controllers下
+//通过路由route调用控制器controller，然后调用视图view
 Route::get('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
 Route::post('member/info2','MemberController@info2');	// 路由名，控制器名 @ 控制器的方法
 Route::any('member/outputView','MemberController@outputView');	// 输出视图，视图文件放在resources=views下
@@ -94,4 +95,5 @@ Route::get('member/info2',[		//路由别名
 	'uses' => 'MemberController@info2',
 	'as' => 'memberinfo2'
 ]);
-Route::any('member/{id}',['uses'=>'MemberController@parameter1']); //参数绑定
+Route::any('member/{id}',['uses'=>'MemberController@parameter1'])->where('id','[0-9]+'); //参数绑定，参数限制
+Route::any('member/{name}',['uses'=>'MemberController@parameter2'])->where('name','[a-z]+'); //参数绑定，参数限制
