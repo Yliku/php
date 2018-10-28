@@ -1,5 +1,7 @@
 <html>	
-<head>	<title>html基础</title>	 </head>		
+	<head>	
+		<title>html基础</title>
+	</head>		
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <!-- 用sublime写程序，输出到网页预览时，得在html中加入这句，不然浏览器无法识别会显示为乱码，
 	或者文件保存为utf-8 ，浏览器现在一般都会默认识别为utf-8 -->

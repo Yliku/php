@@ -86,11 +86,12 @@ Route::group(['prefix'=>'group'],function(){	//prefix是指前缀，表示要加
 
 //学习控制器-控制器和路由关联
 Route::get('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
-Route::post('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
-Route::any('member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
+Route::post('member/info2','MemberController@info2');	// 路由名，控制器名 @ 控制器的方法
+Route::any('member/outputView','MemberController@outputView');	// 输出视图，视图文件放在resources=views下
 Route::match(['get','post'],'member/info','MemberController@info');	// 路由名，控制器名 @ 控制器的方法
 // Route::get('member/info',['uses' => 'MemberController@info']);	 也可以这么写
 Route::get('member/info2',[		//路由别名
 	'uses' => 'MemberController@info2',
 	'as' => 'memberinfo2'
 ]);
+Route::any('member/{id}',['uses'=>'MemberController@parameter1']); //参数绑定

@@ -1,19 +1,17 @@
-1、格式化硬盘
-2、装系统
-3、更新驱动：装USB驱动、驱动人生万能网卡版
+1、格式化硬盘-装系统
+2、更新驱动：装USB驱动、驱动人生万能网卡版
 3、删除收藏夹
 4、下载360安全卫士、删除垃圾软件、装软件、安装前台打印机
 5、下载路径设置、360升级设置、360浏览器老板键设置
 6、360系统修复、清理、优化
 7、关闭360开驱动人生修复
-8、浏览器 安全-internet级别设置：ActiveX控件开启
+8、开始菜单-所有程序-最上面默认的删掉
+9、删掉桌面不常用的右键新建项目：
+	win+r ,输入regedit打开注册表，HKEY_LOCAL_MACHINE\Software\CLASSES\
+	要删除的项目：'.doc'，'.ppt'，'.xls'，'.zip'，删除这些项目下的ShellNew文件夹
+10、浏览器 安全-internet级别设置：ActiveX控件开启
 	若要用360打开OA和打印，得在OA页面下载OA控件，
 	同时选择360地址栏最右边的模式为兼容模式才可显示打印页面；
-9、开始菜单-所有程序-最上面默认的删掉
-10、删掉桌面不常用的右键新建项目：
-win+r ,regedit打开注册表，HKEY_LOCAL_MACHINE\Software\CLASSES\
-要删除的项目：.doc  .ppt  .xls   .zip   
-删除这些项目下的ShellNew文件夹
 
 装机软件：
 360安全卫士、360浏览器
@@ -23,13 +21,8 @@ qq（提示音）、微信pc版
 
 
 我的软件：
-Photoshop cc
-百度云盘
-人生日历
-Foxmail
-myBase
-git
-sublime
+Photoshop cc，百度云盘，人生日历，Foxmail
+myBase，git，sublime
 360软件管家中下载：微软常用运行库合集 64位，然后才装WampServer！！不然会提示缺少MSVCR110.dll文件！
 WampServer（安装在d盘）
 composer（安装在C盘或者自己喜欢的盘都可以）
@@ -45,7 +38,9 @@ ls ~/.ssh/ 检查SSH KEY是否存在
 ssh-keygen -t rsa -C "xx@qq.com" 创建SSh，一路回车即可
 用笔记本打开id_rsa.pub(公钥)，将里面的内容复制到自己github上的SSH and GPG keys上
 这时候就可以克隆项目了！！
-注意：clone项目后，如果有laravel框架，还得在laravel框架的项目文件中执行命令：composer install，否则laravel项目会报错（待测试此步骤）
+注意：
+clone项目后，如果有laravel框架，得先安装好composer，
+然后在laravel框架的项目文件中执行命令：composer install，否则laravel项目会报错（待测试此步骤）
 
 
 Sublime Text配置还原(克隆项目/配置)：
@@ -92,7 +87,9 @@ PHP等后台代码需要使用Wampserver服务器，浏览器输入地址'localhost/文件名' （localh
   "extensions": ".*", "paths": []}  
   },
 ]
-
+7、其他
+sublime如果设置了默认浏览器在360打开，而360打开又选择了兼容模式，打开变成自动下载网页，
+这时需要关掉所有网页只剩下一个，然后关掉下载页面，就可以重新选择极速/兼容模式了！！！
 
 WampServer安装和初始化
 1、安装：确定电脑是32位或64位下载相应版本，安装过程一直点击next，默认打开的浏览器可选择chrome，默认编辑器可选择sublime test；
