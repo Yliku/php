@@ -1,6 +1,7 @@
 <?php 
 namespace App;
 use Illuminate\Database\Eloquent\Model;
+//模型model
 /*
 1、php和html混用，不是纯php代码，必须要加php的结束标签
 2、纯php代码的文件不推荐加结束php的标签
