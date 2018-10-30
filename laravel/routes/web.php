@@ -97,3 +97,4 @@ Route::get('member/info2',[		//路由别名
 ]);
 Route::any('member/{id}',['uses'=>'MemberController@parameter1'])->where('id','[0-9]+'); //参数绑定，参数限制
 Route::any('member/{name}',['uses'=>'MemberController@parameter2'])->where('name','[a-z]+'); //参数绑定，参数限制
+Route::any('member/modelTest',['uses'=>'MemberController@modelTest']); //参数绑定，参数限制

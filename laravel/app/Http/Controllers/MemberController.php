@@ -1,5 +1,6 @@
 <?php 
 namespace App\Http\Controllers;
+use App\Member;	//注意，等使用命名空间引入
 //可参考同个目录下的Controller.php
 //一般一个控制器对应一个视图的目录，视图在resource/views下，视图目录的文件名和控制器保持一致，叫member
 class MemberController extends Controller{
@@ -20,6 +21,9 @@ class MemberController extends Controller{
 			'name'=>'Yliku',
 			'age'=>30
 		]); //参数绑定，传递参数给视图
+	}
+	public function modelTest(){
+		return Member::getMember();
 	}
 
 }

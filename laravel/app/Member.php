@@ -1,5 +1,6 @@
 <?php 
 namespace App;
+use Illuminate\Database\Eloquent\Model;
 /*
 1、php和html混用，不是纯php代码，必须要加php的结束标签
 2、纯php代码的文件不推荐加结束php的标签
@@ -20,5 +21,7 @@ a.php文件有结束标签，而且标签后多了一行空行或空格，php会
 结论：库文件，或者一些class等文件，纯php代码的文件不推荐加结束标签！！！
 */
 class Member extends Model{
-
+	public static function getMember(){
+		return 'Member name is sean';
+	}
 }
