@@ -8,7 +8,7 @@ class StudentController extends Controller{
 	}
 	public function test2(){	//测试数据库连接，数据库查询，是否能够返回学生表的所有信息
 		//$a = DB::select('select * from student'); 
-		$a = DB::select('select * from student where id>?',[1001]); //条件限制，这样也行啊真方便
+		$a = DB::select('select * from student where id>?',[1000]); //条件限制，这样也行啊真方便
 		var_dump($a);
 		dd($a);					//神奇的dd，这样也行。。。谨慎使用dd函数，用来打印出给定的变量和结束脚本的运行！！！类似于使用了die()函数
 	}
@@ -26,6 +26,9 @@ class StudentController extends Controller{
 		$num = DB::delete('delete from student where id>?',	//delete的返回值也是行数，被删掉的行数
 		[1002]);
 		var_dump($num);
+	}
+	public function query1(){	//使用查询构造器
+
 	}
 }
 
