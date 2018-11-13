@@ -16,7 +16,7 @@ class UserTest extends TestCase
     public function testValue()
     {
         $try = new TryClass();
-        $this->assertEquals(1, $try->getValue());
+        $this->assertEquals($try->getValue(), 1);
         //可以改改我们的预期值试试效果，预期值为括号左边的值
     }
 }

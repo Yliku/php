@@ -34,11 +34,11 @@ class ExampleTest extends TestCase
     public function testExample3()
     {
         $stack = [];    //新建数组$stack，给它一个数组，看看输出的结果是否和我们预期的一致，判断是否一致就要开始断言了~~
-        $this->assertEquals(0, count($stack));  //count()提取数组的长度，断言0和数组的长度相等，相等的话测试成功
+        $this->assertEquals(count($stack), 0);  //count()提取数组的长度，断言0和数组的长度相等，相等的话测试成功
         array_push($stack, 'foo');              //array_push()向数组尾部插入元素'foo'
-        $this->assertEquals('foo', $stack[count($stack) - 1]);
-        $this->assertEquals(1, count($stack));
-        $this->assertEquals('foo', array_pop($stack)); //array_pop()删除数组的最后一个元素，返回值是被删除的元素
-        $this->assertEquals(0, count($stack));  //判断括号内右边的值是否和左边的一致，左边的值是我们的预期输出
+        $this->assertEquals($stack[count($stack) - 1], 'foo');
+        $this->assertEquals(count($stack), 1);
+        $this->assertEquals(array_pop($stack), 'foo'); //array_pop()删除数组的最后一个元素，返回值是被删除的元素
+        $this->assertEquals(count($stack), 0);  //判断括号内右边的值是否和左边的一致，右边的值是我们的预期输出
     }
 }
