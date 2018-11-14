@@ -39,6 +39,6 @@ class ExampleTest extends TestCase
         $this->assertEquals($stack[count($stack) - 1], 'foo');
         $this->assertEquals(count($stack), 1);
         $this->assertEquals(array_pop($stack), 'foo'); //array_pop()删除数组的最后一个元素，返回值是被删除的元素
-        $this->assertEquals(count($stack), 0);  //判断括号内右边的值是否和左边的一致，右边的值是我们的预期输出
+        $this->assertEquals(count($stack), 0);  //断言括号内左右两边的值一致，右边的值是我们的预期输出
     }
 }
