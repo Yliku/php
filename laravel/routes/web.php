@@ -100,8 +100,17 @@ Route::any('member/{name}',['uses'=>'MemberController@parameter2'])->where('name
 Route::any('member/modelTest',['uses'=>'MemberController@modelTest']); //参数绑定，参数限制
 
 //数据库连接和新增修改删除测试
-Route::any('DBTest1',['uses'=>'StudentController@test1']);
+Route::any('DBTest1',['uses'=>'StudentController@test1']);	//对应数据库连接
 Route::any('DBTest2',['uses'=>'StudentController@test2']);
 Route::any('DBTest3',['uses'=>'StudentController@test3']);
 Route::any('DBTest4',['uses'=>'StudentController@test4']);
 Route::any('DBTest5',['uses'=>'StudentController@test5']);
+
+//使用查询构造器
+Route::any('query1',['uses'=>'StudentController@query1']);	//对应查询构造器的数据 新增
+Route::any('query2',['uses'=>'StudentController@query2']);	//对应查询构造器的数据 更新
+Route::any('query3',['uses'=>'StudentController@query3']);	//对应查询构造器的数据 自增
+Route::any('query4',['uses'=>'StudentController@query4']);	//对应查询构造器的数据 自增同时修改
+Route::any('query5',['uses'=>'StudentController@query5']);	//对应查询构造器的数据 删除，一定要加条件！！！
+
+Route::any('query6',['uses'=>'StudentController@query6']);	//对应查询构造器的数据 查询
