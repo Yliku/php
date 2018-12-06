@@ -84,8 +84,9 @@ class StudentController extends Controller{
 		$student5 = DB::table('student')->whereRaw('id >=? and age > ?',[1002,30])->get();	//whereRaw，多个条件限制
 			
 		//pluck 返回结果集中指定的字段
-		$student6 = DB::table('student')->pluck('name');		//返回结果集中的name字段，索引数组
-		//$student7 = DB::table('student')->lists('name','id');		//返回结果集中的name字段，以id为key的关联数组，lists废弃了？？？
+		$student6 = DB::table('student')->pluck('name');			//返回结果集中的name字段，索引数组
+		$student7 = DB::table('student')->pluck('name','id');		//返回结果集中的name字段，以id为key的关联数组
+		//$student7 = DB::table('student')->lists('name','id');		//返回结果集中的name字段，以id为key的关联数组，lists被废弃了，被pluck替换了
 		$student7 = DB::table('student')->select('id','name','age')->get();		//返回结果集中的name字段，索引数组
 
 		echo '查询构造器中的get：获取表中的所有数据<br>';		var_dump($student1);
