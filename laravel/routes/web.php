@@ -114,3 +114,10 @@ Route::any('query4',['uses'=>'StudentController@query4']);	//对应查询构造�
 Route::any('query5',['uses'=>'StudentController@query5']);	//对应查询构造器的数据 删除，一定要加条件！！！
 
 Route::any('query6',['uses'=>'StudentController@query6']);	//对应查询构造器的数据 查询
+
+
+Route::get('getdata1',['uses'=>'ClosureTableController@test1']);	//从数据库抽取题目
+Route::get('getdata2',['uses'=>'ClosureTableController@query2']);
+Route::get('getdata3',['uses'=>'ClosureTableController@query3']);	//多条件查询~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Route::get('getdata4',['uses'=>'ClosureTableController@query4']);	//多条件查询~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Route::get('tablequery',['uses'=>'ClosureTableController@tablequery']);	//多表联查~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
