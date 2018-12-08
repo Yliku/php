@@ -85,7 +85,7 @@ class StudentController extends Controller{
 			
 		//pluck 返回结果集中指定的字段
 		$student6 = DB::table('student')->pluck('name');			//返回结果集中的name字段，索引数组
-		$student7 = DB::table('student')->pluck('name','id');		//返回结果集中的name字段，以id为key的关联数组
+		$student6 = DB::table('student')->pluck('name','id');		//返回结果集中的name字段，以id为key的关联数组
 		//$student7 = DB::table('student')->lists('name','id');		//返回结果集中的name字段，以id为key的关联数组，lists被废弃了，被pluck替换了
 		$student7 = DB::table('student')->select('id','name','age')->get();		//返回结果集中的name字段，索引数组
 

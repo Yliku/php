@@ -41,9 +41,20 @@ class ClosureTableController extends Controller{
 	public function tablequery(){
 		$users = DB::table('pages')
 		            ->join('page_closure', 'pages.id', '=', 'page_closure.ancestor')
+		            //join('表名','约束条件') 加入某个表进行多表联查，条件是id和ancestor对应，将两个表联合在一起
 		            ->select('pages.id', 'page_closure.descendant', 'page_closure.depth')->where('id','>',16)
+		            //select 返回指定字段
 		            ->get();
+		// dd($users);
+		foreach($users as $key => $value){	//使用了迭代器模式，iterator
+			$id[] = $value->id;
+		}
+		$random_keys=array_rand($id,3);		//array_rand 返回随机键名的数组
 		var_dump($users);
+		var_dump($random_keys);
+		echo $id[$random_keys[0]]."<br>";
+		echo $id[$random_keys[1]]."<br>";
+		echo $id[$random_keys[2]];
 	}
 }
 
