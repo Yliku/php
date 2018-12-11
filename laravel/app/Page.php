@@ -11,7 +11,8 @@ class page extends Entity implements pageInterface
      * @var string
      */
     protected $table = 'pages';
-
+    public $fillable = ['title','excerpt','content'];
+    // fillable的第一种用法，在类里面直接添加
     /**
      * ClosureTable model instance.
      *

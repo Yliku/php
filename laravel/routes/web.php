@@ -118,6 +118,9 @@ Route::any('query6',['uses'=>'StudentController@query6']);	//对应查询构造�
 
 Route::get('getdata1',['uses'=>'ClosureTableController@test1']);	//从数据库抽取题目
 Route::get('getdata2',['uses'=>'ClosureTableController@query2']);
-Route::get('getdata3',['uses'=>'ClosureTableController@query3']);	//多条件查询~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Route::get('getdata4',['uses'=>'ClosureTableController@query4']);	//多条件查询~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Route::get('tablequery',['uses'=>'ClosureTableController@tablequery']);	//多表联查~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Route::get('getdata3',['uses'=>'ClosureTableController@query3']);	//多条件查询~~~~~~~~~
+Route::get('getdata4',['uses'=>'ClosureTableController@query4']);	//多条件查询~~~~~~~~~
+Route::get('tablequery',['uses'=>'ClosureTableController@tablequery']);	//多表联查~~~~~
+Route::get('copyNode1',['uses'=>'ClosureTableController@copyNode1']);	//复制节点
+Route::get('copyNode2',['uses'=>'ClosureTableController@copyNode2']);	//复制节点
+Route::get('copyNode3',['uses'=>'ClosureTableController@copyNode3']);	//复制节点

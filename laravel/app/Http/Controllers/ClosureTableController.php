@@ -1,9 +1,10 @@
 <?php 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use App\Page;
 
 class ClosureTableController extends Controller{
-	public function test1(){ //²âÊÔ·ÃÎÊÊÇ·ñÕı³£
+	public function test1(){ //æµ‹è¯•è®¿é—®æ˜¯å¦æ­£å¸¸
 		return view('welcome');
 	}
 	public function query1(){
@@ -15,46 +16,96 @@ class ClosureTableController extends Controller{
 		return $query->pluck('id');
 	}
 	public function query2(){
-		$query = DB::table('pages')->whereIn('id', [1, 2, 3]);	//whereIn·µ»Ø£ºidÁĞµÄÖµÔÚ[1,2,3]·¶Î§µÄÊı¾İ
-		return var_dump($query->pluck('position','id'));		//pluck('position','id') ·µ»ØÒÔidÎª¼ü£¬positionÎªÖµµÄ¹ØÁªÊı×é
+		$query = DB::table('pages')->whereIn('id', [1, 2, 3]);	//whereInè¿”å›ï¼šidåˆ—çš„å€¼åœ¨[1,2,3]èŒƒå›´çš„æ•°æ®
+		return var_dump($query->pluck('position','id'));		//pluck('position','id') è¿”å›ä»¥idä¸ºé”®ï¼Œpositionä¸ºå€¼çš„å…³è”æ•°ç»„
 	}
 
-	//ORM¶àÌõ¼ş²éÑ¯
+	//ORMå¤šæ¡ä»¶æŸ¥è¯¢
 	public function query3(){
 		$query = DB::table('users')
 		    ->where('name', '=', 'yliku')
-		    ->orWhere(function ($query2) {	//ÕâÀïµÄ$query2¿ÉÒÔËæ±ãÆğÃû£¬Ö»Òª»¨À¨ºÅÄÚµÄ$query2ºÍËü±£³ÖÒ»ÖÂ¼´¿É
+		    ->orWhere(function ($query2) {	//è¿™é‡Œçš„$query2å¯ä»¥éšä¾¿èµ·åï¼Œåªè¦èŠ±æ‹¬å·å†…çš„$query2å’Œå®ƒä¿æŒä¸€è‡´å³å¯
 		        $query2->where('id', '<=', 1);
 		    })->get();
 		var_dump($query);
 	}
 
 	public function query4(){
-		$query1 = DB::table('pages')->whereIn('id', [1, 2, 3])->orWhere(function($query){	//²éÑ¯id=1,2,3µÄÊı¾İ£¬»òÕß
-			$query->whereIn('parent_id', [5])->where('position', 1);				//parent_id=5ÇÒposition=1µÄÊı¾İ£¬»òÕß
+		$query1 = DB::table('pages')->whereIn('id', [1, 2, 3])->orWhere(function($query){	//æŸ¥è¯¢id=1,2,3çš„æ•°æ®ï¼Œæˆ–è€…
+			$query->whereIn('parent_id', [5])->where('position', 1);				//parent_id=5ä¸”position=1çš„æ•°æ®ï¼Œæˆ–è€…
 		})->orWhere(function($query){
-			$query->whereIn('parent_id', [6]);										//parent_id=6µÄÊı¾İ
-		})->pluck('id');				//Ö»·µ»Øid×Ö¶Î
+			$query->whereIn('parent_id', [6]);										//parent_id=6çš„æ•°æ®
+		})->pluck('id');				//åªè¿”å›idå­—æ®µ
 		var_dump($query1);
 	}
 
 	public function tablequery(){
 		$users = DB::table('pages')
 		            ->join('page_closure', 'pages.id', '=', 'page_closure.ancestor')
-		            //join('±íÃû','Ô¼ÊøÌõ¼ş') ¼ÓÈëÄ³¸ö±í½øĞĞ¶à±íÁª²é£¬Ìõ¼şÊÇidºÍancestor¶ÔÓ¦£¬½«Á½¸ö±íÁªºÏÔÚÒ»Æğ
+		            //join('è¡¨å','çº¦æŸæ¡ä»¶') åŠ å…¥æŸä¸ªè¡¨è¿›è¡Œå¤šè¡¨è”æŸ¥ï¼Œæ¡ä»¶æ˜¯idå’Œancestorå¯¹åº”ï¼Œå°†ä¸¤ä¸ªè¡¨è”åˆåœ¨ä¸€èµ·
 		            ->select('pages.id', 'page_closure.descendant', 'page_closure.depth')->where('id','>',16)
-		            //select ·µ»ØÖ¸¶¨×Ö¶Î
+		            //select è¿”å›æŒ‡å®šå­—æ®µ
 		            ->get();
 		// dd($users);
-		foreach($users as $key => $value){	//Ê¹ÓÃÁËµü´úÆ÷Ä£Ê½£¬iterator
+		foreach($users as $key => $value){	//ä½¿ç”¨äº†è¿­ä»£å™¨æ¨¡å¼ï¼Œiterator
 			$id[] = $value->id;
 		}
-		$random_keys=array_rand($id,3);		//array_rand ·µ»ØËæ»ú¼üÃûµÄÊı×é
+		$random_keys=array_rand($id,3);		//array_rand è¿”å›éšæœºé”®åçš„æ•°ç»„
 		var_dump($users);
 		var_dump($random_keys);
 		echo $id[$random_keys[0]]."<br>";
 		echo $id[$random_keys[1]]."<br>";
 		echo $id[$random_keys[2]];
 	}
+	
+	//æˆ‘çš„ç‰ˆæœ¬
+	public function copyNode1(){	//$idï¼šéœ€è¦å¤åˆ¶çš„èŠ‚ç‚¹ï¼›$copyToIdï¼šå¤åˆ¶åˆ°è¯¥èŠ‚ç‚¹
+		function copyNode($id,$copyToId){
+			$newNode = Page::find($copyToId);
+			$newNode->addChild( new Page() );
+			$child = $newNode->getLastChild();
+
+			$oldNode = DB::table('pages')->where('id',$id)->get();	
+			// $child->fillable(['title','excerpt','content']);	//æ·»åŠ æŒ‡å®šå­—æ®µä¸ºç™½åå•
+			// fillableçš„ç¬¬äºŒç§ç”¨æ³•ï¼Œåœ¨å®ä¾‹åŒ–åä½¿ç”¨
+			$child->fill([									//å­—æ®µé›†ä½“èµ‹å€¼
+				'title' => $oldNode[0]->title,	 
+				'excerpt' => $oldNode[0]->excerpt, 
+				'content' => $oldNode[0]->content, 
+			]); 
+			$child->save(); 	//æœ€åä¿å­˜
+
+			$oldNode = Page::find($id);
+			if($oldNode->hasChildren()){
+				foreach( $oldNode->getChildren() as $value){
+					copyNode($value->id,$child->id);	//é€’å½’è°ƒç”¨
+				}
+			}
+		}
+		copyNode(2,7);
+	}
+
+	//recardohçš„ç‰ˆæœ¬
+	public function copyNode2(){
+		$source = Page::find(2);
+		$source_Tree = $source->getDescendantsTree();
+
+		$destination = Page::find(7);
+
+		function copy($source, $destination): void {
+			// Copy the file / directory to the destination
+			$new_file = new Page($source->toArray());
+			$destination->addChild($new_file);
+
+			// Copy the children if it's a directory and it has children
+			if ($source->hasChildren()) {
+				foreach ($source->getChildren() as $child) {
+					copy($child, $new_file);
+				}
+			}
+		}
+		copy($source, $destination);
+	}
+	
 }
 
