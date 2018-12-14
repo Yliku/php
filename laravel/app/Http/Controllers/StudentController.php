@@ -1,6 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use App\Student;
 
 class StudentController extends Controller{
 	public function test1(){ //测试访问是否正常
@@ -34,6 +35,7 @@ class StudentController extends Controller{
 		//查询构造器，query builder，使用PDO参数绑定，以保护程序免于SQL注入，因此传入的参数不需要额外的转义字符
 		$bool = DB::table('student')
 		->insert(['name'=>'PDO','age'=>18]);	//插入一条数据，一维数组，返回的是布尔值
+		// ->insertGetId(['name'=>'PDO','age'=>18]);	//插入成功后，返回插入的数据id
 		var_dump($bool);
 		//$id = DB::table('student')
 		//->insertGetId(['name'=>'PDO','age'=>18]);	//返回的是自增数据的id
@@ -101,6 +103,37 @@ class StudentController extends Controller{
 		DB::table('student')->orderBy('id','desc')->chunk(2,function($a){
 			var_dump($a);
 		});
+	}
+
+	public function orm1(){
+		$students1 = Student::all();		//模型返回的都是集合，返回所有数据
+		$students2 = Student::get();		//查询构造器的get方法，也是返回所有数据
+		$students3 = Student::where('id','>=',1)->first();		////查询构造器的方法
+		$student1  = Student::find(1);	//find是查询id的方法，返回id=1的数据
+		$student2  = Student::findOrFail(1);	//查找id=1的数据，查到的话就返回这条数据，查不到就报错
+		Student::chunk(2,function($students){//function()跟着的参数$students就是chunk查到的结果集，可根据我们的需要起名
+			// var_dump($students);
+		});		
+		//这句代码的意思是：从模型Student里面每次查找2条数据，并将结果集赋值给$students传递给function()去执行。
+	}
+
+	public function orm2(){
+		//新增数据：方法一，使用模型新增数据（涉及到自定义时间戳）
+		$student3 = new Student();		//新增一个模型，这时模型$student3是没有数据的，attributes属性里面是空的数组
+		$student3->name = 'sean';
+		//逐一插入字段和值，如果用array集体赋值，需要使用到$fillable添加到白名单，才能集体赋值，这是laravel的保护措施
+		$student3->age = 18;
+		// $student3->sex = '男';			
+		//就算是不存在数据库的字段，也可以被插入attributes属性里面
+		//插入后，attributes属性里面就有这些内容了，original这时也是空的数组，调用save()后，才会保存进original
+		$student3->save();	//只有调用save()，才会将字段对应的值保存到数据库，如果有不存在table的字段sex，会插入失败并报错
+		//插入成功后，会自动生成对应的时间戳
+		//如果不想自动生成时间戳，只需要在student的model里面加入代码：  public $timestamps = false;即可
+		echo Student::find(5)->created_at;	//默认的输出格式是：2018-12-14 16:35:53，可在模型中重写asDateTime方法改变格式
+		echo '<br>';
+		echo date('Y-m-d H:i:s',Student::find(5)->created_at);
+		dd($student3);
+		//新增数据：方法二，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
 
 	}
 }

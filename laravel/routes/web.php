@@ -124,3 +124,6 @@ Route::get('tablequery',['uses'=>'ClosureTableController@tablequery']);	//多表
 Route::get('copyNode1',['uses'=>'ClosureTableController@copyNode1']);	//复制节点
 Route::get('copyNode2',['uses'=>'ClosureTableController@copyNode2']);	//复制节点
 Route::get('copyNode3',['uses'=>'ClosureTableController@copyNode3']);	//复制节点
+
+Route::get('orm1',['uses'=>'StudentController@orm1']);	//Eloquent ORM
+Route::get('orm2',['uses'=>'StudentController@orm2']);	//Eloquent ORM，新增数据
