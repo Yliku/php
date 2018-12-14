@@ -133,8 +133,16 @@ class StudentController extends Controller{
 		echo '<br>';
 		echo date('Y-m-d H:i:s',Student::find(5)->created_at);
 		dd($student3);
-		//新增数据：方法二，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
-
 	}
+
+	public function orm3(){
+		//新增数据：方法二，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
+		//这种是批量赋值，默认情况下laravel不允许批量赋值，但可以在模型下将字段添加到 $fillable里面允许批量赋值
+		$student = Student::create([
+			'name'=>'sean22','age'=>20
+		]);
+		dd($student);
+	}
+
 }
 

@@ -126,4 +126,7 @@ Route::get('copyNode2',['uses'=>'ClosureTableController@copyNode2']);	//复制�
 Route::get('copyNode3',['uses'=>'ClosureTableController@copyNode3']);	//复制节点
 
 Route::get('orm1',['uses'=>'StudentController@orm1']);	//Eloquent ORM
-Route::get('orm2',['uses'=>'StudentController@orm2']);	//Eloquent ORM，新增数据
+Route::get('orm2',['uses'=>'StudentController@orm2']);	
+//Eloquent ORM，新增数据，使用模型新增数据（涉及到自定义时间戳）
+Route::get('orm3',['uses'=>'StudentController@orm3']);	
+//Eloquent ORM，新增数据，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
