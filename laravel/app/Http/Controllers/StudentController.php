@@ -107,9 +107,9 @@ class StudentController extends Controller{
 
 	public function orm1(){
 		$students1 = Student::all();		//模型返回的都是集合，返回所有数据
-		$students2 = Student::get();		//查询构造器的get方法，也是返回所有数据
+		$students2 = Student::get();		//查询构造器的get方法，也是返回所有数据，返回的是数组
 		$students3 = Student::where('id','>=',1)->first();		////查询构造器的方法
-		$student1  = Student::find(1);	//find是查询id的方法，返回id=1的数据
+		$student1  = Student::find(1);	//find是查询id的方法，返回id=1的的模型 模型 模型 或 模型的集合！！！
 		$student2  = Student::findOrFail(1);	//查找id=1的数据，查到的话就返回这条数据，查不到就报错
 		Student::chunk(2,function($students){//function()跟着的参数$students就是chunk查到的结果集，可根据我们的需要起名
 			// var_dump($students);
@@ -117,8 +117,8 @@ class StudentController extends Controller{
 		//这句代码的意思是：从模型Student里面每次查找2条数据，并将结果集赋值给$students传递给function()去执行。
 	}
 
+	//新增数据：方法一，使用模型新增数据（涉及到自定义时间戳）
 	public function orm2(){
-		//新增数据：方法一，使用模型新增数据（涉及到自定义时间戳）
 		$student3 = new Student();		//新增一个模型，这时模型$student3是没有数据的，attributes属性里面是空的数组
 		$student3->name = 'sean';
 		//逐一插入字段和值，如果用array集体赋值，需要使用到$fillable添加到白名单，才能集体赋值，这是laravel的保护措施
@@ -135,13 +135,27 @@ class StudentController extends Controller{
 		dd($student3);
 	}
 
+	//新增数据：方法二，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
 	public function orm3(){
-		//新增数据：方法二，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
-		//这种是批量赋值，默认情况下laravel不允许批量赋值，但可以在模型下将字段添加到 $fillable里面允许批量赋值
+		//这种是批量赋值，默认情况下laravel不允许批量赋值，但可以在模型app/student.php下将字段添加到 $fillable里面允许批量赋值
 		$student = Student::create([
 			'name'=>'sean22','age'=>20
 		]);
 		dd($student);
+	}
+
+	public function orm4(){
+		//firstOrCreat()
+		$student1 = Student::firstOrCreate([
+			'name'=>'imooc2',
+		]);	//查找指定的值是否存在，存在即返回该条数据，不存在就创建这笔数据并保存到数据库，返回该条数据
+		$student1->toArray();
+		dd($student1);
+		//firstOrNew()
+		$student2 = Student::firstOrNew([
+			'name'=>'imooc2',
+		]);	//查找指定的值是否存在，存在即返回该条数据，不存在就创建这笔数据但不保存到数据库，并返回该条数据
+		dd($student2);
 	}
 
 }
