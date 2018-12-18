@@ -158,5 +158,10 @@ class StudentController extends Controller{
 		dd($student2);
 	}
 
+	public function RLtest(){	//relationships测试	
+		$score = Student::find(1)->score;
+		dd($score->toArray());
+	}
+
 }
 

@@ -17,4 +17,16 @@ class Student extends Model{
 	public function asDateTime($val){
 		return $val;	//在这里我们直接返回原来的格式，不做任何处理，即会输出Unix时间戳
 	}	//重写该方法，该方法是在输出created或updated时间戳的时候自动转换为该格式：2018-12-14 16:35:53  
+
+
+
+	public function score()			//创建关联table，Relationships：one to one 
+	{
+	    return $this->hasOne('App\Score','score_id');		
+	    // hasOne表示Student模型关联Score模型，
+	    // 这时两个表的对应、映射关系是通过：  Student.id = Score.score_id  来映射
+	    // 第二个参数代表关联Score的socre_id字段，
+	    // 如果不指定，会默认以第一个表的小写为前缀：student_id作为查询的字段名！！即 Score.student_id
+	}
+
 }
