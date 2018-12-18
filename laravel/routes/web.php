@@ -132,4 +132,5 @@ Route::get('orm3',['uses'=>'StudentController@orm3']);
 //Eloquent ORM，新增数据，使用模型的Create方法新增数据（涉及批量赋值，$fillable）
 Route::get('orm4',['uses'=>'StudentController@orm4']);	
 
-Route::get('RLtest', 'StudentController@RLtest');
+Route::get('RLtest1', 'StudentController@RLtest1');	//relationship 一对一的关系
+Route::get('RLtest2', 'StudentController@RLtest2');

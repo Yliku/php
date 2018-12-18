@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Student;
+use App\Score;
 
 class StudentController extends Controller{
 	public function test1(){ //测试访问是否正常
@@ -158,10 +159,17 @@ class StudentController extends Controller{
 		dd($student2);
 	}
 
-	public function RLtest(){	//relationships测试	
-		$score = Student::find(1)->score;
-		dd($score->toArray());
+	public function RLtest1(){	//relationships测试	
+		$score = Student::find(1)->score1;
+		//这里是调用score函数名！score函数名！不是score()函数！！但是却返回了score表对应的数据！符合我们要的结果
+		dd($score);
 	}
+
+	public function RLtest2(){	//relationships测试，反向查找，belongsTo
+		$student = Score::find(2)->student;
+		dd($student);
+	}
+
 
 }
 

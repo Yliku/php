@@ -20,13 +20,22 @@ class Student extends Model{
 
 
 
-	public function score()			//创建关联table，Relationships：one to one 
-	{
-	    return $this->hasOne('App\Score','score_id');		
+	public function score1()			//创建关联table，1对1的表，Relationships：one to one 
+	{	//此处的函数命名可以不用和关联的表对应，但是调用的话得调用该函数名，而不是table名！！！
+	    // return $this->hasOne('App\Score','score_id');		
 	    // hasOne表示Student模型关联Score模型，
 	    // 这时两个表的对应、映射关系是通过：  Student.id = Score.score_id  来映射
 	    // 第二个参数代表关联Score的socre_id字段，
-	    // 如果不指定，会默认以第一个表的小写为前缀：student_id作为查询的字段名！！即 Score.student_id
+	    // 如果不指定参数，会默认以第一个表名为前缀：student_id作为在Score表里查询的字段名！！即 Score.student_id
+
+	    return $this->hasOne('App\Score', 'score_id','id');
+	   	//指定从属关系，表示该表包含 App\Score
+	    //第二个参数是子表 Score 的字段，第三个参数是主表 Student的字段，这样可以通过 Student 表取得 Score 的数据
+
+	    // 这种情况是指定两个表的映射关系是：	Score.math = Student.id
+	    // return $this->hasOne('App\Score', 'foreign_key', 'local_key');
+	    // 这种情况是指定两个表的映射关系是：	Score.foreign_key = Student.local_key
+	   	
 	}
 
 }
