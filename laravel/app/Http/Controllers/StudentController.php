@@ -166,7 +166,8 @@ class StudentController extends Controller{
 	}
 
 	public function RLtest2(){	//relationships测试，反向查找，belongsTo
-		$student = Score::find(2)->student;
+		$student = Score::find(2)->student;		//动态调用
+		// $student = Score::find(2)->student->name;	//动态调用，model本身也是查询构造器，可直接调用attribute里的属性
 		dd($student);
 	}
 
