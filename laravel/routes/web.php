@@ -134,3 +134,10 @@ Route::get('orm4',['uses'=>'StudentController@orm4']);
 
 Route::get('RLtest1', 'StudentController@RLtest1');	//relationship 一对一的关系
 Route::get('RLtest2', 'StudentController@RLtest2');
+
+
+
+// 显示创建博客文章表单
+Route::get('Validate', 'ValidateController@create');
+// 存储新的博客文章
+Route::post('post22', 'ValidateController@store')->name('post11');
