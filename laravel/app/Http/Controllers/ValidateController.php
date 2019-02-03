@@ -52,6 +52,7 @@ class ValidateController extends Controller {
     }
 
     public function store2(validateRequest $request) {
+        // 将验证规则写在request中的写法，
         // 验证通过后下面就可以开始写 将input数据存入数据库 的代码
 
     }
