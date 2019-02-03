@@ -41,6 +41,8 @@ class ValidateController extends Controller {
 
     //方法二：验证失败时重定向自定义视图/路由
     public function store1_1(Request $request) {
+    	//如果我们要获得传递过来的其中指定值,可以使用下面三种方法
+        //$request['name']; $request->get('name'); $request->name;
 		$validator = Validator::make($request->all(), [		//这种方法注意要引入类： use Validator;
 			//传递给make方法的第一个参数是需要验证的数据，第二个参数是要应用到数据上的验证规则。
 			'title' => 'required',
@@ -54,6 +56,6 @@ class ValidateController extends Controller {
     public function store2(validateRequest $request) {
         // 将验证规则写在request中的写法，
         // 验证通过后下面就可以开始写 将input数据存入数据库 的代码
-
+        // dd($request);
     }
 }

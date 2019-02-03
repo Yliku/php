@@ -4,10 +4,10 @@
 -->
 
 <!-- 路由别名的用处和用法，要双花括号~~~~ -->
-<form action="{{ route('post11') }}" method="post">		
+<form action="{{ route('post22') }}" method="post">		
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">	
 	<!-- 	post方法传递必须加上面的代码，否则会找不到，或者这句：	{{ csrf_field() }} 	   -->
-	title<input type="text" name='title' value="{{ old('title') }}">	<!-- {{ old('title') }} 从session中获取闪存的数据 -->
+	title<input type="text" name='title' value="{{ old('title') }}">	<!-- {{ old('title') }} 从session中获取闪存的数据插入 -->
 	body<input type="text" name='body' value="{{ old('body') }}">
 	<input type='submit' value='提交'>
 </form>
