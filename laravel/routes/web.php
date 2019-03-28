@@ -142,3 +142,5 @@ Route::get('Validate', 'ValidateController@create');
 // 存储新的博客文章
 Route::post('post111', 'ValidateController@store1')->name('post11');
 Route::post('post222', 'ValidateController@store2')->name('post22');
+
+Route::get('localization-to-vue', 'LocalizationController@index');
