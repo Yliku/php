@@ -143,4 +143,9 @@ Route::get('Validate', 'ValidateController@create');
 Route::post('post111', 'ValidateController@store1')->name('post11');
 Route::post('post222', 'ValidateController@store2')->name('post22');
 
-Route::get('localization-to-vue', 'LocalizationController@index');
+Route::get('localization', function () {
+    return view('localization');	
+});
+Route::get('laravel-to-vue', function () {
+    return view('localization');	
+});
