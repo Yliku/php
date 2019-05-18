@@ -61,7 +61,7 @@ return [
         /*
          * Timeout of the cached data in minutes - set to 0 to disable
          */
-        'timeout' => 60,
+        'timeout' => 0,
     ],
     'js'     => [
         /*
