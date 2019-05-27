@@ -1,3 +1,4 @@
+<p>{{$name}}</p>	
 @extends('parent')
 @section('title')
   @parent

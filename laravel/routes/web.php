@@ -151,5 +151,8 @@ Route::get('laravel-to-vue', function () {
 });
 
 Route::get('bladeTest',function(){	//blade模板引擎用法
-	return view('bladeTest');
+	$name = 'sean';
+	return view('bladeTest',[
+		'name' => $name,
+	]);
 });
