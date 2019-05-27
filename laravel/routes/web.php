@@ -149,3 +149,7 @@ Route::get('localization', function () {
 Route::get('laravel-to-vue', function () {
     return view('localization');	
 });
+
+Route::get('bladeTest',function(){	//blade模板引擎用法
+	return view('bladeTest');
+});
