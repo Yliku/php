@@ -156,3 +156,7 @@ Route::get('bladeTest',function(){	//blade模板引擎用法
 		'name' => $name,
 	]);
 });
+
+Route::get('mathjax-to-mathml',function(){
+	return view('mathjax');
+});
