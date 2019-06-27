@@ -160,3 +160,7 @@ Route::get('bladeTest',function(){	//blade模板引擎用法
 Route::get('mathjax-to-mathml',function(){
 	return view('mathjax');
 });
+
+//邮件发送测试
+Route::get('send_raw','SendEmailController@send_raw')->name('email.send_raw');
+Route::get('send_html','SendEmailController@send_html')->name('email.send_html');
