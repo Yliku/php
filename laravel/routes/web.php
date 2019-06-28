@@ -164,3 +164,9 @@ Route::get('mathjax-to-mathml',function(){
 //邮件发送测试
 Route::get('send_raw','SendEmailController@send_raw')->name('email.send_raw');
 Route::get('send_html','SendEmailController@send_html')->name('email.send_html');
+
+
+Auth::routes();
+//调用Auth中routers()，static::$app->make('router') 是实例化router，->auth() 是调用实例化的 vendor/laravel/framework/src/Illuminate/Routing/Router.php 中的auth()方法生成默认的路由
+
+Route::get('/home', 'HomeController@index')->name('home');
