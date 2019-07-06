@@ -95,7 +95,7 @@ class RegisterController extends Controller
         // 通过 event() 函数触发注册事件
         event(new Registered($user = $this->create($request->all())));
         // 获取 guard 实例，并通过 guard 登录创建的用户
-        $this->guard()->login($user);
+        // $this->guard()->login($user);
         // 根据 $user 注册信息进行页面跳转
         return $this->registered($request, $user)
                         ?: 'success';
